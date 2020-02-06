@@ -8,13 +8,13 @@ import MainContents from './components/MainContents';
 
 const App = () => {
   return (
-    <div>
+    <React.Fragment>
       <Header />
       <MainContents />
       <FooterPush />
       <Footer />
       <GlobalStyle />
-    </div>
+    </React.Fragment>
   );
 }
 

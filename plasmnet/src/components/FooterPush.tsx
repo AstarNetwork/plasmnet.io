@@ -1,4 +1,5 @@
 import React from 'react'
+import styled from 'styled-components'
 
 interface Props {
 
@@ -6,10 +7,13 @@ interface Props {
 
 const FooterPush: React.FC<Props> = () => {
   return (
-    <div>
-      <h1>FooterPush</h1>
-    </div>
+    <FooterPushContainer>
+    </FooterPushContainer>
   )
 }
 
 export default FooterPush
+
+const FooterPushContainer = styled.div`
+  flex: 1;
+`

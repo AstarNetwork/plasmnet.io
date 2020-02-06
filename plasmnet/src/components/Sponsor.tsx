@@ -1,4 +1,5 @@
 import React from 'react'
+import styled from 'styled-components'
 
 interface Props {
 
@@ -6,10 +7,13 @@ interface Props {
 
 const Sponsor: React.FC<Props> = () => {
   return (
-    <div>
+    <SponsorContainer>
       <h1>Sponsor</h1>
-    </div>
+    </SponsorContainer>
   )
 }
 
 export default Sponsor
+
+const SponsorContainer = styled.div`
+`

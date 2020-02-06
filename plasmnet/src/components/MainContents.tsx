@@ -12,14 +12,14 @@ interface Props {
 
 const MainContents: React.FC<Props> = () => {
   return (
-    <>
+    <div>
       <Title />
       <LockdropInfo />
       <Achieves />
       <TestnetInfo />
       <Roadmap />
       <Sponsor />
-    </>
+    </div>
   )
 }
 

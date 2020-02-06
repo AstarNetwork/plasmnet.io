@@ -17,7 +17,7 @@ export const GlobalStyle = createGlobalStyle`
 
 /* To make footer attached to the bottom  */
 /* Need to define 'flex: 1;' in the div above the footer  */
-#root{
+#root {
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -25,12 +25,13 @@ export const GlobalStyle = createGlobalStyle`
 
 body {
   background-color: ${theme.colors.creamWhite};
+  color: ${theme.colors.black};
   position: relative;
   padding: 0;
   margin: 0;
   font-style: normal;
   height: 100%;
-  padding: 20px;
+  padding: 10px;
 }
 
 `;
