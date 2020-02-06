@@ -20,6 +20,7 @@ const colors = {
   darkPurple: "rgba(10, 7, 82, 0.75)",
   softPurple: "#9795C5",
   white: "#ffffff",
+  creamWhite: "#f4f5f7",
   black: "#000000",
   grey: "#333333",
   softGrey: "#1D1B4D",

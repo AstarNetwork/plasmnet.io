@@ -24,12 +24,13 @@ export const GlobalStyle = createGlobalStyle`
 }
 
 body {
-  background-color: ${theme.colors.navy};
+  background-color: ${theme.colors.creamWhite};
   position: relative;
   padding: 0;
   margin: 0;
   font-style: normal;
   height: 100%;
+  padding: 20px;
 }
 
 `;
