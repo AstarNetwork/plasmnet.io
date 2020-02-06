@@ -27,11 +27,9 @@ body {
   background-color: ${theme.colors.creamWhite};
   color: ${theme.colors.black};
   position: relative;
-  padding: 0;
   margin: 0;
   font-style: normal;
   height: 100%;
-  padding: 10px;
+  padding: 10px 20px;
 }
-
 `;

@@ -14,7 +14,7 @@ const Footer: React.FC<Props> = () => {
     <FooterContainer>
       <h1>Join the discussion</h1>
       <div className="footer-columns">
-        <ul>
+        <ul className="footer-column">
           <h3>Company</h3>
           {Company.map(company => (
             <li>
@@ -23,7 +23,7 @@ const Footer: React.FC<Props> = () => {
           ))}
         </ul>
 
-        <ul>
+        <ul className="footer-column">
           <h3>Products</h3>
           {Products.map(product => (
             <li>
@@ -32,7 +32,7 @@ const Footer: React.FC<Props> = () => {
           ))}
         </ul>
 
-        <ul>
+        <ul className="footer-column">
           <h3>Collaboration</h3>
           <li>
             <a rel="noopener noreferrer" target="_blank">Example</a>
@@ -45,7 +45,7 @@ const Footer: React.FC<Props> = () => {
           </li>
         </ul>
 
-        <ul>
+        <ul className="footer-column">
           <h3>Blog</h3>
           {Blogs.map(blog => (
             <li>
@@ -53,7 +53,7 @@ const Footer: React.FC<Props> = () => {
             </li>
           ))}
         </ul>
-        <ul>
+        <ul className="footer-column">
           <h3>Community</h3>
           {Community.map(community => (
             <li>
@@ -72,7 +72,7 @@ const Footer: React.FC<Props> = () => {
 export default Footer
 
 const FooterContainer = styled.div`
-  footer{
+  footer {
     display: flex;
     justify-content: center;
     margin-top: 10px;
@@ -85,7 +85,7 @@ const FooterContainer = styled.div`
     display: grid;
     grid-template-columns: repeat(5, 1fr);
 
-    ${customMedia.lessThan("tablet")`
+    ${customMedia.lessThan("mobile")`
       grid-template-columns: repeat(2, 1fr);
     `}
     ul li {
@@ -95,9 +95,12 @@ const FooterContainer = styled.div`
 
     a {
       color: ${theme.colors.black};
-      :hover{
+      :hover {
         cursor: pointer;
       }
     }
+  }
+  .footer-column{
+    text-align: center
   }
 `
