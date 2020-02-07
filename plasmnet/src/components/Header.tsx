@@ -63,6 +63,11 @@ export default Header
 const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
+  position: fixed;
+  background-color:${theme.colors.creamWhite};
+  width: 100%;
+  margin: -10px -20px;
+  padding: 0px 10px;
   
   a {
     color: ${theme.colors.black};
