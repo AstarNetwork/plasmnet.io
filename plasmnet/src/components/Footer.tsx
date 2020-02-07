@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Company, Products, Blogs, Community } from '../data/links';
+import { Company, Products, Blogs, Community, Discussions } from '../data/links';
 import { customMedia } from '../styles/globalStyle';
 import { theme } from '../styles/theme';
 
@@ -12,7 +12,16 @@ const Footer: React.FC<Props> = () => {
   const currentYear = new Date().getFullYear();
   return (
     <FooterContainer>
-      <h1>Join the discussion</h1>
+      <div className="discussion">
+        <h2>Join the discussion:</h2>
+        <div className="icons">
+          {Discussions.map(discussion => (
+            <a href={discussion.link} rel="noopener noreferrer" target="_blank">
+              <img src={discussion.image} alt={discussion.className} className={discussion.className} />
+            </a>
+          ))}
+        </div>
+      </div>
       <div className="footer-columns">
         <ul className="footer-column">
           <h3>Company</h3>
@@ -72,6 +81,45 @@ const Footer: React.FC<Props> = () => {
 export default Footer
 
 const FooterContainer = styled.div`
+  .discussion {
+    border-top: 1px groove black;
+    border-bottom: 1px groove black;
+    margin: 10px 0px;
+    padding: 14px 0px;
+    padding-top: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+      margin-right: 10px;
+      margin-bottom: 10px;
+      text-shadow: 0px 0px 1px #000,4px 4px 2px rgba(0,0,0,0.5);
+    }
+    .icons {
+      display: flex;
+      width: 170px;
+      justify-content: space-evenly;
+    }
+    .twitter, .github, .telegram, .discord {
+      height:34px;
+      margin: 0px 4px;
+      -webkit-transition: all 0.3s ease-in;
+      -moz-transition: all 0.3s ease-in;
+      -ms-transition: all 0.3s ease-in;
+      -o-transition: all 0.3s ease-in;
+      transition: all 0.3s ease-in;
+      :hover{
+      box-shadow:3px 3px 5px rgba(1, 1, 1, 1);
+      padding:2px;
+      border:1px solid #dcdcdc;
+      border-radius:4px;
+      transform: scale(1.5);
+      margin: 0px 16px;
+      }
+    }
+  }
+
   footer {
     display: flex;
     justify-content: center;

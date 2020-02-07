@@ -1,8 +1,17 @@
+import twitterImg from "../resources/twitter.svg";
+import githubImg from "../resources/github.svg";
+import telegramImg from "../resources/telegram.svg";
+import discordImg from "../resources/discord.svg";
+
 export const Links = {
   docs: "https://docs.plasmnet.io",
   blog: "https://medium.com/stake-technologies",
   twitter: "https://twitter.com/Plasm_Network",
-  github: "https://github.com/staketechnologies/Plasm"
+  github: "https://github.com/staketechnologies/Plasm",
+  telegram: "https://t.me/PlasmOfficial",
+  discord: "https://discordapp.com/invite/Dnfn5eT",
+  email: "example@example.com",
+  home: "https://stake.co.jp/"
 };
 
 export const Whitepaper = [
@@ -20,23 +29,22 @@ export const Whitepaper = [
 
 export const Community = [
   {
-    link: "https://discord.gg/jeYPf5",
+    link: Links.discord,
     description: "Discord"
   },
   {
-    link: "https://t.me/PlasmOfficial",
+    link: Links.telegram,
     description: "Telegram"
   }
 ];
 
-const Email = "example@example.com";
 export const Company = [
   {
-    link: "https://stake.co.jp/",
+    link: Links.home,
     description: "Home"
   },
   {
-    link: `mailto:${Email}`,
+    link: `mailto:${Links.email}`,
     description: "Contact us"
   }
 ];
@@ -52,5 +60,28 @@ export const Blogs = [
   {
     link: Links.blog,
     description: "Medium"
+  }
+];
+
+export const Discussions = [
+  {
+    link: Links.twitter,
+    className: "twitter",
+    image: twitterImg
+  },
+  {
+    link: Links.github,
+    className: "github",
+    image: githubImg
+  },
+  {
+    link: Links.telegram,
+    className: "telegram",
+    image: telegramImg
+  },
+  {
+    link: Links.discord,
+    className: "discord",
+    image: discordImg
   }
 ];
