@@ -51,7 +51,7 @@ const TitleContainer = styled.div`
   ${customMedia.lessThan("tabletPro")`
     margin-top: -10px;
     height: 70vh;
-    grid-template-rows: 36% 64%;
+    grid-template-rows: 34% 66%;
   `}
   ${customMedia.lessThan("mobile")`
     height: 80vh;
@@ -69,7 +69,7 @@ const TitleContainer = styled.div`
        align-self: start;
     `}
     ${customMedia.lessThan("mobile")`
-       grid-row-gap: 24px;
+       grid-row-gap: 26px;
     `}
   }
   .ui-button {
