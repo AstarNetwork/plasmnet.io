@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import { TitleH } from '../styles/customH'
 import { Sponsors } from '../data/links'
 import { customMedia } from '../styles/globalStyle'
 
@@ -11,7 +10,7 @@ interface Props {
 const Sponsor: React.FC<Props> = () => {
   return (
     <SponsorContainer>
-      <TitleH>Sponsors</TitleH>
+      <TitleH1>Sponsors</TitleH1>
       <div className="sponsors">
         {
           Sponsors.map(sponsor => (
@@ -31,7 +30,7 @@ export default Sponsor
 
 const SponsorContainer = styled.div`
   margin: 40px 0px;
-  
+
   .sponsors{
     width: 100%;
     display: grid;
@@ -48,7 +47,6 @@ const SponsorContainer = styled.div`
   }
   .sponsor{
     width: 200px;
-    height: 200px;
     display: flex;
     text-align: center;
     justify-content: center;
@@ -74,3 +72,11 @@ const SponsorContainer = styled.div`
     }
   }
 `
+
+const TitleH1 = styled.h1`
+  text-align: center;
+  margin-bottom: 24px;
+  ${customMedia.lessThan("mobile")`
+    margin-bottom: 0px;
+  `}
+`;
