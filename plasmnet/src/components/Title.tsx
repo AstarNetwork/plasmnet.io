@@ -69,13 +69,12 @@ const TitleContainer = styled.div`
        align-self: start;
     `}
     ${customMedia.lessThan("mobile")`
-       grid-row-gap: 40px;
+       grid-row-gap: 30px;
     `}
   }
   .ui-button {
     margin-top: 0px;
     ${customMedia.lessThan("tabletPro")`
-      /* margin-bottom: 60px; */
       align-items: start;
     `}
   }
