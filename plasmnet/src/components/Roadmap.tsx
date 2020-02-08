@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import roadmap from '../resources/roadmap.svg'
+import { customMedia } from '../styles/globalStyle'
 interface Props {
 
 }
@@ -30,6 +31,12 @@ const RoadmapContainer = styled.div`
     img {
       width: 75%;
       height: auto;
+      ${customMedia.lessThan("laptop")`
+        width: 90%;
+      `}
+      ${customMedia.lessThan("tablet")`
+        width: 100%;
+      `}
     }
   }
 `
