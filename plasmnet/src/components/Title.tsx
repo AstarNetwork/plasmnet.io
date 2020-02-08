@@ -37,7 +37,15 @@ const TitleContainer = styled.div`
   width: 100vw;
   height: 60vh;
   margin-left: -20px;
+
+  /* fallback for old browsers */
   background: ${theme.colors.blue};
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right, #396afc, ${theme.colors.blue});
+   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, #396afc, ${theme.colors.blue});
+
+
   display: flex;
   text-align: center;
   justify-content: center;
