@@ -11,7 +11,7 @@ interface Props {
 const Title: React.FC<Props> = () => {
   return (
     <TitleContainer>
-      <div>
+      <div className="title">
         <TitleH1>The Plasm Network is</TitleH1>
         <TitleH1>Scaling Dapps Platform on Substrate</TitleH1>
       </div>
@@ -45,34 +45,44 @@ const TitleContainer = styled.div`
    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   background: linear-gradient(to right, #396afc, ${theme.colors.blue});
 
-
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: 40% 60%;
+  align-items: center;
   ${customMedia.lessThan("tabletPro")`
     margin-top: -10px;
+    height: 70vh;
+    grid-template-rows: 36% 64%;
+  `}
+  ${customMedia.lessThan("mobile")`
     height: 80vh;
   `}
 
   .ui {
-    margin-top: 50px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     ${customMedia.lessThan("tabletPro")`
-      flex-direction: column;
+       display: grid;
+       grid-template-rows: 30% 70%;
+       justify-items: center;
+       grid-row-gap: 50px;
+       align-self: start;
+    `}
+    ${customMedia.lessThan("mobile")`
+       grid-row-gap: 40px;
     `}
   }
   .ui-button {
     margin-top: 0px;
     ${customMedia.lessThan("tabletPro")`
-      margin-bottom: 60px;
+      /* margin-bottom: 60px; */
+      align-items: start;
     `}
   }
 `
 
 const TitleH1 = styled.h1`
+  text-align: center;
   font-size: 50px;
   font-weight: 700;
   line-height: 56px;
