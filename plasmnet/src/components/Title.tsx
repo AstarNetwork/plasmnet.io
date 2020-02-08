@@ -69,7 +69,7 @@ const TitleContainer = styled.div`
        align-self: start;
     `}
     ${customMedia.lessThan("mobile")`
-       grid-row-gap: 30px;
+       grid-row-gap: 24px;
     `}
   }
   .ui-button {
