@@ -3,6 +3,7 @@ import { Button } from 'semantic-ui-react';
 import styled from "styled-components";
 import { theme } from '../styles/theme';
 import LockdropInfo from './LockdropInfo';
+import { customMedia } from '../styles/globalStyle';
 interface Props {
 
 }
@@ -50,6 +51,9 @@ const TitleContainer = styled.div`
   text-align: center;
   justify-content: center;
   flex-direction:column;
+  ${customMedia.lessThan("tablet")`
+    margin-top: -10px;
+  `}
 
   .ui {
     margin-top: 50px;

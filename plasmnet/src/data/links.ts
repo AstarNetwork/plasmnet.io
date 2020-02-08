@@ -33,23 +33,27 @@ export const Whitepaper = [
   {
     description: "English",
     link:
-      "https://github.com/stakedtechnologies/plasmdocs/blob/master/wp/en.pdf"
+      "https://github.com/stakedtechnologies/plasmdocs/blob/master/wp/en.pdf",
+    icon: `sticky note outline`
   },
   {
     description: "Japanese",
     link:
-      "https://github.com/stakedtechnologies/plasmdocs/blob/master/wp/jp.pdf"
+      "https://github.com/stakedtechnologies/plasmdocs/blob/master/wp/jp.pdf",
+    icon: `sticky note outline`
   }
 ];
 
 export const Community = [
   {
     description: "Discord",
-    link: Links.discord
+    link: Links.discord,
+    icon: "discord"
   },
   {
     description: "Telegram",
-    link: Links.telegram
+    link: Links.telegram,
+    icon: "telegram"
   }
 ];
 

@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { Community, Links, Whitepaper } from '../data/links'
 import stakedLogo from "../resources/staked-logo.svg"
 import { theme } from '../styles/theme'
+import { customMedia } from '../styles/globalStyle'
 interface Props {
 
 }
@@ -61,6 +62,9 @@ const Header: React.FC<Props> = () => {
 export default Header
 
 const HeaderContainer = styled.div`
+  ${customMedia.lessThan("tablet")`
+    display: none;
+  `}
   display: flex;
   justify-content: space-between;
   position: fixed;
@@ -68,6 +72,8 @@ const HeaderContainer = styled.div`
   width: 100%;
   margin: -10px -20px;
   padding: 0px 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+  z-index: 1000;
   
   a {
     color: ${theme.colors.black};
