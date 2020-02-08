@@ -23,7 +23,7 @@ const Header: React.FC<Props> = () => {
           <Dropdown.Menu>
             <Dropdown.Header>Whitepaper</Dropdown.Header>
             {Whitepaper.map(whitepaper => (
-              <Dropdown.Item>
+              <Dropdown.Item key={whitepaper.description}>
                 <a href={whitepaper.link} rel="noopener noreferrer" target="_blank">{whitepaper.description}</a>
               </Dropdown.Item>
             ))}
@@ -38,7 +38,7 @@ const Header: React.FC<Props> = () => {
           <Dropdown.Menu>
             <Dropdown.Header>Community</Dropdown.Header>
             {Community.map(community => (
-              <Dropdown.Item>
+              <Dropdown.Item key={community.description}>
                 <a href={community.link} rel="noopener noreferrer" target="_blank">{community.description}</a>
               </Dropdown.Item>
             ))}

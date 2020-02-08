@@ -16,7 +16,7 @@ const Footer: React.FC<Props> = () => {
         <h2>Join the discussion:</h2>
         <div className="icons">
           {Discussions.map(discussion => (
-            <a href={discussion.link} rel="noopener noreferrer" target="_blank">
+            <a href={discussion.link} rel="noopener noreferrer" target="_blank" key={discussion.className}>
               <img src={discussion.image} alt={discussion.className} className={discussion.className} />
             </a>
           ))}
@@ -26,7 +26,7 @@ const Footer: React.FC<Props> = () => {
         <ul className="footer-column">
           <h3>Company</h3>
           {Company.map(company => (
-            <li>
+            <li key={company.description}>
               <a href={company.link} rel="noopener noreferrer" target="_blank">{company.description}</a>
             </li>
           ))}
@@ -35,7 +35,7 @@ const Footer: React.FC<Props> = () => {
         <ul className="footer-column">
           <h3>Products</h3>
           {Products.map(product => (
-            <li>
+            <li key={product.description}>
               <a href={product.link} rel="noopener noreferrer" target="_blank">{product.description}</a>
             </li>
           ))}
@@ -44,20 +44,20 @@ const Footer: React.FC<Props> = () => {
         <ul className="footer-column">
           <h3>Collaboration</h3>
           <li>
-            <a rel="noopener noreferrer" target="_blank">Example</a>
+            <a href="/" rel="noopener noreferrer" target="_blank">Example</a>
           </li>
           <li>
-            <a rel="noopener noreferrer" target="_blank">Example</a>
+            <a href="/" rel="noopener noreferrer" target="_blank">Example</a>
           </li>
           <li>
-            <a rel="noopener noreferrer" target="_blank">Example</a>
+            <a href="/" rel="noopener noreferrer" target="_blank">Example</a>
           </li>
         </ul>
 
         <ul className="footer-column">
           <h3>Blog</h3>
           {Blogs.map(blog => (
-            <li>
+            <li key={blog.description}>
               <a href={blog.link} rel="noopener noreferrer" target="_blank">{blog.description}</a>
             </li>
           ))}
@@ -65,7 +65,7 @@ const Footer: React.FC<Props> = () => {
         <ul className="footer-column">
           <h3>Community</h3>
           {Community.map(community => (
-            <li>
+            <li key={community.description}>
               <a href={community.link} rel="noopener noreferrer" target="_blank">{community.description}</a>
             </li>
           ))}
@@ -123,7 +123,7 @@ const FooterContainer = styled.div`
   footer {
     display: flex;
     justify-content: center;
-    margin-top: 10px;
+    margin: 10px 0px;
   }
   .footer-columns {
     width: 90%;

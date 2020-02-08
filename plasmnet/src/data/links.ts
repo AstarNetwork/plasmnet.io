@@ -2,6 +2,12 @@ import twitterImg from "../resources/twitter.svg";
 import githubImg from "../resources/github.svg";
 import telegramImg from "../resources/telegram.svg";
 import discordImg from "../resources/discord.svg";
+import cryptoeconomicsLabImg from "../resources/crypto-economics-lab.png";
+import parityImg from "../resources/parity.png";
+import web3Img from "../resources/web3-foundation.png";
+import istudyImg from "../resources/istudy.png";
+import longhashImg from "../resources/longhash.png";
+import universityOfTokyoImg from "../resources/university-of-tokyo.png";
 
 export const Links = {
   docs: "https://docs.plasmnet.io",
@@ -14,52 +20,61 @@ export const Links = {
   home: "https://stake.co.jp/"
 };
 
+export const SponsorLinks = {
+  cryptoEconomicsLab: "https://www.cryptoeconomicslab.com/",
+  parityTechnologies: "https://www.parity.io/",
+  web3Foundation: "https://web3.foundation/",
+  istudy: "https://www.istudy.co.jp/",
+  longhash: "https://longhash.co.jp/en/",
+  universityOfTokyo: "https://www.u-tokyo.ac.jp/en/index.html"
+};
+
 export const Whitepaper = [
   {
+    description: "English",
     link:
-      "https://github.com/stakedtechnologies/plasmdocs/blob/master/wp/en.pdf",
-    description: "English"
+      "https://github.com/stakedtechnologies/plasmdocs/blob/master/wp/en.pdf"
   },
   {
+    description: "Japanese",
     link:
-      "https://github.com/stakedtechnologies/plasmdocs/blob/master/wp/jp.pdf",
-    description: "Japanese"
+      "https://github.com/stakedtechnologies/plasmdocs/blob/master/wp/jp.pdf"
   }
 ];
 
 export const Community = [
   {
-    link: Links.discord,
-    description: "Discord"
+    description: "Discord",
+    link: Links.discord
   },
   {
-    link: Links.telegram,
-    description: "Telegram"
+    description: "Telegram",
+    link: Links.telegram
   }
 ];
 
 export const Company = [
   {
-    link: Links.home,
-    description: "Home"
+    description: "Home",
+    link: Links.home
   },
   {
-    link: `mailto:${Links.email}`,
-    description: "Contact us"
+    description: "Contact us",
+    link: `mailto:${Links.email}`
   }
 ];
 
 export const Products = [
   {
-    link: "https://github.com/staketechnologies/Plasm",
-    description: "Plasm Testnet v3"
+    description: "Plasm Testnet v3",
+    link: "https://github.com/staketechnologies/Plasm"
   }
 ];
 
 export const Blogs = [
   {
-    link: Links.blog,
-    description: "Medium"
+    description: "Medium",
+    link: Links.blog
   }
 ];
 
@@ -83,5 +98,44 @@ export const Discussions = [
     link: Links.discord,
     className: "discord",
     image: discordImg
+  }
+];
+
+export const Sponsors = [
+  {
+    description: "Cryptoeconomics Lab",
+    link: SponsorLinks.cryptoEconomicsLab,
+    className: "cryptoeconomics-lab",
+    image: cryptoeconomicsLabImg
+  },
+  {
+    description: "Parity Technologies",
+    link: "https://www.parity.io/",
+    className: "parity-technologies",
+    image: parityImg
+  },
+  {
+    description: "Web3 Foundation",
+    link: SponsorLinks.web3Foundation,
+    className: "web3-foundation",
+    image: web3Img
+  },
+  {
+    description: "iStudy",
+    link: SponsorLinks.istudy,
+    className: "istudy",
+    image: istudyImg
+  },
+  {
+    description: "LongHash",
+    link: SponsorLinks.longhash,
+    className: "long-hash",
+    image: longhashImg
+  },
+  {
+    description: "The University of Tokyo",
+    link: SponsorLinks.universityOfTokyo,
+    className: "university-of-tokyo",
+    image: universityOfTokyoImg
   }
 ];

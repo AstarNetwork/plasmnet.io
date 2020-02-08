@@ -1,5 +1,6 @@
 
 import React from 'react'
+import { TitleH } from '../styles/customH'
 
 interface Props {
 
@@ -8,7 +9,7 @@ interface Props {
 const Achieves: React.FC<Props> = () => {
   return (
     <div>
-      <h1>Achieves</h1>
+      <TitleH>Plasm Networks archives:</TitleH>
     </div>
   )
 }

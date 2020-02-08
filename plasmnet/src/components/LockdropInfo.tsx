@@ -59,7 +59,7 @@ const LockdropInfo: React.FC<Props> = () => {
           InputProps={{
             readOnly: true,
           }}
-          id="standard-basic"
+          // id="standard-basic"
           className="input amount"
           value={eth}
         />

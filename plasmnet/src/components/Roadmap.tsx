@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import roadmap from '../resources/roadmap.svg'
 import { customMedia } from '../styles/globalStyle'
+import { TitleH } from '../styles/customH'
 interface Props {
 
 }
@@ -9,7 +10,7 @@ interface Props {
 const Roadmap: React.FC<Props> = () => {
   return (
     <RoadmapContainer>
-      <h1>Roadmap</h1>
+      <TitleH>Roadmap</TitleH>
       <div className="image-container">
         <img src={roadmap} alt="roadmap" />
       </div>
@@ -24,6 +25,7 @@ const RoadmapContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  margin: 40px 0px;
 
   .image-container{
     width: 100%;

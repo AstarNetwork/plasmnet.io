@@ -1,4 +1,5 @@
 import React from 'react'
+import { TitleH } from '../styles/customH'
 
 interface Props {
 
@@ -7,7 +8,7 @@ interface Props {
 const TestnetInfo: React.FC<Props> = () => {
   return (
     <div>
-      <h1>Testnet info</h1>
+      <TitleH>Plasm Testnet v3</TitleH>
     </div>
   )
 }
