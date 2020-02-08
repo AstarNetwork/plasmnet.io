@@ -186,7 +186,7 @@ const HeaderSmall: React.FC<Props> = () => {
 export default HeaderSmall
 
 const HeaderSmallContainer = styled.div`
-  ${customMedia.greaterThan("tablet")`
+  ${customMedia.greaterThan("tabletPro")`
     display: none;
   `}
 

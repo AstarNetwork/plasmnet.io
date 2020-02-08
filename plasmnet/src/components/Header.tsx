@@ -62,7 +62,7 @@ const Header: React.FC<Props> = () => {
 export default Header
 
 const HeaderContainer = styled.div`
-  ${customMedia.lessThan("tablet")`
+  ${customMedia.lessThan("tabletPro")`
     display: none;
   `}
   display: flex;

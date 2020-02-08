@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { TitleH } from '../styles/customH'
 import { Sponsors } from '../data/links'
+import { customMedia } from '../styles/globalStyle'
 
 interface Props {
 
@@ -36,7 +37,14 @@ const SponsorContainer = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     text-align: center;
+    align-items: center;
     justify-items: center;
+    ${customMedia.lessThan("laptop")`
+      grid-template-columns: 1fr 1fr;
+    `}
+    ${customMedia.lessThan("mobile")`
+      grid-template-columns: 1fr;
+    `}
   }
   .sponsor{
     width: 200px;
@@ -45,6 +53,9 @@ const SponsorContainer = styled.div`
     text-align: center;
     justify-content: center;
     padding: 10px;
+    a {
+      align-self: center
+    }
 
     .cryptoeconomics-lab, .parity-technologies, .web3-foundation, .istudy, .long-hash, .university-of-tokyo {
       height: 130px;
@@ -52,6 +63,10 @@ const SponsorContainer = styled.div`
       display: flex;
       text-align: center;
       justify-content: center;
+    ${customMedia.lessThan("mobile")`
+      width: 300px;
+      height: auto;
+    `}
     }
 
     .cryptoeconomics-lab,.parity-technologies,.web3-foundation{

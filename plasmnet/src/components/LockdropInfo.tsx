@@ -2,6 +2,7 @@ import TextField from '@material-ui/core/TextField';
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { theme } from '../styles/theme';
+import { customMedia } from '../styles/globalStyle';
 
 interface Props {
 
@@ -80,12 +81,20 @@ const LockdropInfoContainer = styled.div`
   border: 4px solid ${theme.colors.black};
   border-radius: 6px;
   padding: 20px 10px;
+   ${customMedia.lessThan("mobile")`
+      width: 350px;
+      border: 3px solid ${theme.colors.black};
+  `}
 
   .expected, .total{
     display:grid;
     align-items: center;
     grid-template-columns:50% 40% 10%;
     padding:0px 6%;
+    ${customMedia.lessThan("mobile")`
+      grid-template-columns: 55% 35% 10%;
+      padding: 0 4px;
+    `}
   }
   input{
     font-size: 20px;
@@ -96,6 +105,9 @@ const LockdropInfoContainer = styled.div`
     padding-bottom: 10px;
     align-self: center;
     font-weight: bold;
+    ${customMedia.lessThan("mobile")`
+      width: 100px;
+    `}
   }
   .amount{
     input {
@@ -117,7 +129,15 @@ const LockdropInfoContainer = styled.div`
 
 const TitleH1 = styled.h1`
   text-align: center;
+  ${customMedia.lessThan("mobile")`
+    font-size: 24px;
+    margin-bottom: 0;
+  `}
 `
 
-const ExpectedH2 = styled.h2``
-const AmountH2 = styled.h2``
+const ExpectedH2 = styled.h2`
+  ${customMedia.lessThan("mobile")`
+    font-size: 18px;
+  `}
+`
+const AmountH2 = styled(ExpectedH2)``

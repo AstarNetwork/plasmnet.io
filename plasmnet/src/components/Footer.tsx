@@ -71,9 +71,11 @@ const Footer: React.FC<Props> = () => {
           ))}
         </ul>
       </div>
-      <footer>
-        © 2019-{currentYear} Stake Technologies, Inc. All Rights Reserved.
+      <div className="footer-div">
+        <footer>
+          © 2019-{currentYear} Stake Technologies, Inc. All Rights Reserved.
       </footer>
+      </div>
     </FooterContainer>
   )
 }
@@ -120,10 +122,20 @@ const FooterContainer = styled.div`
     }
   }
 
+  .footer-div{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+
   footer {
     display: flex;
     justify-content: center;
     margin: 10px 0px;
+    ${customMedia.lessThan("mobile")`
+      width: 252px;
+      text-align: center;
+    `}
   }
   .footer-columns {
     width: 90%;
@@ -149,6 +161,9 @@ const FooterContainer = styled.div`
     }
   }
   .footer-column{
-    text-align: center
+    text-align: center;
+    ${customMedia.lessThan("mobile")`
+      padding-left: 0px;;
+    `}
   }
 `

@@ -24,7 +24,6 @@ const Title: React.FC<Props> = () => {
         <div>
           <LockdropInfo />
         </div>
-
       </div>
     </TitleContainer>
   )
@@ -50,9 +49,10 @@ const TitleContainer = styled.div`
   display: flex;
   text-align: center;
   justify-content: center;
-  flex-direction:column;
-  ${customMedia.lessThan("tablet")`
+  flex-direction: column;
+  ${customMedia.lessThan("tabletPro")`
     margin-top: -10px;
+    height: 75vh;
   `}
 
   .ui {
@@ -60,9 +60,15 @@ const TitleContainer = styled.div`
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    ${customMedia.lessThan("tabletPro")`
+      flex-direction: column;
+    `}
   }
   .ui-button {
     margin-top: 0px;
+    ${customMedia.lessThan("tabletPro")`
+      margin-bottom: 30px;
+    `}
   }
 `
 
@@ -70,4 +76,17 @@ const TitleH1 = styled.h1`
   font-size: 50px;
   font-weight: 700;
   line-height: 56px;
+  ${customMedia.lessThan("laptop")`
+    font-size: 46px;
+    line-height: 50px;
+  `}
+  ${customMedia.lessThan("tablet")`
+    font-size: 40px;
+    line-height: 44px;
+  `}
+  ${customMedia.lessThan("mobile")`
+    font-size: 30px;
+    line-height: 44px;
+    margin: 0;
+  `}
 `;
