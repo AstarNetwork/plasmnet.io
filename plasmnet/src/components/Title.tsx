@@ -52,7 +52,7 @@ const TitleContainer = styled.div`
   flex-direction: column;
   ${customMedia.lessThan("tabletPro")`
     margin-top: -10px;
-    height: 75vh;
+    height: 80vh;
   `}
 
   .ui {
@@ -67,7 +67,7 @@ const TitleContainer = styled.div`
   .ui-button {
     margin-top: 0px;
     ${customMedia.lessThan("tabletPro")`
-      margin-bottom: 30px;
+      margin-bottom: 60px;
     `}
   }
 `
