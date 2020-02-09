@@ -1,15 +1,24 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Sponsors } from '../data/links'
-import { customMedia } from '../styles/globalStyle'
-
+import React, { useRef } from 'react';
+import { useIntersection } from "react-use";
+import styled from 'styled-components';
+import { Sponsors } from '../data/links';
+import { customMedia } from '../styles/globalStyle';
+import { ScrollFadeIn, ThresholdPoint } from '../utils/scrollFadeIn';
 interface Props {
 
 }
 
 const Sponsor: React.FC<Props> = () => {
+  const sectionRef = useRef(null);
+  const intersection = useIntersection(sectionRef, {
+    root: null,
+    rootMargin: "0px",
+    threshold: ThresholdPoint
+  });
+
+  ScrollFadeIn(intersection, ".sponsor", false)
   return (
-    <SponsorContainer>
+    <SponsorContainer ref={sectionRef}>
       <TitleH1>Sponsors</TitleH1>
       <div className="sponsors">
         {
@@ -30,8 +39,10 @@ export default Sponsor
 
 const SponsorContainer = styled.div`
   margin: 40px 0px;
+  margin-bottom: 20px;
 
   .sponsors{
+    padding-top: 20px;
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -46,6 +57,7 @@ const SponsorContainer = styled.div`
     `}
   }
   .sponsor{
+    opacity: 0;
     width: 200px;
     display: flex;
     text-align: center;
