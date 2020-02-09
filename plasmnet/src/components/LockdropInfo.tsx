@@ -81,6 +81,10 @@ const LockdropInfoContainer = styled.div`
   border: 4px solid ${theme.colors.black};
   border-radius: 6px;
   padding: 20px 10px;
+   ${customMedia.lessThan("tabletSmall")`
+      width: 450px;
+      /* border: 3px solid ${theme.colors.black}; */
+  `}
    ${customMedia.lessThan("mobile")`
       width: 350px;
       border: 3px solid ${theme.colors.black};
@@ -91,7 +95,7 @@ const LockdropInfoContainer = styled.div`
     align-items: center;
     grid-template-columns:50% 40% 10%;
     padding:0px 6%;
-    ${customMedia.lessThan("mobile")`
+    ${customMedia.lessThan("tabletSmall")`
       grid-template-columns: 55% 35% 10%;
       padding: 0 4px;
     `}
@@ -105,6 +109,9 @@ const LockdropInfoContainer = styled.div`
     padding-bottom: 10px;
     align-self: center;
     font-weight: bold;
+    ${customMedia.lessThan("tabletSmall")`
+      width: 130px;
+    `}
     ${customMedia.lessThan("mobile")`
       width: 100px;
     `}
