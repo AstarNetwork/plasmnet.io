@@ -1,83 +1,80 @@
-import Divider from '@material-ui/core/Divider';
-import Drawer from '@material-ui/core/Drawer';
-import IconButton from '@material-ui/core/IconButton';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import MenuIcon from '@material-ui/icons/Menu';
-import clsx from 'clsx';
-import React from 'react';
-import { Icon } from 'semantic-ui-react';
-import styled from 'styled-components';
-import { Community, Links, Whitepaper } from '../data/links';
+import Divider from "@material-ui/core/Divider";
+import Drawer from "@material-ui/core/Drawer";
+import IconButton from "@material-ui/core/IconButton";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
+import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
+import MenuIcon from "@material-ui/icons/Menu";
+import clsx from "clsx";
+import React from "react";
+import { Icon } from "semantic-ui-react";
+import styled from "styled-components";
+import { Community, Links, Whitepaper } from "../data/links";
 import stakedLogo from "../resources/staked-logo.svg";
-import { customMedia } from '../styles/globalStyle';
-import { theme } from '../styles/theme';
+import { customMedia } from "../styles/globalStyle";
+import { theme } from "../styles/theme";
 
-interface Props {
-
-}
+interface Props {}
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      display: 'flex',
+      display: "flex"
     },
     appBar: {
-      transition: theme.transitions.create(['margin', 'width'], {
+      transition: theme.transitions.create(["margin", "width"], {
         easing: theme.transitions.easing.sharp,
-        duration: theme.transitions.duration.leavingScreen,
-      }),
+        duration: theme.transitions.duration.leavingScreen
+      })
     },
     appBarShift: {
       width: `calc(100% - ${drawerWidth}px)`,
       marginLeft: drawerWidth,
-      transition: theme.transitions.create(['margin', 'width'], {
+      transition: theme.transitions.create(["margin", "width"], {
         easing: theme.transitions.easing.easeOut,
-        duration: theme.transitions.duration.enteringScreen,
-      }),
+        duration: theme.transitions.duration.enteringScreen
+      })
     },
     menuButton: {
-      marginRight: theme.spacing(2),
+      marginRight: theme.spacing(2)
     },
     hide: {
-      display: 'none',
+      display: "none"
     },
     drawer: {
       width: drawerWidth,
-      flexShrink: 0,
+      flexShrink: 0
     },
     drawerPaper: {
-      width: drawerWidth,
+      width: drawerWidth
     },
     drawerHeader: {
-      display: 'flex',
-      alignItems: 'center',
+      display: "flex",
+      alignItems: "center",
       padding: theme.spacing(0, 1),
       ...theme.mixins.toolbar,
-      justifyContent: 'flex-end',
+      justifyContent: "flex-end"
     },
     content: {
       flexGrow: 1,
       padding: theme.spacing(3),
-      transition: theme.transitions.create('margin', {
+      transition: theme.transitions.create("margin", {
         easing: theme.transitions.easing.sharp,
-        duration: theme.transitions.duration.leavingScreen,
+        duration: theme.transitions.duration.leavingScreen
       }),
-      marginLeft: -drawerWidth,
+      marginLeft: -drawerWidth
     },
     contentShift: {
-      transition: theme.transitions.create('margin', {
+      transition: theme.transitions.create("margin", {
         easing: theme.transitions.easing.easeOut,
-        duration: theme.transitions.duration.enteringScreen,
+        duration: theme.transitions.duration.enteringScreen
       }),
-      marginLeft: 0,
-    },
-  }),
+      marginLeft: 0
+    }
+  })
 );
-
 
 const HeaderSmall: React.FC<Props> = () => {
   const classes = useStyles();
@@ -110,7 +107,7 @@ const HeaderSmall: React.FC<Props> = () => {
           anchor="left"
           open={open}
           classes={{
-            paper: classes.drawerPaper,
+            paper: classes.drawerPaper
           }}
         >
           <div className={classes.drawerHeader}>
@@ -119,18 +116,22 @@ const HeaderSmall: React.FC<Props> = () => {
               <h4>Plasm Network</h4>
             </div>
             <IconButton onClick={handleDrawerClose}>
-              < ChevronLeftIcon />
+              <ChevronLeftIcon />
             </IconButton>
           </div>
           <Divider />
           <List>
             <TitleP>Whitepaper</TitleP>
             {Whitepaper.map(whitepaper => (
-              <a href={whitepaper.link} rel="noopener noreferrer" target="_blank">
+              <a
+                href={whitepaper.link}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
                 <ListItem button key={whitepaper.description}>
                   {/*
                   // @ts-ignore */}
-                  <Icon name={whitepaper.icon} color="grey" size='large' />
+                  <Icon name={whitepaper.icon} color="grey" size="large" />
                   <SmallMenuP>{whitepaper.description}</SmallMenuP>
                 </ListItem>
               </a>
@@ -140,11 +141,15 @@ const HeaderSmall: React.FC<Props> = () => {
           <List>
             <TitleP>Community</TitleP>
             {Community.map(community => (
-              <a href={community.link} rel="noopener noreferrer" target="_blank">
+              <a
+                href={community.link}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
                 <ListItem button key={community.description}>
                   {/*
                   // @ts-ignore */}
-                  <Icon name={community.icon} color="grey" size='large' />
+                  <Icon name={community.icon} color="grey" size="large" />
                   <SmallMenuP>{community.description}</SmallMenuP>
                 </ListItem>
               </a>
@@ -154,7 +159,7 @@ const HeaderSmall: React.FC<Props> = () => {
           <div>
             <a href={Links.docs} rel="noopener noreferrer" target="_blank">
               <ListItem button>
-                <Icon name="book" color="grey" size='large' />
+                <Icon name="book" color="grey" size="large" />
                 <SmallMenuP>Docs</SmallMenuP>
               </ListItem>
             </a>
@@ -163,7 +168,7 @@ const HeaderSmall: React.FC<Props> = () => {
           <div>
             <a href={Links.twitter} rel="noopener noreferrer" target="_blank">
               <ListItem button>
-                <Icon name="twitter" color="grey" size='large' />
+                <Icon name="twitter" color="grey" size="large" />
                 <SmallMenuP>Twitter</SmallMenuP>
               </ListItem>
             </a>
@@ -172,18 +177,18 @@ const HeaderSmall: React.FC<Props> = () => {
           <div>
             <a href={Links.github} rel="noopener noreferrer" target="_blank">
               <ListItem button>
-                <Icon name="github" color="grey" size='large' />
+                <Icon name="github" color="grey" size="large" />
                 <SmallMenuP>Github</SmallMenuP>
               </ListItem>
             </a>
           </div>
         </Drawer>
       </div>
-    </HeaderSmallContainer >
+    </HeaderSmallContainer>
   );
-}
+};
 
-export default HeaderSmall
+export default HeaderSmall;
 
 const HeaderSmallContainer = styled.div`
   ${customMedia.greaterThan("tabletPro")`
@@ -191,11 +196,11 @@ const HeaderSmallContainer = styled.div`
   `}
 
   position: fixed;
-  .MuiToolbar-gutters{
+  .MuiToolbar-gutters {
     background: ${theme.colors.creamWhite};
   }
-  
-  .MuiIconButton-label{
+
+  .MuiIconButton-label {
     color: ${theme.colors.black} !important;
   }
 
@@ -205,25 +210,25 @@ const HeaderSmallContainer = styled.div`
     text-decoration: none;
     color: black;
     opacity: 0.9;
-    .staked-logo{
+    .staked-logo {
       height: 50px;
     }
-    h4{
+    h4 {
       font-size: 18px;
       margin-top: 0px;
     }
   }
-`
+`;
 const SmallMenuP = styled.p`
   font-size: 16px;
   margin-left: 18px;
   margin-bottom: 0px;
-  color: ${theme.colors.black}
-`
+  color: ${theme.colors.black};
+`;
 const TitleP = styled.p`
   font-size: 18px;
   margin-bottom: 6px !important;
   margin-bottom: 0px;
   color: ${theme.colors.black};
   text-align: center;
-`
+`;

@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { theme } from "../styles/theme";
 import { customMedia } from "../styles/globalStyle";
 
-interface Props { }
+interface Props {}
 
 const LockdropInfo: React.FC<Props> = () => {
   const [msg, setMsg] = useState("");
@@ -54,8 +54,8 @@ const LockdropInfo: React.FC<Props> = () => {
         <TextField
           id="standard-basic"
           className="input amount"
-          onChange={(e) => {
-            isNotContainString(e.target.value, setMsg)
+          onChange={e => {
+            isNotContainString(e.target.value, setMsg);
           }}
         />
         <span className="currency">ETH</span>
@@ -154,7 +154,7 @@ const TitleH1 = styled.h1`
 `;
 
 const ExpiredH2 = styled.h2`
-    margin-bottom: 0px;
+  margin-bottom: 0px;
   ${customMedia.lessThan("mobile")`
     font-size: 18px;
   `}
@@ -165,4 +165,4 @@ const HeaderTimeSpan = styled.span`
   font-weight: bold;
   font-size: 22px;
   opacity: 0.9;
-`
+`;

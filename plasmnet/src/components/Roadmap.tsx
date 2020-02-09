@@ -1,13 +1,11 @@
-import React, { useRef } from 'react'
-import styled from 'styled-components'
-import roadmap from '../resources/roadmap.svg'
-import { customMedia } from '../styles/globalStyle'
-import { TitleH } from '../styles/customH'
-import { useIntersection } from 'react-use'
-import { ThresholdPoint, ScrollFadeIn } from '../utils/scrollFadeIn'
-interface Props {
-
-}
+import React, { useRef } from "react";
+import styled from "styled-components";
+import roadmap from "../resources/roadmap.svg";
+import { customMedia } from "../styles/globalStyle";
+import { TitleH } from "../styles/customH";
+import { useIntersection } from "react-use";
+import { ThresholdPoint, ScrollFadeIn } from "../utils/scrollFadeIn";
+interface Props {}
 
 const Roadmap: React.FC<Props> = () => {
   const sectionRef = useRef(null);
@@ -17,7 +15,7 @@ const Roadmap: React.FC<Props> = () => {
     threshold: ThresholdPoint
   });
 
-  ScrollFadeIn(intersection, ".roadmap", false)
+  ScrollFadeIn(intersection, ".roadmap", false);
   return (
     <RoadmapContainer ref={sectionRef}>
       <TitleH>Roadmap</TitleH>
@@ -25,10 +23,10 @@ const Roadmap: React.FC<Props> = () => {
         <img src={roadmap} alt="roadmap" className="roadmap" />
       </div>
     </RoadmapContainer>
-  )
-}
+  );
+};
 
-export default Roadmap
+export default Roadmap;
 
 const RoadmapContainer = styled.div`
   display: flex;
@@ -38,12 +36,12 @@ const RoadmapContainer = styled.div`
   margin: 40px 0px;
   margin-top: 20px;
 
-  .roadmap{
+  .roadmap {
     opacity: 0;
     padding-top: 20px;
   }
 
-  .image-container{
+  .image-container {
     width: 100%;
 
     img {
@@ -55,4 +53,4 @@ const RoadmapContainer = styled.div`
       `}
     }
   }
-`
+`;

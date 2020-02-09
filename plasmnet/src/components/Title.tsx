@@ -1,12 +1,10 @@
-import React from 'react';
-import { Button } from 'semantic-ui-react';
+import React from "react";
+import { Button } from "semantic-ui-react";
 import styled from "styled-components";
-import { theme } from '../styles/theme';
-import LockdropInfo from './LockdropInfo';
-import { customMedia } from '../styles/globalStyle';
-interface Props {
-
-}
+import { theme } from "../styles/theme";
+import LockdropInfo from "./LockdropInfo";
+import { customMedia } from "../styles/globalStyle";
+interface Props {}
 
 const Title: React.FC<Props> = () => {
   return (
@@ -17,8 +15,14 @@ const Title: React.FC<Props> = () => {
       </div>
       <div className="ui">
         <div>
-          <a href="https://apps.plasmnet.io/" rel="noopener noreferrer" target="_blank">
-            <Button positive size='massive' className="ui-button">Launch UI</Button>
+          <a
+            href="https://apps.plasmnet.io/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <Button positive size="massive" className="ui-button">
+              Launch UI
+            </Button>
           </a>
         </div>
         <div>
@@ -26,10 +30,10 @@ const Title: React.FC<Props> = () => {
         </div>
       </div>
     </TitleContainer>
-  )
-}
+  );
+};
 
-export default Title
+export default Title;
 
 const TitleContainer = styled.div`
   /* off-set the header height */
@@ -43,7 +47,7 @@ const TitleContainer = styled.div`
   background: ${theme.colors.blue};
   /* Chrome 10-25, Safari 5.1-6 */
   background: -webkit-linear-gradient(to right, #396afc, ${theme.colors.blue});
-   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   background: linear-gradient(to right, #396afc, ${theme.colors.blue});
 
   display: grid;
@@ -81,7 +85,7 @@ const TitleContainer = styled.div`
       align-items: start;
     `}
   }
-`
+`;
 
 const TitleH1 = styled.h1`
   text-align: center;

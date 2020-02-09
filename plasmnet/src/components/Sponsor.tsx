@@ -1,12 +1,10 @@
-import React, { useRef } from 'react';
+import React, { useRef } from "react";
 import { useIntersection } from "react-use";
-import styled from 'styled-components';
-import { Sponsors } from '../data/links';
-import { customMedia } from '../styles/globalStyle';
-import { ScrollFadeIn, ThresholdPoint } from '../utils/scrollFadeIn';
-interface Props {
-
-}
+import styled from "styled-components";
+import { Sponsors } from "../data/links";
+import { customMedia } from "../styles/globalStyle";
+import { ScrollFadeIn, ThresholdPoint } from "../utils/scrollFadeIn";
+interface Props {}
 
 const Sponsor: React.FC<Props> = () => {
   const sectionRef = useRef(null);
@@ -16,32 +14,34 @@ const Sponsor: React.FC<Props> = () => {
     threshold: ThresholdPoint
   });
 
-  ScrollFadeIn(intersection, ".sponsor", false)
+  ScrollFadeIn(intersection, ".sponsor", false);
   return (
     <SponsorContainer ref={sectionRef}>
       <TitleH1>Sponsors</TitleH1>
       <div className="sponsors">
-        {
-          Sponsors.map(sponsor => (
-            <div className="sponsor" key={sponsor.className}>
-              <a href={sponsor.link} rel="noopener noreferrer" target="_blank">
-                <img src={sponsor.image} alt={sponsor.description} className={sponsor.className} />
-              </a>
-            </div>
-          ))
-        }
+        {Sponsors.map(sponsor => (
+          <div className="sponsor" key={sponsor.className}>
+            <a href={sponsor.link} rel="noopener noreferrer" target="_blank">
+              <img
+                src={sponsor.image}
+                alt={sponsor.description}
+                className={sponsor.className}
+              />
+            </a>
+          </div>
+        ))}
       </div>
     </SponsorContainer>
-  )
-}
+  );
+};
 
-export default Sponsor
+export default Sponsor;
 
 const SponsorContainer = styled.div`
   margin: 40px 0px;
   margin-bottom: 20px;
 
-  .sponsors{
+  .sponsors {
     padding-top: 20px;
     width: 100%;
     display: grid;
@@ -56,7 +56,7 @@ const SponsorContainer = styled.div`
       grid-template-columns: 1fr;
     `}
   }
-  .sponsor{
+  .sponsor {
     opacity: 0;
     width: 200px;
     display: flex;
@@ -64,26 +64,33 @@ const SponsorContainer = styled.div`
     justify-content: center;
     padding: 10px;
     a {
-      align-self: center
+      align-self: center;
     }
 
-    .cryptoeconomics-lab, .parity-technologies, .web3-foundation, .istudy, .long-hash, .university-of-tokyo {
+    .cryptoeconomics-lab,
+    .parity-technologies,
+    .web3-foundation,
+    .istudy,
+    .long-hash,
+    .university-of-tokyo {
       height: 130px;
       padding: 20px;
       display: flex;
       text-align: center;
       justify-content: center;
-    ${customMedia.lessThan("mobile")`
+      ${customMedia.lessThan("mobile")`
       width: 300px;
       height: auto;
     `}
     }
 
-    .cryptoeconomics-lab,.parity-technologies,.web3-foundation{
+    .cryptoeconomics-lab,
+    .parity-technologies,
+    .web3-foundation {
       height: 150px;
     }
   }
-`
+`;
 
 const TitleH1 = styled.h1`
   text-align: center;

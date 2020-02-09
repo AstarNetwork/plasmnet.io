@@ -1,19 +1,14 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
 
-interface Props {
-
-}
+interface Props {}
 
 const FooterPush: React.FC<Props> = () => {
-  return (
-    <FooterPushContainer>
-    </FooterPushContainer>
-  )
-}
+  return <FooterPushContainer></FooterPushContainer>;
+};
 
-export default FooterPush
+export default FooterPush;
 
 const FooterPushContainer = styled.div`
   flex: 1;
-`
+`;

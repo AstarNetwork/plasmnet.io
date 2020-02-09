@@ -22,11 +22,16 @@ v1.19.2
 
 - [semantic-ui-react](https://react.semantic-ui.com/)
   - The official React integration for Semantic UI.
+- [material-ui](https://github.com/mui-org/material-ui)
+  - React components for faster and easier web development.
 - [styled-components](https://www.styled-components.com/)
   - Visual primitives for the component age. Use the best bits of ES6 and CSS to style your apps without stress.
 - [styled-media-query](https://github.com/morajabi/styled-media-query)
-
   - Better media queries for styled-component.
+- [gsap](https://github.com/greensock/GSAP)
+  - GreenSock's GSAP JavaScript animation library.
+- [react-use](https://react.semantic-ui.com/)
+  - React hooks.
 
 ### For Development
 

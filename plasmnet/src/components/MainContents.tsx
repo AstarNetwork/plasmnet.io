@@ -1,13 +1,11 @@
-import React from 'react'
-import Sponsor from './Sponsor'
-import Roadmap from './Roadmap'
-import TestnetInfo from './TestnetInfo'
-import Achieves from './Achieves'
-import Title from './Title'
+import React from "react";
+import Sponsor from "./Sponsor";
+import Roadmap from "./Roadmap";
+import TestnetInfo from "./TestnetInfo";
+import Achieves from "./Achieves";
+import Title from "./Title";
 
-interface Props {
-
-}
+interface Props {}
 
 const MainContents: React.FC<Props> = () => {
   return (
@@ -18,7 +16,7 @@ const MainContents: React.FC<Props> = () => {
       <Roadmap />
       <Sponsor />
     </div>
-  )
-}
+  );
+};
 
-export default MainContents
+export default MainContents;

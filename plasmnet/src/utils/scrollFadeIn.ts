@@ -2,7 +2,7 @@ import { gsap } from "gsap";
 
 export const ThresholdPoint = 0.3;
 
-export const FadeIn = (element: string) => {
+export const FadeIn = (element: string): void => {
   gsap.to(element, 3, {
     opacity: 1,
     y: -20,
@@ -13,7 +13,7 @@ export const FadeIn = (element: string) => {
     }
   });
 };
-export const FadeOut = (element: string) => {
+export const FadeOut = (element: string): void => {
   gsap.to(element, 2, {
     opacity: 0,
     y: -40,

@@ -1,12 +1,16 @@
-import React from 'react';
-import styled from 'styled-components';
-import { Company, Products, Blogs, Community, Discussions } from '../data/links';
-import { customMedia } from '../styles/globalStyle';
-import { theme } from '../styles/theme';
+import React from "react";
+import styled from "styled-components";
+import {
+  Company,
+  Products,
+  Blogs,
+  Community,
+  Discussions
+} from "../data/links";
+import { customMedia } from "../styles/globalStyle";
+import { theme } from "../styles/theme";
 
-interface Props {
-
-}
+interface Props {}
 
 const Footer: React.FC<Props> = () => {
   const currentYear = new Date().getFullYear();
@@ -16,8 +20,17 @@ const Footer: React.FC<Props> = () => {
         <h2>Join the discussion:</h2>
         <div className="icons">
           {Discussions.map(discussion => (
-            <a href={discussion.link} rel="noopener noreferrer" target="_blank" key={discussion.className}>
-              <img src={discussion.image} alt={discussion.className} className={discussion.className} />
+            <a
+              href={discussion.link}
+              rel="noopener noreferrer"
+              target="_blank"
+              key={discussion.className}
+            >
+              <img
+                src={discussion.image}
+                alt={discussion.className}
+                className={discussion.className}
+              />
             </a>
           ))}
         </div>
@@ -27,7 +40,9 @@ const Footer: React.FC<Props> = () => {
           <h3>Company</h3>
           {Company.map(company => (
             <li key={company.description}>
-              <a href={company.link} rel="noopener noreferrer" target="_blank">{company.description}</a>
+              <a href={company.link} rel="noopener noreferrer" target="_blank">
+                {company.description}
+              </a>
             </li>
           ))}
         </ul>
@@ -36,7 +51,9 @@ const Footer: React.FC<Props> = () => {
           <h3>Products</h3>
           {Products.map(product => (
             <li key={product.description}>
-              <a href={product.link} rel="noopener noreferrer" target="_blank">{product.description}</a>
+              <a href={product.link} rel="noopener noreferrer" target="_blank">
+                {product.description}
+              </a>
             </li>
           ))}
         </ul>
@@ -44,13 +61,19 @@ const Footer: React.FC<Props> = () => {
         <ul className="footer-column">
           <h3>Collaboration</h3>
           <li>
-            <a href="/" rel="noopener noreferrer" target="_blank">Example</a>
+            <a href="/" rel="noopener noreferrer" target="_blank">
+              Example
+            </a>
           </li>
           <li>
-            <a href="/" rel="noopener noreferrer" target="_blank">Example</a>
+            <a href="/" rel="noopener noreferrer" target="_blank">
+              Example
+            </a>
           </li>
           <li>
-            <a href="/" rel="noopener noreferrer" target="_blank">Example</a>
+            <a href="/" rel="noopener noreferrer" target="_blank">
+              Example
+            </a>
           </li>
         </ul>
 
@@ -58,7 +81,9 @@ const Footer: React.FC<Props> = () => {
           <h3>Blog</h3>
           {Blogs.map(blog => (
             <li key={blog.description}>
-              <a href={blog.link} rel="noopener noreferrer" target="_blank">{blog.description}</a>
+              <a href={blog.link} rel="noopener noreferrer" target="_blank">
+                {blog.description}
+              </a>
             </li>
           ))}
         </ul>
@@ -66,7 +91,13 @@ const Footer: React.FC<Props> = () => {
           <h3>Community</h3>
           {Community.map(community => (
             <li key={community.description}>
-              <a href={community.link} rel="noopener noreferrer" target="_blank">{community.description}</a>
+              <a
+                href={community.link}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                {community.description}
+              </a>
             </li>
           ))}
         </ul>
@@ -74,13 +105,13 @@ const Footer: React.FC<Props> = () => {
       <div className="footer-div">
         <footer>
           © 2019-{currentYear} Stake Technologies, Inc. All Rights Reserved.
-      </footer>
+        </footer>
       </div>
     </FooterContainer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
 
 const FooterContainer = styled.div`
   .discussion {
@@ -96,33 +127,36 @@ const FooterContainer = styled.div`
     h2 {
       margin-right: 10px;
       margin-bottom: 10px;
-      text-shadow: 0px 0px 1px #000,4px 4px 2px rgba(0,0,0,0.5);
+      text-shadow: 0px 0px 1px #000, 4px 4px 2px rgba(0, 0, 0, 0.5);
     }
     .icons {
       display: flex;
       width: 170px;
       justify-content: space-evenly;
     }
-    .twitter, .github, .telegram, .discord {
-      height:34px;
+    .twitter,
+    .github,
+    .telegram,
+    .discord {
+      height: 34px;
       margin: 0px 4px;
       -webkit-transition: all 0.3s ease-in;
       -moz-transition: all 0.3s ease-in;
       -ms-transition: all 0.3s ease-in;
       -o-transition: all 0.3s ease-in;
       transition: all 0.3s ease-in;
-      :hover{
-      box-shadow:3px 3px 5px rgba(1, 1, 1, 1);
-      padding:2px;
-      border:1px solid #dcdcdc;
-      border-radius:4px;
-      transform: scale(1.5);
-      margin: 0px 16px;
+      :hover {
+        box-shadow: 3px 3px 5px rgba(1, 1, 1, 1);
+        padding: 2px;
+        border: 1px solid #dcdcdc;
+        border-radius: 4px;
+        transform: scale(1.5);
+        margin: 0px 16px;
       }
     }
   }
 
-  .footer-div{
+  .footer-div {
     text-align: center;
     display: flex;
     justify-content: center;
@@ -160,10 +194,10 @@ const FooterContainer = styled.div`
       }
     }
   }
-  .footer-column{
+  .footer-column {
     text-align: center;
     ${customMedia.lessThan("mobile")`
       padding-left: 0px;;
     `}
   }
-`
+`;
