@@ -47,7 +47,7 @@ const TitleContainer = styled.div`
   background: linear-gradient(to right, #396afc, ${theme.colors.blue});
 
   display: grid;
-  grid-template-rows: 40% 60%;
+  grid-template-rows: 38% 62%;
   align-items: center;
   ${customMedia.lessThan("tabletPro")`
     margin-top: -10px;
@@ -56,6 +56,7 @@ const TitleContainer = styled.div`
     grid-template-rows: 34% 66%;
   `}
   ${customMedia.lessThan("mobile")`
+    grid-template-rows: 36% 64%;
     height: 600px;
   `}
 
