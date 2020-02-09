@@ -48,10 +48,8 @@ const RoadmapContainer = styled.div`
 
     img {
       width: 75%;
+      max-width: 900px;
       height: auto;
-      ${customMedia.lessThan("laptop")`
-        width: 90%;
-      `}
       ${customMedia.lessThan("tablet")`
         width: 100%;
       `}
