@@ -1,13 +1,10 @@
-import twitterImg from "../resources/twitter.svg";
-import githubImg from "../resources/github.svg";
-import telegramImg from "../resources/telegram.svg";
-import discordImg from "../resources/discord.svg";
 import cryptoeconomicsLabImg from "../resources/crypto-economics-lab.png";
-import parityImg from "../resources/parity.png";
-import web3Img from "../resources/web3-foundation.png";
-import istudyImg from "../resources/istudy.png";
+import discordImg from "../resources/discord.svg";
+import githubImg from "../resources/github.svg";
 import longhashImg from "../resources/longhash.png";
-import universityOfTokyoImg from "../resources/university-of-tokyo.png";
+import telegramImg from "../resources/telegram.svg";
+import twitterImg from "../resources/twitter.svg";
+import web3Img from "../resources/web3-foundation.png";
 
 export const Links = {
   docs: "https://docs.plasmnet.io",
@@ -27,6 +24,10 @@ export const SponsorLinks = {
   istudy: "https://www.istudy.co.jp/",
   longhash: "https://longhash.co.jp/en/",
   universityOfTokyo: "https://www.u-tokyo.ac.jp/en/index.html"
+};
+export const BlogLinks = {
+  lockdropIntroduction:
+    "https://medium.com/stake-technologies/plasm-lockdrop-introduction-54614592a13"
 };
 
 export const Whitepaper = [

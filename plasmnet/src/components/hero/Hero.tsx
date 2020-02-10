@@ -1,4 +1,3 @@
-import { useWindowSize } from 'react-use'
 import { Power3, TimelineLite, TweenMax } from 'gsap';
 import React, { useEffect, useRef, useState } from "react";
 import { Link } from 'react-scroll';
@@ -13,7 +12,7 @@ interface Props {
 
 const Hero: React.FC<Props> = (props: Props) => {
   let offsetInitialState = window.screen.width > 920 ? -70 : 0
-  const [offset, setOffset] = useState(offsetInitialState)
+  const [offset] = useState(offsetInitialState)
 
   // Fixme: Animation will broke if apply below code
   // const { width, height } = useWindowSize();
@@ -109,7 +108,7 @@ const Hero: React.FC<Props> = (props: Props) => {
                     <Link className="link" to="ui-id" smooth={true} offset={offset} duration={700}>Lockdrop Information</Link>
                   </div>
                   <div className="btn-row">
-                    <Link className="link" to="archives-id" smooth={true} offset={offset} duration={700}>Plasm Networks archives</Link>
+                    <Link className="link" to="achieves-id" smooth={true} offset={offset} duration={700}>Plasm Networks archives</Link>
                   </div>
                   <div className="btn-row">
                     <Link className="link" to="testnet-id" smooth={true} offset={offset} duration={700}>Plasm Testnet v3</Link>

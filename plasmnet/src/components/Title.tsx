@@ -39,7 +39,7 @@ const TitleContainer = styled.div`
   /* off-set the header height */
   margin-top: 60px;
   width: 100vw;
-  height: 500px;
+  height: 650px;
   margin-left: -20px;
   /* padding: 40px 0px; */
 
@@ -51,17 +51,17 @@ const TitleContainer = styled.div`
   background: linear-gradient(to right, #396afc, ${theme.colors.blue});
 
   display: grid;
-  grid-template-rows: 38% 62%;
+  grid-template-rows: 34% 66%;
   align-items: center;
   ${customMedia.lessThan("tabletPro")`
     margin-top: -10px;
-    height: 650px;
+    height: 700px;
     padding-bottom: 16px;
-    grid-template-rows: 34% 66%;
+    grid-template-rows: 26% 84%;
   `}
   ${customMedia.lessThan("mobile")`
     grid-template-rows: 36% 64%;
-    height: 600px;
+    height: 740px;
   `}
 
   .ui {

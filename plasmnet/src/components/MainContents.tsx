@@ -2,9 +2,9 @@ import React from "react";
 import Sponsor from "./Sponsor";
 import Roadmap from "./Roadmap";
 import TestnetInfo from "./TestnetInfo";
-import Achieves from "./Achieves";
 import Title from "./Title";
 import Hero from "./hero/Hero";
+import Achieves from "./Achieves";
 
 interface Props {}
 

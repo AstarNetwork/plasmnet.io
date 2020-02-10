@@ -28,8 +28,8 @@ export const HeroContainer = styled.div`
       margin-top: 70px;
     `}
      @media only screen and (max-width: 814px) and (min-width: 810px) {
-      height: 450px !important;
-      margin-top: 160px !important;
+      height: 450px;
+      margin-top: 160px;
     } 
 
     .container {

@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { theme } from "../styles/theme";
 import { customMedia } from "../styles/globalStyle";
+import { Icon } from "semantic-ui-react";
+import { BlogLinks } from "../data/links";
 
 interface Props {}
 
@@ -64,6 +66,16 @@ const LockdropInfo: React.FC<Props> = () => {
         <div />
         {msg}
       </div>
+      <div className="reference">
+        <Icon name="attention" className="icon" />
+        <a
+          href={BlogLinks.lockdropIntroduction}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          What is the Lockdrop?
+        </a>
+      </div>
     </LockdropInfoContainer>
   );
 };
@@ -71,8 +83,9 @@ const LockdropInfo: React.FC<Props> = () => {
 export default LockdropInfo;
 
 const LockdropInfoContainer = styled.div`
-  width: 600px;
-  height: 230px;
+  width: 630px;
+  /* height: 230px; */
+  height: 300px;
   display: grid;
   align-items: center;
   background-color: ${theme.colors.creamWhite};
@@ -80,9 +93,9 @@ const LockdropInfoContainer = styled.div`
   border-radius: 6px;
   padding: 20px 10px;
 
-  ${customMedia.lessThan("tabletSmall")`
-      width: 350px;
-      height: 220px;
+  ${customMedia.lessThan("mobile")`
+      width: 360px;
+      height: 270px;
       border: 3px solid ${theme.colors.black};
   `}
 
@@ -112,16 +125,11 @@ const LockdropInfoContainer = styled.div`
     align-self: center;
     font-weight: bold;
     ${customMedia.lessThan("tabletSmall")`
-      width: 130px;
+      width: 110px;
     `}
     ${customMedia.lessThan("mobile")`
       width: 100px;
     `}
-  }
-  .amount {
-    input {
-      cursor: default;
-    }
   }
   .currency {
     font-size: 18px;
@@ -134,11 +142,38 @@ const LockdropInfoContainer = styled.div`
     display: grid;
     align-items: center;
     grid-template-columns: 50% 50%;
+    ${customMedia.lessThan("tabletSmall")`
+      font-size: 8px;
+    `}
   }
   .time {
     display: flex;
     justify-content: space-around;
     text-align: center;
+  }
+  .reference {
+    margin: 0px;
+    .icon {
+      margin-left: 34px;
+      font-size: 16px;
+      ${customMedia.lessThan("tabletSmall")`
+      margin-left: 4px;
+      font-size: 14px;
+    `}
+    }
+    a {
+      margin-left: 10px;
+      font-size: 16px;
+      color: ${theme.colors.black};
+      cursor: pointer;
+      ${customMedia.lessThan("tabletSmall")`
+        margin-left: 4px;
+        font-size: 14px;
+      `}
+      &:hover {
+        border-bottom: double 2px ${theme.colors.blue};
+      }
+    }
   }
 `;
 
@@ -152,7 +187,7 @@ const TitleH1 = styled.h1`
 
 const ExpiredH2 = styled.h2`
   margin-bottom: 0px;
-  ${customMedia.lessThan("mobile")`
+  ${customMedia.lessThan("tabletPro")`
     font-size: 18px;
   `}
 `;
@@ -162,4 +197,7 @@ const HeaderTimeSpan = styled.span`
   font-weight: bold;
   font-size: 22px;
   opacity: 0.9;
+  ${customMedia.lessThan("tabletPro")`
+    font-size: 18px;
+  `}
 `;

@@ -3,7 +3,7 @@ import { animateScroll as scroll } from "react-scroll";
 import { Dropdown, Icon, Menu } from "semantic-ui-react";
 import styled from "styled-components";
 import { Community, Links, Whitepaper } from "../data/links";
-import stakedLogo from "../resources/staked-logo.svg";
+import plasmLogo from "../resources/plasm-logo.png";
 import { customMedia } from "../styles/globalStyle";
 import { theme } from "../styles/theme";
 
@@ -14,7 +14,7 @@ const Header: React.FC<Props> = () => {
     <HeaderContainer>
       <div className="leftHeader">
         <div onClick={() => scroll.scrollToTop()} className="logo">
-          <img src={stakedLogo} alt="stakedLogo" className="staked-logo" />
+          <img src={plasmLogo} alt="plasmLogo" className="plasm-logo" />
           <h1>Plasm Network</h1>
         </div>
       </div>
@@ -127,12 +127,15 @@ const HeaderContainer = styled.div`
     color: black;
     opacity: 0.9;
     cursor: pointer;
+    height: 70px;
 
-    .staked-logo {
-      height: 70px;
+    .plasm-logo {
+      height: 46px;
+      margin-left: 4px;
     }
     h1 {
       margin-top: 0px;
+      margin-left: 6px;
     }
   }
 `;

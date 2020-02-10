@@ -11,7 +11,7 @@ import React from "react";
 import { Icon } from "semantic-ui-react";
 import styled from "styled-components";
 import { Community, Links, Whitepaper } from "../data/links";
-import stakedLogo from "../resources/staked-logo.svg";
+import plasmLogo from "../resources/plasm-logo.png";
 import { customMedia } from "../styles/globalStyle";
 import { theme } from "../styles/theme";
 
@@ -90,7 +90,7 @@ const HeaderSmall: React.FC<Props> = () => {
   };
 
   return (
-    <HeaderSmallContainer>
+    <HeaderSmallContainer style={{ zIndex: 100 }}>
       <div className={classes.root}>
         <IconButton
           color="inherit"
@@ -112,7 +112,7 @@ const HeaderSmall: React.FC<Props> = () => {
         >
           <div className={classes.drawerHeader}>
             <div className="logo">
-              <img src={stakedLogo} alt="stakedLogo" className="staked-logo" />
+              <img src={plasmLogo} alt="plasm-logo" className="plasm-logo" />
               <h4>Plasm Network</h4>
             </div>
             <IconButton onClick={handleDrawerClose}>
@@ -210,8 +210,9 @@ const HeaderSmallContainer = styled.div`
     text-decoration: none;
     color: black;
     opacity: 0.9;
-    .staked-logo {
-      height: 50px;
+    .plasm-logo {
+      height: 40px;
+      margin-right: 10px;
     }
     h4 {
       font-size: 18px;
