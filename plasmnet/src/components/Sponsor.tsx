@@ -16,7 +16,7 @@ const Sponsor: React.FC<Props> = () => {
 
   ScrollFadeIn(intersection, ".sponsor", false);
   return (
-    <SponsorContainer ref={sectionRef}>
+    <SponsorContainer ref={sectionRef} id="sponsor-id">
       <TitleH1>Sponsors</TitleH1>
       <div className="sponsors">
         {Sponsors.map(sponsor => (

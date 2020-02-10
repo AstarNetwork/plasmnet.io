@@ -8,7 +8,7 @@ interface Props {}
 
 const Title: React.FC<Props> = () => {
   return (
-    <TitleContainer>
+    <TitleContainer id="ui-id">
       <div className="title">
         <TitleH1>The Plasm Network is</TitleH1>
         <TitleH1>Scaling Dapps Platform on Substrate</TitleH1>

@@ -5,7 +5,7 @@ interface Props {}
 
 const Achieves: React.FC<Props> = () => {
   return (
-    <AchievesContainer>
+    <AchievesContainer id="archives-id">
       <TitleH>Plasm Networks archives:</TitleH>
     </AchievesContainer>
   );

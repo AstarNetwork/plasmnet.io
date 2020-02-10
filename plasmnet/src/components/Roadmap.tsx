@@ -17,7 +17,7 @@ const Roadmap: React.FC<Props> = () => {
 
   ScrollFadeIn(intersection, ".roadmap", false);
   return (
-    <RoadmapContainer ref={sectionRef}>
+    <RoadmapContainer ref={sectionRef} id="roadmap-id">
       <TitleH>Roadmap</TitleH>
       <div className="image-container">
         <img src={roadmap} alt="roadmap" className="roadmap" />

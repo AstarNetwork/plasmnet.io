@@ -1,20 +1,22 @@
 import React from "react";
+import { animateScroll as scroll } from "react-scroll";
 import { Dropdown, Icon, Menu } from "semantic-ui-react";
 import styled from "styled-components";
 import { Community, Links, Whitepaper } from "../data/links";
 import stakedLogo from "../resources/staked-logo.svg";
-import { theme } from "../styles/theme";
 import { customMedia } from "../styles/globalStyle";
+import { theme } from "../styles/theme";
+
 interface Props {}
 
 const Header: React.FC<Props> = () => {
   return (
     <HeaderContainer>
       <div className="leftHeader">
-        <a href="/" className="logo">
+        <div onClick={() => scroll.scrollToTop()} className="logo">
           <img src={stakedLogo} alt="stakedLogo" className="staked-logo" />
           <h1>Plasm Network</h1>
-        </a>
+        </div>
       </div>
 
       <div className="right-header">
@@ -124,6 +126,7 @@ const HeaderContainer = styled.div`
     text-decoration: none;
     color: black;
     opacity: 0.9;
+    cursor: pointer;
 
     .staked-logo {
       height: 70px;

@@ -5,7 +5,7 @@ interface Props {}
 
 const TestnetInfo: React.FC<Props> = () => {
   return (
-    <TestnetInfoContainer>
+    <TestnetInfoContainer id="testnet-id">
       <TitleH>Plasm Testnet v3</TitleH>
     </TestnetInfoContainer>
   );
