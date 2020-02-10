@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Card, Icon } from "semantic-ui-react";
 import { customMedia } from "../styles/globalStyle";
+import { theme } from "../styles/theme";
 
 interface Props {
   icon: string;
@@ -37,11 +38,17 @@ const CardContainer = styled.div`
       width: 334px;
     `}
 
-  .icon {
-    font-size: 20px;
-    padding: 10px;
-  }
-  p {
-    line-height: 26px;
+    .icon {
+      font-size: 20px;
+      padding: 10px;
+    }
+
+    h3 {
+      color: ${theme.colors.blue};
+    }
+
+    p {
+      line-height: 26px;
+    }
   }
 `;
