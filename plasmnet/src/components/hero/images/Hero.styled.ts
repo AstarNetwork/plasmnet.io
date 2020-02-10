@@ -19,6 +19,18 @@ export const HeroContainer = styled.div`
     ${customMedia.lessThan("laptop")`
       height: 90vh;
     `}
+    ${customMedia.lessThan("tablet")`
+      /* height: 640px; */
+      /* margin-top: 70px; */
+    `}
+    ${customMedia.lessThan("mobile")`
+      height: 750px;
+      margin-top: 70px;
+    `}
+     @media only screen and (max-width: 814px) and (min-width: 810px) {
+      height: 450px !important;
+      margin-top: 160px !important;
+    } 
 
     .container {
       width: 1440px;
@@ -29,8 +41,8 @@ export const HeroContainer = styled.div`
         min-width: 920px;
       `}
       ${customMedia.lessThan("tabletPro")`
-        width: 768px;
-        min-width: 768px;
+        width: 750px;
+        min-width: 750px;
       `}
       ${customMedia.lessThan("tablet")`
         width: 680px;
@@ -56,6 +68,7 @@ export const HeroContainer = styled.div`
         `}
         ${customMedia.lessThan("tabletPro")`
           height: 80vh;
+          margin: 0 10px;
         `}
 
         .hero-content {

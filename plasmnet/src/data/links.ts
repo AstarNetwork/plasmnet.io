@@ -113,33 +113,15 @@ export const Sponsors = [
     image: cryptoeconomicsLabImg
   },
   {
-    description: "Parity Technologies",
-    link: "https://www.parity.io/",
-    className: "parity-technologies",
-    image: parityImg
-  },
-  {
     description: "Web3 Foundation",
     link: SponsorLinks.web3Foundation,
     className: "web3-foundation",
     image: web3Img
   },
   {
-    description: "iStudy",
-    link: SponsorLinks.istudy,
-    className: "istudy",
-    image: istudyImg
-  },
-  {
     description: "LongHash",
     link: SponsorLinks.longhash,
     className: "long-hash",
     image: longhashImg
-  },
-  {
-    description: "The University of Tokyo",
-    link: SponsorLinks.universityOfTokyo,
-    className: "university-of-tokyo",
-    image: universityOfTokyoImg
   }
 ];

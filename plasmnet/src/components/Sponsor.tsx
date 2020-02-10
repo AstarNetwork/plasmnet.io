@@ -52,7 +52,7 @@ const SponsorContainer = styled.div`
     ${customMedia.lessThan("laptop")`
       grid-template-columns: 1fr 1fr;
     `}
-    ${customMedia.lessThan("mobile")`
+    ${customMedia.lessThan("tabletSmall")`
       grid-template-columns: 1fr;
     `}
   }

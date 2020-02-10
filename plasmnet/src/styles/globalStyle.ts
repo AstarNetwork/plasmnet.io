@@ -7,7 +7,7 @@ export const customMedia = generateMedia({
   laptop: "1172px",
   tabletPro: "920px",
   tablet: "768px",
-  tabletSmall: "680px",
+  tabletSmall: "700px",
   mobile: "400px"
 });
 

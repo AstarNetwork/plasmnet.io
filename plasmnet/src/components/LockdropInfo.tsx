@@ -79,11 +79,8 @@ const LockdropInfoContainer = styled.div`
   border: 4px solid ${theme.colors.black};
   border-radius: 6px;
   padding: 20px 10px;
+
   ${customMedia.lessThan("tabletSmall")`
-      width: 450px;
-      /* border: 3px solid ${theme.colors.black}; */
-  `}
-  ${customMedia.lessThan("mobile")`
       width: 350px;
       height: 220px;
       border: 3px solid ${theme.colors.black};

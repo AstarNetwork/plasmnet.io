@@ -179,7 +179,7 @@ const FooterContainer = styled.div`
     display: grid;
     grid-template-columns: repeat(5, 1fr);
 
-    ${customMedia.lessThan("mobile")`
+    ${customMedia.lessThan("tabletSmall")`
       grid-template-columns: repeat(2, 1fr);
     `}
     ul li {
