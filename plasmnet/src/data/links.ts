@@ -30,6 +30,12 @@ export const BlogLinks = {
     "https://medium.com/stake-technologies/plasm-lockdrop-introduction-54614592a13"
 };
 
+export const AppLinks = {
+  plasmnetIo: "https://apps.plasmnet.io/",
+  polkadotNetwork: "https://telemetry.polkadot.io/#list/Plasm%20Testnet%20v3",
+  joinLockdrop: "https://lockdrop.plasmnet.io)"
+};
+
 export const Whitepaper = [
   {
     description: "English",
@@ -85,6 +91,16 @@ export const Blogs = [
 
 export const Discussions = [
   {
+    link: Links.discord,
+    className: "discord",
+    image: discordImg
+  },
+  {
+    link: Links.telegram,
+    className: "telegram",
+    image: telegramImg
+  },
+  {
     link: Links.twitter,
     className: "twitter",
     image: twitterImg
@@ -93,16 +109,6 @@ export const Discussions = [
     link: Links.github,
     className: "github",
     image: githubImg
-  },
-  {
-    link: Links.telegram,
-    className: "telegram",
-    image: telegramImg
-  },
-  {
-    link: Links.discord,
-    className: "discord",
-    image: discordImg
   }
 ];
 

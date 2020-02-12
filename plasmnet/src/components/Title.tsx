@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { theme } from "../styles/theme";
 import LockdropInfo from "./LockdropInfo";
 import { customMedia } from "../styles/globalStyle";
+import { AppLinks } from "../data/links";
 interface Props {}
 
 const Title: React.FC<Props> = () => {
@@ -14,16 +15,29 @@ const Title: React.FC<Props> = () => {
         <TitleH1>Scaling Dapps Platform on Substrate</TitleH1>
       </div>
       <div className="ui">
-        <div>
-          <a
-            href="https://apps.plasmnet.io/"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <Button positive size="massive" className="ui-button">
-              Launch UI
-            </Button>
-          </a>
+        <div className="app-buttons">
+          <div>
+            <a
+              href={AppLinks.plasmnetIo}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <Button positive size="massive" className="ui-button">
+                Launch UI
+              </Button>
+            </a>
+          </div>
+          <div>
+            <a
+              href={AppLinks.joinLockdrop}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <Button size="massive" className="ui-button" color="brown">
+                Join Lockdrop
+              </Button>
+            </a>
+          </div>
         </div>
         <div>
           <LockdropInfo />
@@ -55,13 +69,13 @@ const TitleContainer = styled.div`
   align-items: center;
   ${customMedia.lessThan("tabletPro")`
     margin-top: -10px;
-    height: 700px;
+    height: 870px;
     padding-bottom: 16px;
-    grid-template-rows: 26% 84%;
+    grid-template-rows: 20% 80%;
   `}
   ${customMedia.lessThan("mobile")`
-    grid-template-rows: 36% 64%;
-    height: 740px;
+    grid-template-rows: 26% 74%;
+    height: 800px;
   `}
 
   .ui {
@@ -70,20 +84,27 @@ const TitleContainer = styled.div`
     align-items: center;
     ${customMedia.lessThan("tabletPro")`
        display: grid;
-       grid-template-rows: 30% 70%;
-       justify-items: center;
+       grid-template-rows: 50% 50%;
+       /* justify-items: center; */
        grid-row-gap: 50px;
-       align-self: start;
+       /* align-self: start; */
     `}
     ${customMedia.lessThan("mobile")`
        grid-row-gap: 28px;
     `}
-  }
-  .ui-button {
-    margin-top: 0px;
-    ${customMedia.lessThan("tabletPro")`
-      align-items: start;
-    `}
+    .app-buttons {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      grid-row-gap: 40px;
+      justify-items: center;
+    }
+    .ui-button {
+      margin-top: 0px;
+      width: 224px;
+      ${customMedia.lessThan("tabletPro")`
+        align-items: start;
+      `}
+    }
   }
 `;
 

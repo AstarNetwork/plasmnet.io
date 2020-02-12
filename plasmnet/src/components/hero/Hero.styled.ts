@@ -1,11 +1,12 @@
-import { customMedia } from "./../../../styles/globalStyle";
+import { customMedia } from "../../styles/globalStyle";
 import styled from "styled-components";
 
 export const HeroContainer = styled.div`
+
   .link {
     color: #323232;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 40px;
     font-weight: 300;
     padding-right: 48px;
@@ -13,22 +14,24 @@ export const HeroContainer = styled.div`
   }
 
   .hero {
-    visibility: hidden;
-    height: 100vh;
+    /* HeroWithoutAnimation */
+    opacity:0;
+    visibility: visible;
+    /* HeroWithoutAnimation */
+
+    /* visibility: hidden; */
+  
+    height: 90vh;
     margin-top: 70px;
     ${customMedia.lessThan("laptop")`
-      height: 90vh;
+      height: 500px;
     `}
     ${customMedia.lessThan("tablet")`
-      /* height: 640px; */
-      /* margin-top: 70px; */
+      height: 430px;
     `}
-    ${customMedia.lessThan("mobile")`
-      height: 750px;
-      margin-top: 70px;
-    `}
-     @media only screen and (max-width: 814px) and (min-width: 810px) {
-      height: 450px;
+     /* @media only screen and (max-width: 814px) and (min-width: 810px) { */
+     @media only screen and (max-width: 814px) and (max-height: 376px) {
+      height: 250px;
       margin-top: 160px;
     } 
 
@@ -88,8 +91,8 @@ export const HeroContainer = styled.div`
 
             h1 {
               font-weight: 500;
-              font-size: 32px;
-              margin-bottom: 24px;
+              font-size: 42px;
+              margin-bottom: 30px;
               ${customMedia.lessThan("mobile")`
                 font-size: 28px;
                 margin-right: 0;
@@ -97,7 +100,7 @@ export const HeroContainer = styled.div`
 
               .hero-content-line {
                 margin: 0;
-                height: 44px;
+                height: 50px;
                 overflow: hidden;
 
                 .hero-content-line-inner {
@@ -106,7 +109,7 @@ export const HeroContainer = styled.div`
             }
 
             p {
-              font-size: 14px;
+              font-size: 18px;
               line-height: 24px;
               font-weight: 300;
               padding-right: 48px;
@@ -119,6 +122,7 @@ export const HeroContainer = styled.div`
             }
 
             .btn-row {
+              font-size: 18px;
               position: relative;
               ${customMedia.lessThan("laptop")`
                   padding-left: 50px;

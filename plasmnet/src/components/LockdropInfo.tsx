@@ -9,24 +9,6 @@ import { BlogLinks } from "../data/links";
 interface Props {}
 
 const LockdropInfo: React.FC<Props> = () => {
-  const [msg, setMsg] = useState("");
-
-  const isNotContainString = (
-    value: string,
-    setMsg: React.Dispatch<React.SetStateAction<string>>
-  ): void => {
-    const valueArray = value.split("");
-
-    for (const value of valueArray) {
-      if (/^[^.0-9]*$/.test(value)) {
-        setMsg("Please enter number only");
-        return;
-      }
-    }
-    setMsg("");
-    return;
-  };
-
   return (
     <LockdropInfoContainer>
       <TitleH1>Lockdrop Information</TitleH1>
@@ -53,18 +35,8 @@ const LockdropInfo: React.FC<Props> = () => {
       </div>
       <div className="total">
         <AmountH2>Total Amount Lock:</AmountH2>
-        <TextField
-          id="standard-basic"
-          className="input amount"
-          onChange={e => {
-            isNotContainString(e.target.value, setMsg);
-          }}
-        />
+        <TotalAmountH2>777</TotalAmountH2>
         <span className="currency">ETH</span>
-      </div>
-      <div className="warning">
-        <div />
-        {msg}
       </div>
       <div className="reference">
         <Icon name="attention" className="icon" />
@@ -84,7 +56,6 @@ export default LockdropInfo;
 
 const LockdropInfoContainer = styled.div`
   width: 630px;
-  /* height: 230px; */
   height: 300px;
   display: grid;
   align-items: center;
@@ -94,19 +65,21 @@ const LockdropInfoContainer = styled.div`
   padding: 20px 10px;
 
   ${customMedia.lessThan("mobile")`
-      width: 360px;
-      height: 270px;
+      width: 290px;
+      height: 250px;
       border: 3px solid ${theme.colors.black};
+      margin 0;
+      padding: 10px 4px;
   `}
 
   .expired, .total {
     display: grid;
     align-items: center;
-    grid-template-columns: 50% 40% 10%;
+    grid-template-columns: 60% 30% 30%;
     padding: 8px 6%;
     height: 42px;
     ${customMedia.lessThan("tabletSmall")`
-      grid-template-columns: 55% 35% 10%;
+      grid-template-columns: 70% 15% 15%;
       padding: 0 4px;
     `}
   }
@@ -116,21 +89,7 @@ const LockdropInfoContainer = styled.div`
       grid-template-columns: 55% 45%;
     `};
   }
-  input {
-    font-size: 20px;
-    text-align: center;
-  }
-  .input {
-    width: 170px;
-    align-self: center;
-    font-weight: bold;
-    ${customMedia.lessThan("tabletSmall")`
-      width: 110px;
-    `}
-    ${customMedia.lessThan("mobile")`
-      width: 100px;
-    `}
-  }
+
   .currency {
     font-size: 18px;
   }
@@ -152,7 +111,7 @@ const LockdropInfoContainer = styled.div`
     text-align: center;
   }
   .reference {
-    margin: 0px;
+    margin-top: 30px;
     .icon {
       margin-left: 34px;
       font-size: 16px;
@@ -180,24 +139,32 @@ const LockdropInfoContainer = styled.div`
 const TitleH1 = styled.h1`
   text-align: center;
   margin-bottom: 30px;
-  ${customMedia.lessThan("tabletPro")`
+  ${customMedia.lessThan("mobile")`
     font-size: 24px;
   `}
 `;
 
 const ExpiredH2 = styled.h2`
   margin-bottom: 0px;
-  ${customMedia.lessThan("tabletPro")`
+  ${customMedia.lessThan("mobile")`
     font-size: 18px;
   `}
 `;
 const AmountH2 = styled(ExpiredH2)``;
 
+const TotalAmountH2 = styled.h2`
+  margin: 0px;
+  padding: 0px;
+  ${customMedia.lessThan("mobile")`
+    font-size: 18px;
+  `}
+`;
+
 const HeaderTimeSpan = styled.span`
   font-weight: bold;
   font-size: 22px;
   opacity: 0.9;
-  ${customMedia.lessThan("tabletPro")`
+  ${customMedia.lessThan("mobile")`
     font-size: 18px;
   `}
 `;

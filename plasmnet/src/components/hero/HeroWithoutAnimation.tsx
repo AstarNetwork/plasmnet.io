@@ -1,100 +1,40 @@
-import { Power3, TimelineLite, TweenMax } from 'gsap';
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { Link } from 'react-scroll';
-import { HeroContainer } from "./Hero.styled";
+import { useIntersection } from "react-use";
+import { ScrollFadeIn, ThresholdPoint, DeepFadeIn } from "../../utils/scrollFadeIn";
 import imgBoy from "./images/boy.webp";
 import imgGirl from "./images/girl.webp";
-
-
+import { HeroContainer } from "./Hero.styled";
 
 interface Props {
 }
 
-const Hero: React.FC<Props> = (props: Props) => {
-  // const sectionRef = useRef(null);
-  // const intersection = useIntersection(sectionRef, {
-  //   root: null,
-  //   rootMargin: "0px",
-  //   threshold: ThresholdPoint
-  // });
+const HeroWithoutAnimation: React.FC<Props> = (props: Props) => {
 
-  // ScrollFadeIn(intersection, ".hero", false);
+  const sectionRef = useRef(null);
+
+  const intersection = useIntersection(sectionRef, {
+    root: null,
+    rootMargin: "0px",
+    threshold: ThresholdPoint
+  });
+  // ScrollFadeIn(intersection, ".hero", false, threshHoldPoint);
+  ScrollFadeIn(intersection, ".hero", false, ThresholdPoint, DeepFadeIn);
 
   let offsetInitialState = window.screen.width > 920 ? -70 : 0
   const [offset] = useState(offsetInitialState)
 
-  // Fixme: Animation will broke if apply below code
-  // const { width, height } = useWindowSize();
-  // useEffect(() => {
-  //   setOffset(window.screen.width > 920 ? -70 : 0)
-  // }, [width])
-
-  let app = useRef()
-  let images = useRef()
-  let content = useRef()
-  let tl = new TimelineLite({ delay: .8 });
-
-  useEffect(() => {
-    // Images Vars
-
-    // @ts-ignore
-    const girlImage = images.firstElementChild; // or children[0]
-    // @ts-ignore
-    const boyImage = images.lastElementChild;
-
-    //content vars
-
-    // @ts-ignore
-    const headlineFirst = content.children[0].children[0];
-    const headlineSecond = headlineFirst.nextSibling;
-    const headlineThird = headlineSecond.nextSibling;
-    // @ts-ignore
-    const contentP = content.children[1];
-    // @ts-ignore
-    const locationFirst = content.children[2].children[0];
-    const locationSecond = locationFirst.nextSibling;
-    const locationThird = locationSecond.nextSibling;
-    const locationFour = locationThird.nextSibling;
-    const locationFive = locationFour.nextSibling;
-    const locationSix = locationFive.nextSibling;
-
-    //Remove initial flash
-    TweenMax.to(app, 0, { css: { visibility: 'visible' } })
-
-    //Images Animation
-    tl.from(girlImage, 1.2, { y: 1280, ease: Power3.easeOut }, 'Start')
-      // .2: will run after 0.2sec above
-      .from(girlImage.firstElementChild, 2, { scale: 1.6, ease: Power3.easeOut }, .2)
-      .from(boyImage, 1.4, { y: 1280, ease: Power3.easeOut }, .2)
-      .from(boyImage.firstElementChild, 2, { scale: 1.6, ease: Power3.easeOut }, .2)
-
-    //Content Animation
-
-    // @ts-ignore
-    tl.staggerFrom([headlineFirst.children, headlineSecond.children, headlineThird.children], 1, {
-      y: 44,
-      ease: Power3.easeOut,
-      delay: .8
-    }, .15, 'Start')
-      .from(contentP, 1, { y: 20, opacity: 0, ease: Power3.easeOut }, 1.4, "content")
-      .staggerFrom([locationFirst.children, locationSecond.children, locationThird.children, locationFour.children, locationFive.children, locationSix.children], 1, {
-        y: 20,
-        ease: Power3.easeOut,
-        opacity: 0,
-      }, .15, "content")
-  }, [tl])
-
   return (
-    <HeroContainer>
+    <HeroContainer ref={sectionRef} style={{ paddingTop: "80px", paddingBottom: "0px" }}>
       {/*
         // @ts-ignore */}
-      <div className="hero" ref={el => app = el}>
+      <div className="hero" >
         <div className="container">
           <div className="hero-inner">
             <div className="hero-content">
               {/*
                   // @ts-ignore */}
-              <div className="hero-content-inner" ref={el => content = el}>
+              <div className="hero-content-inner">
                 <h1>
                   <div className="hero-content-line">
                     <div className="hero-content-line-inner">The Plasm Network</div>
@@ -134,7 +74,7 @@ const Hero: React.FC<Props> = (props: Props) => {
             <div className="hero-images">
               {/*
                   // @ts-ignore */}
-              <div ref={el => images = el} className="hero-images-inner">
+              <div className="hero-images-inner">
                 <div className="hero-image girl">
                   <img src={imgGirl} alt="girl" />
                 </div>
@@ -150,4 +90,4 @@ const Hero: React.FC<Props> = (props: Props) => {
   )
 }
 
-export default Hero
+export default HeroWithoutAnimation

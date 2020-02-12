@@ -5,6 +5,10 @@ import { customMedia } from "../styles/globalStyle";
 import { TitleH } from "../styles/customH";
 import { useIntersection } from "react-use";
 import { ThresholdPoint, ScrollFadeIn } from "../utils/scrollFadeIn";
+import { Icon } from "semantic-ui-react";
+import RoadmapCard from "./RoadmapCard";
+import { RoadmapList } from "../data/roadmapRecord";
+import { IRoadmaps, IRoadmap } from "../type/types";
 interface Props {}
 
 const Roadmap: React.FC<Props> = () => {
@@ -19,8 +23,10 @@ const Roadmap: React.FC<Props> = () => {
   return (
     <RoadmapContainer ref={sectionRef} id="roadmap-id">
       <TitleH>Roadmap</TitleH>
-      <div className="image-container">
-        <img src={roadmap} alt="roadmap" className="roadmap" />
+      <div className="cards">
+        {RoadmapList.map((list: IRoadmap) => (
+          <RoadmapCard list={list} />
+        ))}
       </div>
     </RoadmapContainer>
   );
@@ -29,28 +35,18 @@ const Roadmap: React.FC<Props> = () => {
 export default Roadmap;
 
 const RoadmapContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  margin: 40px 0px;
-  margin-top: 20px;
-
-  .roadmap {
-    opacity: 0;
-    padding-top: 20px;
+  .next {
+    margin-top: 94px;
   }
 
-  .image-container {
-    width: 100%;
-
-    img {
-      width: 75%;
-      max-width: 900px;
-      height: auto;
-      ${customMedia.lessThan("tablet")`
-        width: 100%;
-      `}
-    }
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    grid-row-gap: 20px;
+    ${customMedia.lessThan("laptop")`
+      grid-template-columns: 1fr;
+      grid-row-gap: 40px;
+    `}
   }
 `;

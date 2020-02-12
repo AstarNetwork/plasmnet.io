@@ -38,8 +38,8 @@ const Sponsor: React.FC<Props> = () => {
 export default Sponsor;
 
 const SponsorContainer = styled.div`
-  margin: 40px 0px;
-  margin-bottom: 20px;
+  margin: 100px 0px;
+  margin-bottom: 60px;
 
   .sponsors {
     padding-top: 20px;
@@ -94,7 +94,8 @@ const SponsorContainer = styled.div`
 
 const TitleH1 = styled.h1`
   text-align: center;
-  margin-bottom: 24px;
+  font-size: 38px;
+  margin-bottom: 70px;
   ${customMedia.lessThan("mobile")`
     margin-bottom: 0px;
   `}

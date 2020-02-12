@@ -115,44 +115,33 @@ export default Footer;
 
 const FooterContainer = styled.div`
   .discussion {
-    border-top: 1px groove black;
-    border-bottom: 1px groove black;
-    margin: 10px 0px;
-    padding: 14px 0px;
-    padding-top: 18px;
-    display: flex;
-    justify-content: center;
+    border-top: 2px groove black;
+    border-bottom: 2px groove black;
+    margin: 20px 0px;
+    padding: 40px 0px;
+    display: grid;
+    justify-items: center;
     align-items: center;
 
     h2 {
-      margin-right: 10px;
-      margin-bottom: 10px;
-      text-shadow: 0px 0px 1px #000, 4px 4px 2px rgba(0, 0, 0, 0.5);
+      font-size: 38px;
+      margin-bottom: 20px;
+      margin-top: 0;
     }
     .icons {
       display: flex;
-      width: 170px;
+      width: 370px;
       justify-content: space-evenly;
+      ${customMedia.lessThan("mobile")`
+        width: 350px;
+    `}
     }
     .twitter,
     .github,
     .telegram,
     .discord {
-      height: 34px;
+      height: 60px;
       margin: 0px 4px;
-      -webkit-transition: all 0.3s ease-in;
-      -moz-transition: all 0.3s ease-in;
-      -ms-transition: all 0.3s ease-in;
-      -o-transition: all 0.3s ease-in;
-      transition: all 0.3s ease-in;
-      :hover {
-        box-shadow: 3px 3px 5px rgba(1, 1, 1, 1);
-        padding: 2px;
-        border: 1px solid #dcdcdc;
-        border-radius: 4px;
-        transform: scale(1.5);
-        margin: 0px 16px;
-      }
     }
   }
 
@@ -172,6 +161,7 @@ const FooterContainer = styled.div`
     `}
   }
   .footer-columns {
+    padding-top: 30px;
     width: 90%;
     margin: auto;
     font-size: 14px;
