@@ -93,8 +93,13 @@ const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
   position: fixed;
-  /* background-color: ${theme.colors.creamWhite}; */
-  background-color: ${theme.colors.black};
+  /* fallback for old browsers */
+  background: #232526;
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right, #414345, #232526);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, #414345, #232526);
+  /* background: black; */
   width: 100%;
   margin: -10px -20px;
   padding: 0px 10px;
@@ -135,7 +140,7 @@ const HeaderContainer = styled.div`
       margin-left: 4px;
     }
     h1 {
-      color:${theme.colors.white};
+      color: ${theme.colors.white};
       margin-top: 0px;
       margin-left: 6px;
     }
