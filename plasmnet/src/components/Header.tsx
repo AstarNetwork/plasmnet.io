@@ -93,7 +93,8 @@ const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
   position: fixed;
-  background-color: ${theme.colors.creamWhite};
+  /* background-color: ${theme.colors.creamWhite}; */
+  background-color: ${theme.colors.black};
   width: 100%;
   margin: -10px -20px;
   padding: 0px 10px;
@@ -105,7 +106,7 @@ const HeaderContainer = styled.div`
   }
 
   .header-link {
-    color: ${theme.colors.black};
+    color: ${theme.colors.white};
     font-size: 18px;
     :hover {
       color: ${theme.colors.slaty};
@@ -134,6 +135,7 @@ const HeaderContainer = styled.div`
       margin-left: 4px;
     }
     h1 {
+      color:${theme.colors.white};
       margin-top: 0px;
       margin-left: 6px;
     }

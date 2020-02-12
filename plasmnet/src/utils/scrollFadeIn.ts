@@ -5,7 +5,7 @@ export const ThresholdPoint = 0.3;
 export const FadeIn = (element: string): void => {
   gsap.to(element, 3, {
     opacity: 1,
-    y: -20,
+    y: -40,
     ease: "power4.out",
     // next animation fadeIn
     stagger: {

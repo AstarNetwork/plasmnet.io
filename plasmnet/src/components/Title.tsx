@@ -1,46 +1,130 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-scroll";
 import { Button } from "semantic-ui-react";
 import styled from "styled-components";
+import { AppLinks } from "../data/links";
+import "../styles/animation.scss";
+import { customMedia } from "../styles/globalStyle";
 import { theme } from "../styles/theme";
 import LockdropInfo from "./LockdropInfo";
-import { customMedia } from "../styles/globalStyle";
-import { AppLinks } from "../data/links";
 interface Props {}
 
 const Title: React.FC<Props> = () => {
+  const offsetInitialState = window.screen.width > 920 ? -70 : 0;
+  const [offset] = useState(offsetInitialState);
+
   return (
     <TitleContainer id="ui-id">
       <div className="title">
-        <TitleH1>The Plasm Network is</TitleH1>
-        <TitleH1>Scaling Dapps Platform on Substrate</TitleH1>
+        <TitleH1 className="SlideDown one">The Plasm Network is</TitleH1>
+        <TitleH1 className="SlideDown two">
+          Scaling Dapps Platform on Substrate
+        </TitleH1>
       </div>
-      <div className="ui">
-        <div className="app-buttons">
-          <div>
-            <a
-              href={AppLinks.plasmnetIo}
-              rel="noopener noreferrer"
-              target="_blank"
+      <div className="container">
+        <div className="left">
+          <div className="btn-row Fade-in one">
+            <Link
+              className="link"
+              to="ui-id"
+              smooth={true}
+              offset={offset}
+              duration={700}
             >
-              <Button positive size="massive" className="ui-button">
-                Launch UI
-              </Button>
-            </a>
+              Launch UI
+            </Link>
           </div>
-          <div>
-            <a
-              href={AppLinks.joinLockdrop}
-              rel="noopener noreferrer"
-              target="_blank"
+          <div className="btn-row Fade-in two">
+            <Link
+              className="link"
+              to="ui-id"
+              smooth={true}
+              offset={offset}
+              duration={700}
             >
-              <Button size="massive" className="ui-button" color="brown">
-                Join Lockdrop
-              </Button>
-            </a>
+              Lockdrop Information
+            </Link>
+          </div>
+          <div className="btn-row Fade-in three">
+            <Link
+              className="link"
+              to="achieves-id"
+              smooth={true}
+              offset={offset}
+              duration={700}
+            >
+              Plasm Networks archives
+            </Link>
+          </div>
+          <div className="btn-row Fade-in four">
+            <Link
+              className="link"
+              to="testnet-id"
+              smooth={true}
+              offset={offset}
+              duration={700}
+            >
+              Plasm Testnet v3
+            </Link>
+          </div>
+          <div className="btn-row Fade-in five">
+            <Link
+              className="link"
+              to="roadmap-id"
+              smooth={true}
+              offset={offset}
+              duration={700}
+            >
+              Roadmap
+            </Link>
+          </div>
+          <div className="btn-row Fade-in six">
+            <Link
+              className="link"
+              to="sponsor-id"
+              smooth={true}
+              offset={offset}
+              duration={700}
+            >
+              Sponsors
+            </Link>
           </div>
         </div>
-        <div>
-          <LockdropInfo />
+        <div className="right">
+          <div className="ui SlideUp one">
+            <div>
+              <LockdropInfo />
+            </div>
+            <div className="app-buttons SlideUp two">
+              <div>
+                <a
+                  href={AppLinks.plasmnetIo}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <Button color="violet" size="massive" className="ui-button">
+                    Launch UI
+                  </Button>
+                </a>
+              </div>
+              <div>
+                <a
+                  href={AppLinks.joinLockdrop}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <Button
+                    size="massive"
+                    className="ui-button"
+                    inverted
+                    color="violet"
+                  >
+                    Join Lockdrop
+                  </Button>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </TitleContainer>
@@ -50,53 +134,109 @@ const Title: React.FC<Props> = () => {
 export default Title;
 
 const TitleContainer = styled.div`
+
   /* off-set the header height */
   margin-top: 60px;
   width: 100vw;
-  height: 650px;
+  height: 690px;
   margin-left: -20px;
-  /* padding: 40px 0px; */
 
-  /* fallback for old browsers */
-  background: ${theme.colors.blue};
+   /* fallback for old browsers */
+  background: #232526;
   /* Chrome 10-25, Safari 5.1-6 */
-  background: -webkit-linear-gradient(to right, #396afc, ${theme.colors.blue});
+  background: -webkit-linear-gradient(to right, #414345, #232526); 
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  background: linear-gradient(to right, #396afc, ${theme.colors.blue});
+  background: linear-gradient(to right, #414345, #232526);
+  background: black;
+  
 
   display: grid;
-  grid-template-rows: 34% 66%;
+  grid-template-rows: 30% 70%;
   align-items: center;
-  ${customMedia.lessThan("tabletPro")`
+  ${customMedia.lessThan("laptopSmall")`
     margin-top: -10px;
-    height: 870px;
-    padding-bottom: 16px;
-    grid-template-rows: 20% 80%;
-  `}
-  ${customMedia.lessThan("mobile")`
-    grid-template-rows: 26% 74%;
-    height: 800px;
+    height: 1200px;
   `}
 
-  .ui {
+  .link{
+    color:rgb(129, 133, 141);
+  }
+  .title{
+    margin-top: 10px;
+  }
+
+  .container{
     display: flex;
-    justify-content: space-evenly;
     align-items: center;
+    justify-content: space-evenly;
+    margin: 0 24px;
+    height: 100vh;
+    ${customMedia.lessThan("laptop")`
+      justify-content: space-around;
+      padding: 10px;
+    `}
+    ${customMedia.lessThan("laptopSmall")`
+      flex-direction: column-reverse;
+    `}
+    ${customMedia.lessThan("mobile")`
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    `}
+    .left{
+      ${customMedia.lessThan("laptopSmall")`
+          margin-top: 60px;
+        `}
+      .btn-row {
+        color: ${theme.colors.white};
+        height: 42px;
+        cursor: pointer;
+        line-height: 40px;
+        font-size: 18px;
+        position: relative;
+        ${customMedia.lessThan("laptop")`
+            padding-left: 50px;
+          `}
+
+        /* --- */
+        &:before {
+          position: absolute;
+          content: "";
+          width: 36px;
+          height: 1px;
+          background: #323232;
+          top: 50%;
+          left: -58px;
+          ${customMedia.lessThan("laptop")`
+            left: 0px;
+          `}
+        }
+      }
+    }
+  }
+
+  .ui {
+    display: grid;
+    /* grid-template-rows: 50% 50%; */
+    align-items: center;
+    grid-row-gap: 30px;
     ${customMedia.lessThan("tabletPro")`
-       display: grid;
-       grid-template-rows: 50% 50%;
-       /* justify-items: center; */
-       grid-row-gap: 50px;
-       /* align-self: start; */
     `}
     ${customMedia.lessThan("mobile")`
        grid-row-gap: 28px;
     `}
     .app-buttons {
       display: grid;
-      grid-template-rows: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
       grid-row-gap: 40px;
       justify-items: center;
+      ${customMedia.lessThan("laptopSmall")`
+        margin-top: 40px;
+      `}
+      ${customMedia.lessThan("mobile")`
+       /* grid-template-rows: 1fr 1fr; */
+       grid-template: none;
+    `}
     }
     .ui-button {
       margin-top: 0px;
@@ -104,11 +244,15 @@ const TitleContainer = styled.div`
       ${customMedia.lessThan("tabletPro")`
         align-items: start;
       `}
+      ${customMedia.lessThan("mobile")`
+        width: 330px;
+      `}
     }
   }
 `;
 
 const TitleH1 = styled.h1`
+  color: ${theme.colors.white};
   text-align: center;
   font-size: 50px;
   font-weight: 700;
@@ -122,11 +266,11 @@ const TitleH1 = styled.h1`
     line-height: 44px;
   `}
   ${customMedia.lessThan("tabletSmall")`
-    font-size: 30px;
+    font-size: 40px;
     line-height: 38px;
   `}
   ${customMedia.lessThan("mobile")`
-    font-size: 30px;
+    font-size: 36px;
     line-height: 44px;
     margin: 0;
   `}

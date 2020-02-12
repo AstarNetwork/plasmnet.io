@@ -3,8 +3,6 @@ import Sponsor from "./Sponsor";
 import Roadmap from "./Roadmap";
 import TestnetInfo from "./TestnetInfo";
 import Title from "./Title";
-import Hero from "./hero/Hero";
-import HeroWithoutAnimation from "./hero/HeroWithoutAnimation";
 import Achieves from "./Achieves";
 import styled from "styled-components";
 
@@ -14,8 +12,6 @@ const MainContents: React.FC<Props> = () => {
   return (
     <MainContentsContainer>
       <Title />
-      {/* <Hero /> */}
-      <HeroWithoutAnimation />
       <Achieves />
       <TestnetInfo />
       <Roadmap />
