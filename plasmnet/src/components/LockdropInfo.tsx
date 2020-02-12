@@ -60,7 +60,7 @@ const LockdropInfoContainer = styled.div`
   align-items: center;
   background-color: ${theme.colors.creamWhite};
   border: 4px solid ${theme.colors.black};
-  border-radius: 6px;
+  border-radius: 10px;
   padding: 20px 10px;
 
   ${customMedia.lessThan("tabletSmall")`
