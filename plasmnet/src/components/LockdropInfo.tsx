@@ -1,10 +1,9 @@
-import TextField from "@material-ui/core/TextField";
-import React, { useState } from "react";
-import styled from "styled-components";
-import { theme } from "../styles/theme";
-import { customMedia } from "../styles/globalStyle";
+import React from "react";
 import { Icon } from "semantic-ui-react";
+import styled from "styled-components";
 import { BlogLinks } from "../data/links";
+import { customMedia } from "../styles/globalStyle";
+import { theme } from "../styles/theme";
 
 interface Props {}
 
@@ -64,8 +63,15 @@ const LockdropInfoContainer = styled.div`
   border-radius: 6px;
   padding: 20px 10px;
 
+  ${customMedia.lessThan("tabletSmall")`
+      width: 558px;
+      /* height: 250px;
+      border: 3px solid ${theme.colors.black};
+      margin 0;
+      padding: 10px 4px; */
+  `}
   ${customMedia.lessThan("mobile")`
-      width: 290px;
+      width: 330px;
       height: 250px;
       border: 3px solid ${theme.colors.black};
       margin 0;
