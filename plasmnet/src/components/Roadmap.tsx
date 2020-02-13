@@ -7,7 +7,7 @@ import { customMedia } from "../styles/globalStyle";
 import { IRoadmap } from "../type/types";
 import { ScrollFadeIn, ThresholdPoint } from "../utils/scrollFadeIn";
 import RoadmapCard from "./RoadmapCard";
-interface Props {}
+interface Props { }
 
 const Roadmap: React.FC<Props> = () => {
   const sectionRef = useRef(null);

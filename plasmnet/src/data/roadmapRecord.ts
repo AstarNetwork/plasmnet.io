@@ -2,7 +2,7 @@ export const RoadmapList = [
   {
     id: 1,
     month: "2020.03",
-    task: ["task1", "task2", "task 3"]
+    task: ["task 1", "task 2", "task 3"]
   },
   {
     id: 2,
@@ -17,6 +17,6 @@ export const RoadmapList = [
   {
     id: 4,
     month: "2020.06",
-    task: ["task1", "task2", "task 3"]
+    task: ["task 1", "task 2", "task 3"]
   }
 ];
