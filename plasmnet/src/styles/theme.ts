@@ -23,6 +23,7 @@ const colors = {
   creamWhite: "#f4f5f7",
   black: "#000000",
   grey: "#333333",
+  lightGrey: "grey",
   softGrey: "#1D1B4D",
   slaty: "#797992",
   lavender: "#e5e5f8",

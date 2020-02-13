@@ -17,11 +17,11 @@ const Roadmap: React.FC<Props> = () => {
     threshold: ThresholdPoint
   });
 
-  ScrollFadeIn(intersection, ".cards", false);
+  ScrollFadeIn(intersection, ".roadmap-cards", false);
   return (
     <RoadmapContainer ref={sectionRef} id="roadmap-id">
       <TitleH>Roadmap</TitleH>
-      <div className="cards">
+      <div className="roadmap-cards">
         {RoadmapList.map((list: IRoadmap) => (
           <RoadmapCard list={list} />
         ))}
@@ -37,7 +37,7 @@ const RoadmapContainer = styled.div`
     margin-top: 94px;
   }
 
-  .cards {
+  .roadmap-cards {
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-items: center;
