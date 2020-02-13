@@ -1,22 +1,28 @@
-import React from "react";
-import { TitleH } from "../styles/customH";
-import styled from "styled-components";
+import React, { useRef } from "react";
+import { useIntersection } from "react-use";
 import { Button } from "semantic-ui-react";
+import styled from "styled-components";
 import { AppLinks } from "../data/links";
-import coinMiningImg from "../resources/coin-mining.svg";
 import coinMiningColorImg from "../resources/coin-mining-color.svg";
+import { TitleH } from "../styles/customH";
 import { customMedia } from "../styles/globalStyle";
+import { ScrollFadeIn } from "../utils/scrollFadeIn";
 interface Props {}
 
 const TestnetInfo: React.FC<Props> = () => {
+  const sectionRef = useRef(null);
+  const intersection = useIntersection(sectionRef, {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.1
+  });
+
+  ScrollFadeIn(intersection, ".container", false, 0.1);
   return (
-    <TestnetInfoContainer id="testnet-id">
+    <TestnetInfoContainer ref={sectionRef} id="testnet-id">
       <TitleH>Plasm Testnet v3</TitleH>
       <div className="container">
         <div className="image">
-          {/* https://www.iconpacks.net/free-icon/coin-mining-2203.html */}
-          {/* <img src={coinMiningImg} alt="coin-mining" className="logo" /> */}
-
           {/* https://www.iconpacks.net/free-icon/coin-mining-2474.html */}
           <img src={coinMiningColorImg} alt="coin-mining" className="logo" />
         </div>
@@ -55,6 +61,7 @@ const TestnetInfoContainer = styled.div`
     grid-template-columns: 1fr 1fr;
     justify-items: center;
     padding: 0 10%;
+    opacity: 0;
     ${customMedia.lessThan("laptop")`
       grid-template-columns: 1fr;
       grid-row-gap: 40px;

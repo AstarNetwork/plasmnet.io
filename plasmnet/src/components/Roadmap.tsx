@@ -16,10 +16,10 @@ const Roadmap: React.FC<Props> = () => {
   const intersection = useIntersection(sectionRef, {
     root: null,
     rootMargin: "0px",
-    threshold: ThresholdPoint
+    threshold: 0.1
   });
 
-  ScrollFadeIn(intersection, ".roadmap", false);
+  ScrollFadeIn(intersection, ".cards", false, 0.1);
   return (
     <RoadmapContainer ref={sectionRef} id="roadmap-id">
       <TitleH>Roadmap</TitleH>
@@ -44,6 +44,7 @@ const RoadmapContainer = styled.div`
     grid-template-columns: 1fr 1fr;
     justify-items: center;
     grid-row-gap: 20px;
+    opacity: 0;
     ${customMedia.lessThan("laptop")`
       grid-template-columns: 1fr;
       grid-row-gap: 40px;
