@@ -43,6 +43,7 @@ const AchievesContainer = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     justify-items: center;
+    opacity: 0;
     ${customMedia.lessThan("laptop")`
       grid-template-columns: 1fr;
       grid-row-gap: 40px;

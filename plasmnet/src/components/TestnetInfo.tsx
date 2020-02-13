@@ -60,6 +60,7 @@ const TestnetInfoContainer = styled.div`
     grid-template-columns: 1fr 1fr;
     justify-items: center;
     padding: 0 10%;
+    opacity: 0;
     ${customMedia.lessThan("laptop")`
       grid-template-columns: 1fr;
       grid-row-gap: 40px;

@@ -5,7 +5,7 @@ import { RoadmapList } from "../data/roadmapRecord";
 import { TitleH } from "../styles/customH";
 import { customMedia } from "../styles/globalStyle";
 import { IRoadmap } from "../type/types";
-import { ScrollFadeIn } from "../utils/scrollFadeIn";
+import { ScrollFadeIn, ThresholdPoint } from "../utils/scrollFadeIn";
 import RoadmapCard from "./RoadmapCard";
 interface Props {}
 
@@ -14,10 +14,10 @@ const Roadmap: React.FC<Props> = () => {
   const intersection = useIntersection(sectionRef, {
     root: null,
     rootMargin: "0px",
-    threshold: 0.1
+    threshold: ThresholdPoint
   });
 
-  ScrollFadeIn(intersection, ".cards", false, 0.1);
+  ScrollFadeIn(intersection, ".cards", false);
   return (
     <RoadmapContainer ref={sectionRef} id="roadmap-id">
       <TitleH>Roadmap</TitleH>
@@ -42,6 +42,7 @@ const RoadmapContainer = styled.div`
     grid-template-columns: 1fr 1fr;
     justify-items: center;
     grid-row-gap: 20px;
+    opacity: 0;
     ${customMedia.lessThan("laptop")`
       grid-template-columns: 1fr;
       grid-row-gap: 40px;
