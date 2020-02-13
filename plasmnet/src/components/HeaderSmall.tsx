@@ -15,7 +15,7 @@ import plasmLogo from "../resources/plasm-logo.png";
 import { customMedia } from "../styles/globalStyle";
 import { theme } from "../styles/theme";
 
-interface Props { }
+interface Props {}
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme: Theme) =>
