@@ -15,7 +15,7 @@ import plasmLogo from "../resources/plasm-logo.png";
 import { customMedia } from "../styles/globalStyle";
 import { theme } from "../styles/theme";
 
-interface Props {}
+interface Props { }
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -178,7 +178,7 @@ const HeaderSmall: React.FC<Props> = () => {
             <a href={Links.github} rel="noopener noreferrer" target="_blank">
               <ListItem button>
                 <Icon name="github" color="grey" size="large" />
-                <SmallMenuP>Github</SmallMenuP>
+                <SmallMenuP>GitHub</SmallMenuP>
               </ListItem>
             </a>
           </div>
