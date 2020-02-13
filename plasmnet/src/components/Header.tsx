@@ -74,10 +74,10 @@ const Header: React.FC<Props> = () => {
           Blog
         </a>
         <a href={Links.twitter} rel="noopener noreferrer" target="_blank">
-          <Icon name="twitter" size="large" className="header-link" />
+          <Icon name="twitter" className="header-link icon" />
         </a>
         <a href={Links.github} rel="noopener noreferrer" target="_blank">
-          <Icon name="github" size="large" className="header-link" />
+          <Icon name="github" className="header-link icon" />
         </a>
       </div>
     </HeaderContainer>
@@ -103,23 +103,26 @@ const HeaderContainer = styled.div`
 
   a {
     color: ${theme.colors.black};
-  }
-
-  .header-link {
-    color: ${theme.colors.white};
-    font-size: 18px;
-    :hover {
-      color: ${theme.colors.slaty};
+   .icon{
+    padding-top: 4px;
     }
   }
 
   .right-header {
-    width: 520px;
+    width: 600px;
     height: 24px;
     display: flex;
     justify-content: space-between;
     margin-top: 26px;
   }
+  .header-link {
+    color: ${theme.colors.white};
+    font-size: 22px;
+    :hover {
+      color: ${theme.colors.slaty};
+    }
+  }
+
 
   .logo {
     display: flex;

@@ -71,7 +71,6 @@ const CardContainer = styled.div`
       color: ${theme.colors.blue};
       padding: 10px;
       margin-bottom: 0;
-      /* margin-bottom:0; */
     }
 
     p {

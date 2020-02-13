@@ -7,6 +7,7 @@ import coinMiningColorImg from "../resources/coin-mining-color.svg";
 import { TitleH } from "../styles/customH";
 import { customMedia } from "../styles/globalStyle";
 import { ScrollFadeIn } from "../utils/scrollFadeIn";
+import { theme } from "../styles/theme";
 interface Props {}
 
 const TestnetInfo: React.FC<Props> = () => {
@@ -27,7 +28,6 @@ const TestnetInfo: React.FC<Props> = () => {
           <img src={coinMiningColorImg} alt="coin-mining" className="logo" />
         </div>
         <div className="introduction">
-          {/* <div className="contents"> */}
           <div>
             <p>This is the most interesting network.</p>
             <p>
@@ -41,7 +41,7 @@ const TestnetInfo: React.FC<Props> = () => {
             rel="noopener noreferrer"
             target="_blank"
           >
-            <Button size="massive" color="purple">
+            <Button size="massive" color="purple" className="button">
               Telemetry Plasm Testnet
             </Button>
           </a>
@@ -85,5 +85,8 @@ const TestnetInfoContainer = styled.div`
       font-size: 16px;
       /* width: 300px; */
     `}
+  }
+  .button {
+    font-family: ${theme.font};
   }
 `;

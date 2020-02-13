@@ -90,12 +90,16 @@ const space = [
   "9.6rem"
 ];
 
+const font =
+  '"Orbitron", sans-serif, -apple-system, BlinkMacSystemFont,"Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans","Droid Sans", "Helvetica Neue";-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;';
+
 export interface StyleClosetTheme {
   breakpoints: string[];
   fontSizes: string[];
   space: string[];
   colors: { [key in keyof typeof colors]: string };
   secondaryColors: { [key in keyof typeof secondaryColors]: string };
+  font: string;
 }
 
 export const theme: StyleClosetTheme = {
@@ -103,5 +107,6 @@ export const theme: StyleClosetTheme = {
   fontSizes,
   space,
   colors,
-  secondaryColors
+  secondaryColors,
+  font
 };

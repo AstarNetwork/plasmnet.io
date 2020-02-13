@@ -211,7 +211,7 @@ const HeaderSmallContainer = styled.div`
     color: black;
     opacity: 0.9;
     .plasm-logo {
-      height: 40px;
+      height: 38px;
       margin-right: 10px;
     }
     h4 {
