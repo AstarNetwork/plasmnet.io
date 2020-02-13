@@ -67,11 +67,12 @@ const RoadmapCardContainer = styled.div`
   
   
   .header{
+    height: 100px;
     border-top-left-radius:10px;
     border-top-right-radius:10px;
     display: grid !important;
     grid-template-columns: 1 1;
-    align-items: center;
+    align-items: end;
     padding: 20px;
     background-color: ${theme.colors.blue};
     ${customMedia.lessThan("tabletSmall")`
