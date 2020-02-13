@@ -45,7 +45,6 @@ const TestnetInfo: React.FC<Props> = () => {
               Telemetry Plasm Testnet
             </Button>
           </a>
-          {/* </div> */}
         </div>
       </div>
     </TestnetInfoContainer>

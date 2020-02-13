@@ -5,6 +5,7 @@ import { theme } from "./theme";
 export const customMedia = generateMedia({
   desktop: "1296px",
   laptop: "1172px",
+  laptopSmall: "1032px",
   tabletPro: "920px",
   tablet: "768px",
   tabletSmall: "700px",

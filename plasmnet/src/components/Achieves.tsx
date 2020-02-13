@@ -37,7 +37,7 @@ const Achieves: React.FC<Props> = () => {
 export default Achieves;
 
 const AchievesContainer = styled.div`
-  margin: 150px 0px;
+  margin: 100px 0px;
 
   .cards {
     display: grid;

@@ -1,15 +1,13 @@
 import React, { useRef } from "react";
-import styled from "styled-components";
-import roadmap from "../resources/roadmap.svg";
-import { customMedia } from "../styles/globalStyle";
-import { TitleH } from "../styles/customH";
 import { useIntersection } from "react-use";
-import { ThresholdPoint, ScrollFadeIn } from "../utils/scrollFadeIn";
-import { Icon } from "semantic-ui-react";
-import RoadmapCard from "./RoadmapCard";
+import styled from "styled-components";
 import { RoadmapList } from "../data/roadmapRecord";
-import { IRoadmaps, IRoadmap } from "../type/types";
-interface Props {}
+import { TitleH } from "../styles/customH";
+import { customMedia } from "../styles/globalStyle";
+import { IRoadmap } from "../type/types";
+import { ScrollFadeIn, ThresholdPoint } from "../utils/scrollFadeIn";
+import RoadmapCard from "./RoadmapCard";
+interface Props { }
 
 const Roadmap: React.FC<Props> = () => {
   const sectionRef = useRef(null);
@@ -19,7 +17,7 @@ const Roadmap: React.FC<Props> = () => {
     threshold: 0.1
   });
 
-  ScrollFadeIn(intersection, ".cards", false, 0.1);
+  ScrollFadeIn(intersection, ".cards", false);
   return (
     <RoadmapContainer ref={sectionRef} id="roadmap-id">
       <TitleH>Roadmap</TitleH>
