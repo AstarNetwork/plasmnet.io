@@ -183,6 +183,9 @@ const FooterContainer = styled.div`
         cursor: pointer;
       }
     }
+    h3 {
+      font-family: ${theme.font};
+    }
   }
   .footer-column {
     text-align: center;

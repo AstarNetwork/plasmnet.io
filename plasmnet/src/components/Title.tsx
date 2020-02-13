@@ -233,7 +233,9 @@ const TitleContainer = styled.div`
     }
     .ui-button {
       margin-top: 0px;
-      width: 224px;
+      width: 270px;
+      font-family: ${theme.font};
+
       ${customMedia.lessThan("tabletPro")`
         align-items: start;
       `}

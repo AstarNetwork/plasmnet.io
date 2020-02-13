@@ -15,26 +15,26 @@ const LockdropInfo: React.FC<Props> = () => {
         <ExpiredH2>Expired:</ExpiredH2>
         <div className="time">
           <div>
-            <HeaderTimeSpan>137</HeaderTimeSpan>
+            <HeaderTimeSpan>7</HeaderTimeSpan>
             <p>Days</p>
           </div>
           <div>
-            <HeaderTimeSpan>8</HeaderTimeSpan>
+            <HeaderTimeSpan>12</HeaderTimeSpan>
             <p>Hours</p>
           </div>
           <div>
-            <HeaderTimeSpan>23</HeaderTimeSpan>
+            <HeaderTimeSpan>10</HeaderTimeSpan>
             <p>Min</p>
           </div>
           <div>
-            <HeaderTimeSpan>7</HeaderTimeSpan>
+            <HeaderTimeSpan>25</HeaderTimeSpan>
             <p>Sec</p>
           </div>
         </div>
       </div>
       <div className="total">
         <AmountH2>Total Amount Lock:</AmountH2>
-        <TotalAmountH2>777</TotalAmountH2>
+        <TotalAmountH2>888</TotalAmountH2>
         <span className="currency">ETH</span>
       </div>
       <div className="reference">
@@ -115,6 +115,11 @@ const LockdropInfoContainer = styled.div`
     display: flex;
     justify-content: space-around;
     text-align: center;
+    p {
+      ${customMedia.lessThan("mobile")`
+      font-size: 12px;
+    `}
+    }
   }
   .reference {
     margin-top: 30px;
