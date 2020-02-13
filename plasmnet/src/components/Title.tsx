@@ -141,7 +141,7 @@ const TitleContainer = styled.div`
   height: 690px;
   margin-left: -20px;
   background: black;
-  
+
 
   display: grid;
   grid-template-rows: 30% 70%;
@@ -266,5 +266,7 @@ const TitleH1 = styled.h1`
     font-size: 36px;
     line-height: 44px;
     margin: 0;
+    padding-right: 8px;
+    padding-left: 8px;
   `}
 `;

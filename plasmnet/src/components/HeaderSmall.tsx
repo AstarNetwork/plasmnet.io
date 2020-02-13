@@ -201,7 +201,7 @@ const HeaderSmallContainer = styled.div`
   }
 
   .MuiIconButton-label {
-    color: ${theme.colors.black} !important;
+    color: ${theme.colors.lightGrey} !important;
   }
 
   .logo {
