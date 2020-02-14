@@ -19,11 +19,13 @@ const RoadmapCard: React.FC<Props> = (props: Props) => {
             <Icon name="calendar check outline" className="icon" />
             <h3>{list.month}</h3>
           </div>
-          <ul>
-            {list.task.map((task: any) => (
-              <li>{task}</li>
-            ))}
-          </ul>
+          <div className="task">
+            <ul>
+              {list.task.map((task: any) => (
+                <li>{task}</li>
+              ))}
+            </ul>
+          </div>
         </Card.Content>
       </Card>
     </RoadmapCardContainer>
@@ -33,39 +35,45 @@ const RoadmapCard: React.FC<Props> = (props: Props) => {
 export default RoadmapCard;
 
 const RoadmapCardContainer = styled.div`
+
   .card {
-    width: 440px;
-    height: 260px;
+    /* height: auto; */
+    width: 470px;
+    /* min-height: 400px; */
     box-shadow: 0 20px 60px rgba(1,50,204,.1);
     border-radius: 10px;
+    display: grid;
+    grid-template-rows:20% 80%;
     ${customMedia.lessThan("laptop")`
-      width: 600px;
+        width: 600px;
       `}
     ${customMedia.lessThan("tabletSmall")`
-      width: 334px;
+        width: 334px;
       `}
+  }
+  .card-down {
+    /* height: auto; */
+    width: 470px;
+    /* min-height: 400px; */
+    box-shadow: 0 20px 60px rgba(1,50,204,.1);
+    border-radius: 10px;
+    display: grid;
+    grid-template-rows:20% 80%;
+    ${customMedia.greaterThan("laptop")`
+      margin-top: 94px !important;
+    `}
+    ${customMedia.lessThan("laptop")`
+      width: 600px;
+    `}
+    ${customMedia.lessThan("tabletSmall")`
+      width: 334px;
+    `}
   }
   .content {
     padding:0 !important;
     display: grid;
+    min-height: 260px;
   }
-  .card-down {
-    border-radius: 10px;
-    width: 440px;
-    height: 260px;
-    box-shadow: 0 20px 60px rgba(1,50,204,.1);
-    ${customMedia.greaterThan("laptop")`
-    margin-top: 94px !important;
-    `}
-    ${customMedia.lessThan("laptop")`
-    width: 600px;
-    `}
-    ${customMedia.lessThan("tabletSmall")`
-    width: 334px;
-    `}
-  }
-  
-  
   .header{
     height: 100px;
     border-top-left-radius:10px;
@@ -85,6 +93,13 @@ const RoadmapCardContainer = styled.div`
       ${customMedia.lessThan("tabletSmall")`
         font-size: 30px;
       `}
+    }
+
+    .task{
+      display: grid;
+      align-self:center;
+      /* min-height: 200px; */
+      /* height: 100% !important; */
     }
 
 
@@ -111,7 +126,7 @@ const RoadmapCardContainer = styled.div`
     }
 
     li{
-      font-size: 22px;
+      font-size: 20px;
       line-height:38px;
       ${customMedia.lessThan("tabletSmall")`
         font-size: 18px;

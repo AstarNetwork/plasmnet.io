@@ -14,10 +14,10 @@ const Roadmap: React.FC<Props> = () => {
   const intersection = useIntersection(sectionRef, {
     root: null,
     rootMargin: "0px",
-    threshold: ThresholdPoint
+    threshold: 0.1
   });
 
-  ScrollFadeIn(intersection, ".roadmap-cards", false);
+  ScrollFadeIn(intersection, ".roadmap-cards", false, 0.1);
   return (
     <RoadmapContainer ref={sectionRef} id="roadmap-id">
       <TitleH>Roadmap</TitleH>
