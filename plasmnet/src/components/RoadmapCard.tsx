@@ -37,9 +37,7 @@ export default RoadmapCard;
 const RoadmapCardContainer = styled.div`
 
   .card {
-    /* height: auto; */
     width: 470px;
-    /* min-height: 400px; */
     box-shadow: 0 20px 60px rgba(1,50,204,.1);
     border-radius: 10px;
     display: grid;
@@ -52,9 +50,7 @@ const RoadmapCardContainer = styled.div`
       `}
   }
   .card-down {
-    /* height: auto; */
     width: 470px;
-    /* min-height: 400px; */
     box-shadow: 0 20px 60px rgba(1,50,204,.1);
     border-radius: 10px;
     display: grid;
@@ -80,7 +76,7 @@ const RoadmapCardContainer = styled.div`
     border-top-right-radius:10px;
     display: grid !important;
     grid-template-columns: 1 1;
-    align-items: end;
+    align-items: center;
     padding: 20px;
     background-color: ${theme.colors.blue};
     ${customMedia.lessThan("tabletSmall")`
@@ -98,8 +94,6 @@ const RoadmapCardContainer = styled.div`
     .task{
       display: grid;
       align-self:center;
-      /* min-height: 200px; */
-      /* height: 100% !important; */
     }
 
 
