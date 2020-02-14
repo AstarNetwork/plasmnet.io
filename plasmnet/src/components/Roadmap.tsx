@@ -5,7 +5,7 @@ import { RoadmapList } from "../data/roadmapRecord";
 import { TitleH } from "../styles/customH";
 import { customMedia } from "../styles/globalStyle";
 import { IRoadmap } from "../type/types";
-import { ScrollFadeIn, ThresholdPoint } from "../utils/scrollFadeIn";
+import { ScrollFadeIn } from "../utils/scrollFadeIn";
 import RoadmapCard from "./RoadmapCard";
 interface Props {}
 

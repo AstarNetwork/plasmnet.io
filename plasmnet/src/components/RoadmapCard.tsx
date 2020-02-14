@@ -86,8 +86,10 @@ const RoadmapCardContainer = styled.div`
     .icon {
       font-size: 40px;
       grid-column: 1/2;
+      margin-top: 14px;
       ${customMedia.lessThan("tabletSmall")`
         font-size: 30px;
+        margin-top: 6px;
       `}
     }
 
@@ -101,11 +103,9 @@ const RoadmapCardContainer = styled.div`
       font-size: 28px;
       color: ${theme.colors.black};
       margin: 0;
-      padding-bottom: 12px;
       grid-column: 4/8;
       ${customMedia.lessThan("tabletSmall")`
         font-size: 26px;
-        padding-bottom: 8px;
       `}
     }
 
