@@ -50,7 +50,7 @@ $ yarn
 $ yarn start
 ```
 
-## How To Add Contents
+## How To Add A Data Of Contents
 
 Contents data is passed as an object array to each react component.
 
