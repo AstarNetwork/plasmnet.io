@@ -50,9 +50,9 @@ $ yarn
 $ yarn start
 ```
 
-## How to add data
+## How To Add Data
 
-Data is mapped as an object array to each react component.
+Data is passed as an object array to each react component.
 
 ### Plasm Networks achieves
 
