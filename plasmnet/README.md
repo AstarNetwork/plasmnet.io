@@ -50,9 +50,9 @@ $ yarn
 $ yarn start
 ```
 
-## How To Add Data
+## How To Add Contents
 
-Data is passed as an object array to each react component.
+Contents data is passed as an object array to each react component.
 
 ### Plasm Networks achieves
 
