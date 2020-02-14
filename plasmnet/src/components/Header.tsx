@@ -93,18 +93,16 @@ const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
   position: fixed;
-  /* background-color: ${theme.colors.creamWhite}; */
   background-color: ${theme.colors.black};
   width: 100%;
-  margin: -10px -20px;
   padding: 0px 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   z-index: 1000;
 
   a {
     color: ${theme.colors.black};
-   .icon{
-    padding-top: 4px;
+    .icon {
+      padding-top: 4px;
     }
   }
 
@@ -123,7 +121,6 @@ const HeaderContainer = styled.div`
     }
   }
 
-
   .logo {
     display: flex;
     align-items: center;
@@ -138,7 +135,7 @@ const HeaderContainer = styled.div`
       margin-left: 4px;
     }
     h1 {
-      color:${theme.colors.white};
+      color: ${theme.colors.white};
       margin-top: 0px;
       margin-left: 6px;
     }

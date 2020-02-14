@@ -117,24 +117,31 @@ const FooterContainer = styled.div`
   .discussion {
     border-top: 2px groove black;
     border-bottom: 2px groove black;
-    margin: 20px 0px;
+    margin: 20px 20px;
     padding: 40px 0px;
     display: grid;
     justify-items: center;
     align-items: center;
+    ${customMedia.lessThan("mobile")`
+      width: auto;
+    `}
 
     h2 {
       font-size: 38px;
       margin-bottom: 20px;
       margin-top: 0;
+      ${customMedia.lessThan("mobile")`
+        font-size: 28px;
+      `}
     }
     .icons {
       display: flex;
       width: 370px;
       justify-content: space-evenly;
       ${customMedia.lessThan("mobile")`
-        width: 350px;
-    `}
+        width: auto;
+        justify-content: space-evenly
+     `}
     }
     .twitter,
     .github,
@@ -142,6 +149,9 @@ const FooterContainer = styled.div`
     .discord {
       height: 60px;
       margin: 0px 4px;
+      ${customMedia.lessThan("mobile")`
+        margin: 0px 8px;
+      `}
     }
   }
 

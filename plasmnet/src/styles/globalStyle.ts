@@ -33,7 +33,7 @@ body {
   margin: 0;
   font-style: normal;
   height: 100%;
-  padding: 10px 20px;
+  /* padding: 10px 20px; */
   font-family: ${theme.font};
   h1, h2, h3,h4, p, span{
     font-family: ${theme.font};

@@ -202,6 +202,7 @@ const HeaderSmallContainer = styled.div`
 
   .MuiIconButton-label {
     color: ${theme.colors.lightGrey} !important;
+    margin-left: 20px;
   }
 
   .logo {
