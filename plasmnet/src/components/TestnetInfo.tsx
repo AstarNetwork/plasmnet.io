@@ -58,7 +58,7 @@ const TestnetInfoContainer = styled.div`
   .container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    justify-items: center;
+    align-items: center;
     padding: 0 10%;
     opacity: 0;
     ${customMedia.lessThan("laptop")`
@@ -69,7 +69,10 @@ const TestnetInfoContainer = styled.div`
     `}
     .image {
       .logo {
-        height: 300px;
+        height: 350px;
+        ${customMedia.lessThan("mobile")`
+          height: 250px;
+        `}
       }
     }
   }

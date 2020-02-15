@@ -50,9 +50,80 @@ $ yarn
 $ yarn start
 ```
 
+## How To Add A Data Of Contents
+
+Contents data is passed as an object array to each react component.
+
+### Plasm Networks achieves
+
+- src/data/achieveIntroductions.ts
+
+```
+export const AchieveIntroductions = [
+  {
+    // Memo: `icon` from Semantic UI React
+    // Docs: https://react.semantic-ui.com/elements/icon/
+    icon: "gem",
+    title: "Stable Currency",
+    description:
+      "Asset-backed decentralized currency without volatility. Stable by design and without borders."
+  }
+];
+```
+
+### Roadmap
+
+- src/data/roadmapRecord.ts
+
+```
+RoadmapList = [
+  {
+    // Memo: `id` is used for css styling
+    id: 1,
+    month: "2020.03",
+    task: ["task 1", "task 2", "task 3"]
+  }
+];
+```
+
+### Links
+
+- src/data/links.ts
+  
+Please define URL in the inside of the object and make an array variable to pass(map) to the react component.
+
+```
+export const Links = {
+  docs: "https://docs.plasmnet.io",
+  blog: "https://medium.com/stake-technologies",
+  twitter: "https://twitter.com/Plasm_Network",
+  github: "https://github.com/staketechnologies/Plasm",
+  telegram: "https://t.me/PlasmOfficial",
+  discord: "https://discordapp.com/invite/Dnfn5eT",
+  email: "example@example.com",
+  home: "https://stake.co.jp/"
+};
+
+export const Community = [
+  {
+    description: "Discord",
+    link: Links.discord,
+    // Memo: `icon` from Semantic UI React
+    // Docs: https://react.semantic-ui.com/elements/icon/
+    icon: "discord"
+  },
+  {
+    description: "Telegram",
+    link: Links.telegram,
+    icon: "telegram"
+  }
+];
+```
+
+
 ## How To Contribute
 
-This project is using [TypeScript ESLint](https://github.com/typescript-eslint/typescript-eslint). When you push your branch to remote ones, please run `yarn lint --fix` to comply to the code convention.
+This project is using [TypeScript ESLint](https://github.com/typescript-eslint/typescript-eslint). When you push your branch to remote ones, please run `yarn lint --fix` to comply with the code convention.
 
 When you add a new library, please make sure its license is not [GPL](https://en.wikipedia.org/wiki/GNU_General_Public_License). And please use `-D` for @types.
 

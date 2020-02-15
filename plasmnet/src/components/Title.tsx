@@ -139,7 +139,6 @@ const TitleContainer = styled.div`
   margin-top: 60px;
   width: 100vw;
   height: 690px;
-  margin-left: -20px;
   background: black;
 
 
@@ -210,7 +209,6 @@ const TitleContainer = styled.div`
 
   .ui {
     display: grid;
-    /* grid-template-rows: 50% 50%; */
     align-items: center;
     grid-row-gap: 30px;
     ${customMedia.lessThan("tabletPro")`

@@ -1,11 +1,11 @@
 import React, { useRef } from "react";
-import { TitleH } from "../styles/customH";
-import styled from "styled-components";
-import AchievesCard from "./AchievesCard";
-import { customMedia } from "../styles/globalStyle";
-import { AchieveIntroductions } from "../data/achieveIntroductions";
 import { useIntersection } from "react-use";
-import { ThresholdPoint, ScrollFadeIn } from "../utils/scrollFadeIn";
+import styled from "styled-components";
+import { AchieveIntroductions } from "../data/achieveIntroductions";
+import { TitleH } from "../styles/customH";
+import { customMedia } from "../styles/globalStyle";
+import { ScrollFadeIn, ThresholdPoint } from "../utils/scrollFadeIn";
+import AchievesCard from "./AchievesCard";
 interface Props {}
 
 const Achieves: React.FC<Props> = () => {
