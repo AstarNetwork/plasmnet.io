@@ -33,10 +33,6 @@ const Roadmap: React.FC<Props> = () => {
 export default Roadmap;
 
 const RoadmapContainer = styled.div`
-  .next {
-    margin-top: 94px;
-  }
-
   .roadmap-cards {
     display: grid;
     grid-template-columns: 1fr 1fr;

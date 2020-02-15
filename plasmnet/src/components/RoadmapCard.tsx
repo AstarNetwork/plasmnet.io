@@ -11,6 +11,7 @@ interface Props {
 
 const RoadmapCard: React.FC<Props> = (props: Props) => {
   const { list } = props;
+
   return (
     <RoadmapCardContainer>
       <Card className={`${list.id % 2 === 0 ? "card-down" : "card"}`}>

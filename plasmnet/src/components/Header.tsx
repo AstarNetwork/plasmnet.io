@@ -12,14 +12,14 @@ interface Props {}
 const Header: React.FC<Props> = () => {
   return (
     <HeaderContainer>
-      <div className="leftHeader">
+      <div className="leftHeader Fade-in">
         <div onClick={() => scroll.scrollToTop()} className="logo">
           <img src={plasmLogo} alt="plasmLogo" className="plasm-logo" />
           <h1>Plasm Network</h1>
         </div>
       </div>
 
-      <div className="right-header">
+      <div className="right-header Fade-in">
         <Dropdown text="Whitepaper" className="header-link">
           <Dropdown.Menu>
             <Dropdown.Header>Whitepaper</Dropdown.Header>

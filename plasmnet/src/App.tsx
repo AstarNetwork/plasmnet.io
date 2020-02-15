@@ -5,6 +5,7 @@ import Footer from './components/Footer'
 import { GlobalStyle } from "./styles/globalStyle";
 import FooterPush from './components/FooterPush';
 import MainContents from './components/MainContents';
+import "./styles/animation.scss"
 
 const App = () => {
   return (
