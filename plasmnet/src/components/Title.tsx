@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-scroll";
 import { Button } from "semantic-ui-react";
 import styled from "styled-components";
@@ -7,12 +7,9 @@ import "../styles/animation.scss";
 import { customMedia } from "../styles/globalStyle";
 import { theme } from "../styles/theme";
 import LockdropInfo from "./LockdropInfo";
-interface Props { }
+interface Props {}
 
 const Title: React.FC<Props> = () => {
-  const offsetInitialState = window.screen.width > 920 ? -70 : 0;
-  const [offset] = useState(offsetInitialState);
-
   return (
     <TitleContainer id="ui-id">
       <div className="title">
@@ -28,8 +25,8 @@ const Title: React.FC<Props> = () => {
               className="link"
               to="ui-id"
               smooth={true}
-              offset={offset}
-              duration={700}
+              offset={0}
+              duration={900}
             >
               Launch UI
             </Link>
@@ -39,8 +36,8 @@ const Title: React.FC<Props> = () => {
               className="link"
               to="ui-id"
               smooth={true}
-              offset={offset}
-              duration={700}
+              offset={0}
+              duration={900}
             >
               Lockdrop Information
             </Link>
@@ -50,8 +47,8 @@ const Title: React.FC<Props> = () => {
               className="link"
               to="achieves-id"
               smooth={true}
-              offset={offset}
-              duration={700}
+              offset={0}
+              duration={900}
             >
               Plasm Networks archives
             </Link>
@@ -61,8 +58,8 @@ const Title: React.FC<Props> = () => {
               className="link"
               to="testnet-id"
               smooth={true}
-              offset={offset}
-              duration={700}
+              offset={0}
+              duration={900}
             >
               Plasm Testnet v3
             </Link>
@@ -72,8 +69,8 @@ const Title: React.FC<Props> = () => {
               className="link"
               to="roadmap-id"
               smooth={true}
-              offset={offset}
-              duration={700}
+              offset={0}
+              duration={900}
             >
               Roadmap
             </Link>
@@ -83,8 +80,8 @@ const Title: React.FC<Props> = () => {
               className="link"
               to="sponsor-id"
               smooth={true}
-              offset={offset}
-              duration={700}
+              offset={0}
+              duration={900}
             >
               Sponsors
             </Link>
@@ -135,8 +132,7 @@ export default Title;
 
 const TitleContainer = styled.div`
 
-  /* off-set the header height */
-  margin-top: 60px;
+  padding-top: 60px;
   width: 100vw;
   background: black;
   height: 100vh;
@@ -145,7 +141,7 @@ const TitleContainer = styled.div`
   grid-template-rows: 30% 70%;
   align-items: center;
   ${customMedia.lessThan("laptopSmall")`
-    margin-top: -10px;
+    padding-top: -10px;
     height: 1200px;
   `}
 

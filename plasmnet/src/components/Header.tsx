@@ -6,13 +6,38 @@ import { Community, Links, Whitepaper } from "../data/links";
 import plasmLogo from "../resources/plasm-logo.png";
 import { customMedia } from "../styles/globalStyle";
 import { theme } from "../styles/theme";
+import { of, fromEvent, animationFrameScheduler } from "rxjs";
+import {
+  distinctUntilChanged,
+  filter,
+  map,
+  pairwise,
+  switchMap,
+  throttleTime
+} from "rxjs/operators";
+import { useObservable } from "rxjs-hooks";
 
 interface Props {}
 
+const watchScroll = () =>
+  of(typeof window === "undefined").pipe(
+    filter(bool => !bool),
+    switchMap(() => fromEvent(window, "scroll", { passive: true })),
+    throttleTime(0, animationFrameScheduler),
+    map(() => window.pageYOffset),
+    pairwise(),
+    map(([y1, y2]) => (y2 < y1 ? "Up" : "Down")),
+    distinctUntilChanged()
+  );
+
 const Header: React.FC<Props> = () => {
+  const scrollDirection = useObservable(watchScroll, "Up");
+
   return (
-    <HeaderContainer>
-      <div className="leftHeader Fade-in header">
+    <HeaderContainer
+      className={`site-header ${scrollDirection === "Down" && "hidden"}`}
+    >
+      <div className="leftHeader Fade-in header" id="navbar">
         <div onClick={() => scroll.scrollToTop()} className="logo">
           <img src={plasmLogo} alt="plasmLogo" className="plasm-logo" />
           <h1>Plasm Network</h1>
@@ -98,6 +123,11 @@ const HeaderContainer = styled.div`
   padding: 0px 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   z-index: 1000;
+  transition: all 300ms ease-in;
+  &.hidden {
+    transition: all 300ms ease-out;
+    transform: translate(0, -100%);
+  }
 
   a {
     color: ${theme.colors.black};
