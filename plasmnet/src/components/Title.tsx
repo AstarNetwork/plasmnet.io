@@ -7,7 +7,7 @@ import "../styles/animation.scss";
 import { customMedia } from "../styles/globalStyle";
 import { theme } from "../styles/theme";
 import LockdropInfo from "./LockdropInfo";
-interface Props {}
+interface Props { }
 
 const Title: React.FC<Props> = () => {
   const offsetInitialState = window.screen.width > 920 ? -70 : 0;
@@ -138,9 +138,8 @@ const TitleContainer = styled.div`
   /* off-set the header height */
   margin-top: 60px;
   width: 100vw;
-  height: 690px;
   background: black;
-
+  height: 100vh;
 
   display: grid;
   grid-template-rows: 30% 70%;
