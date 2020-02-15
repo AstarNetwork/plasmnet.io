@@ -7,7 +7,7 @@ import "../styles/animation.scss";
 import { customMedia } from "../styles/globalStyle";
 import { theme } from "../styles/theme";
 import LockdropInfo from "./LockdropInfo";
-interface Props {}
+interface Props { }
 
 const Title: React.FC<Props> = () => {
   return (
@@ -131,8 +131,6 @@ const Title: React.FC<Props> = () => {
 export default Title;
 
 const TitleContainer = styled.div`
-
-  padding-top: 60px;
   width: 100vw;
   background: black;
   height: 100vh;
@@ -140,6 +138,9 @@ const TitleContainer = styled.div`
   display: grid;
   grid-template-rows: 30% 70%;
   align-items: center;
+  ${customMedia.greaterThan("tabletPro")`
+    padding-top: 60px;
+  `}
   ${customMedia.lessThan("laptopSmall")`
     padding-top: -10px;
     height: 1200px;
