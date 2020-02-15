@@ -7,19 +7,19 @@ import plasmLogo from "../resources/plasm-logo.png";
 import { customMedia } from "../styles/globalStyle";
 import { theme } from "../styles/theme";
 
-interface Props {}
+interface Props { }
 
 const Header: React.FC<Props> = () => {
   return (
     <HeaderContainer>
-      <div className="leftHeader Fade-in">
+      <div className="leftHeader Fade-in header">
         <div onClick={() => scroll.scrollToTop()} className="logo">
           <img src={plasmLogo} alt="plasmLogo" className="plasm-logo" />
           <h1>Plasm Network</h1>
         </div>
       </div>
 
-      <div className="right-header Fade-in">
+      <div className="right-header Fade-in header">
         <Dropdown text="Whitepaper" className="header-link">
           <Dropdown.Menu>
             <Dropdown.Header>Whitepaper</Dropdown.Header>

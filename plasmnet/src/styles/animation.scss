@@ -46,6 +46,12 @@
   animation-duration: 1s;
 }
 
+.Fade-in.header {
+  -webkit-animation-delay: 0.3s;
+  -moz-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+}
+
 .Fade-in.one {
   -webkit-animation-delay: 0.4s;
   -moz-animation-delay: 0.4s;
