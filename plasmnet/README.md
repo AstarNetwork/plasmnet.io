@@ -40,6 +40,8 @@ v1.19.2
   - A reactive programming library for JavaScript.
 - [rxjs-hooks](https://github.com/LeetCode-OpenSource/rxjs-hooks)
   - React hooks for RxJS.
+- [react-scroll-progress-bar](https://github.com/thisisadityarao/react-scroll-progress-bar#readme)
+  - A scroll progress bar component for React.
 
 ### For Development
 
@@ -97,7 +99,7 @@ RoadmapList = [
 ### Links
 
 - src/data/links.ts
-  
+
 Please define URL in the inside of the object and make an array variable to pass(map) to the react component.
 
 ```
@@ -127,7 +129,6 @@ export const Community = [
   }
 ];
 ```
-
 
 ## How To Contribute
 
