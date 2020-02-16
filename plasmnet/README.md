@@ -30,8 +30,16 @@ v1.19.2
   - Better media queries for styled-component.
 - [gsap](https://github.com/greensock/GSAP)
   - GreenSock's GSAP JavaScript animation library.
-- [react-use](https://react.semantic-ui.com/)
+- [react-use](https://github.com/streamich/react-use)
   - React hooks.
+- [react-scroll](https://github.com/fisshy/react-scroll)
+  - Component for animating vertical scrolling.
+- [react-scroll-to-component](https://github.com/flyingant/react-scroll-to-component)
+  - Smooth srolls to react component via reference.
+- [rxjs](https://github.com/ReactiveX/rxjs)
+  - A reactive programming library for JavaScript.
+- [rxjs-hooks](https://github.com/LeetCode-OpenSource/rxjs-hooks)
+  - React hooks for RxJS.
 
 ### For Development
 

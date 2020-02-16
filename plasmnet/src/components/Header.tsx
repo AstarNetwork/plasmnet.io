@@ -1,12 +1,7 @@
 import React from "react";
 import { animateScroll as scroll } from "react-scroll";
-import { Dropdown, Icon, Menu } from "semantic-ui-react";
-import styled from "styled-components";
-import { Community, Links, Whitepaper } from "../data/links";
-import plasmLogo from "../resources/plasm-logo.png";
-import { customMedia } from "../styles/globalStyle";
-import { theme } from "../styles/theme";
-import { of, fromEvent, animationFrameScheduler } from "rxjs";
+import { animationFrameScheduler, fromEvent, of } from "rxjs";
+import { useObservable } from "rxjs-hooks";
 import {
   distinctUntilChanged,
   filter,
@@ -15,7 +10,12 @@ import {
   switchMap,
   throttleTime
 } from "rxjs/operators";
-import { useObservable } from "rxjs-hooks";
+import { Dropdown, Icon, Menu } from "semantic-ui-react";
+import styled from "styled-components";
+import { Community, Links, Whitepaper } from "../data/links";
+import plasmLogo from "../resources/plasm-logo.png";
+import { customMedia } from "../styles/globalStyle";
+import { theme } from "../styles/theme";
 
 interface Props {}
 
@@ -34,9 +34,7 @@ const Header: React.FC<Props> = () => {
   const scrollDirection = useObservable(watchScroll, "Up");
 
   return (
-    <HeaderContainer
-      className={`site-header ${scrollDirection === "Down" && "hidden"}`}
-    >
+    <HeaderContainer className={`${scrollDirection === "Down" && "hidden"}`}>
       <div className="leftHeader Fade-in header" id="navbar">
         <div onClick={() => scroll.scrollToTop()} className="logo">
           <img src={plasmLogo} alt="plasmLogo" className="plasm-logo" />
