@@ -7,7 +7,7 @@ import "../styles/animation.scss";
 import { customMedia } from "../styles/globalStyle";
 import { theme } from "../styles/theme";
 import LockdropInfo from "./LockdropInfo";
-interface Props { }
+interface Props {}
 
 const Title: React.FC<Props> = () => {
   return (
@@ -89,7 +89,7 @@ const Title: React.FC<Props> = () => {
         </div>
         <div className="right">
           <div className="ui SlideUp one">
-            <div>
+            <div className="lockdrop">
               <LockdropInfo />
             </div>
             <div className="app-buttons SlideUp two">
@@ -203,39 +203,52 @@ const TitleContainer = styled.div`
     }
   }
 
-  .ui {
-    display: grid;
-    align-items: center;
-    grid-row-gap: 30px;
-    ${customMedia.lessThan("tabletPro")`
-    `}
+  .right{
     ${customMedia.lessThan("mobile")`
-       grid-row-gap: 28px;
+       width: 100%;
     `}
-    .app-buttons {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-row-gap: 40px;
-      justify-items: center;
-      ${customMedia.lessThan("laptopSmall")`
-        margin-top: 40px;
-      `}
-      ${customMedia.lessThan("mobile")`
-       /* grid-template-rows: 1fr 1fr; */
-       grid-template: none;
-    `}
-    }
-    .ui-button {
-      margin-top: 0px;
-      width: 270px;
-      font-family: ${theme.font};
 
+    .ui {
+      display: grid;
+      align-items: center;
+      grid-row-gap: 30px;
       ${customMedia.lessThan("tabletPro")`
-        align-items: start;
       `}
       ${customMedia.lessThan("mobile")`
-        width: 330px;
+        grid-row-gap: 28px;
       `}
+
+      .lockdrop{
+        ${customMedia.lessThan("mobile")`
+          display: grid;
+          justify-items: center;
+        `}
+      }
+      .app-buttons {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-row-gap: 40px;
+        justify-items: center;
+        ${customMedia.lessThan("laptopSmall")`
+          margin-top: 40px;
+        `}
+        ${customMedia.lessThan("mobile")`
+        /* grid-template-rows: 1fr 1fr; */
+        grid-template: none;
+      `}
+      }
+      .ui-button {
+        margin-top: 0px;
+        width: 270px;
+        font-family: ${theme.font};
+
+        ${customMedia.lessThan("tabletPro")`
+          align-items: start;
+        `}
+        ${customMedia.lessThan("mobile")`
+          width: 330px;
+        `}
+      }
     }
   }
 `;

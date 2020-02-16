@@ -65,13 +65,10 @@ const LockdropInfoContainer = styled.div`
 
   ${customMedia.lessThan("tabletSmall")`
       width: 558px;
-      /* height: 250px;
-      border: 3px solid ${theme.colors.black};
-      margin 0;
-      padding: 10px 4px; */
   `}
   ${customMedia.lessThan("mobile")`
-      width: 330px;
+      min-width: 330px;
+      width: 90%;
       height: 250px;
       border: 3px solid ${theme.colors.black};
       margin 0;
