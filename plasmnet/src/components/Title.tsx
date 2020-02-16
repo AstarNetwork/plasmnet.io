@@ -90,7 +90,7 @@ const Title: React.FC<Props> = () => {
         <div className="right">
           <div className="ui SlideUp one">
             <div className="lockdrop">
-              <LockdropInfo />
+              <LockdropInfo countdownDate="2021-1-1 00:00:00" />
             </div>
             <div className="app-buttons SlideUp two">
               <div>
@@ -147,11 +147,11 @@ const TitleContainer = styled.div`
 
   /* Memo: If a user make browser as lower size */
   /* Assign 'min-height' to avoid collapse the title section */
-  @media only screen and (min-width: 920px) and (min-height: 710px){
+  @media only screen and (min-width: 1032px) and (min-height: 710px){
     padding-top: 60px;
     height: 100vh;
   }
-  @media only screen and (min-width: 920px) and (max-height: 710px){
+  @media only screen and (min-width: 1032px) and (max-height: 710px){
     padding-bottom: 60px;
   }
 
@@ -167,7 +167,6 @@ const TitleContainer = styled.div`
     align-items: center;
     justify-content: space-evenly;
     margin: 0 24px;
-    height: 100vh;
     ${customMedia.lessThan("laptop")`
       justify-content: space-around;
       padding: 10px;
@@ -180,6 +179,10 @@ const TitleContainer = styled.div`
       margin: 0;
       padding: 0;
     `}
+    @media only screen and (max-height: 708px){
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
     .left{
       ${customMedia.lessThan("laptopSmall")`
           margin-top: 60px;

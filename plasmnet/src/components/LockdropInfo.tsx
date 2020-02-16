@@ -1,33 +1,81 @@
-import React from "react";
+import moment, { duration } from "moment";
+import React, { useEffect, useState } from "react";
+import useInterval from "react-useinterval";
 import { Icon } from "semantic-ui-react";
 import styled from "styled-components";
 import { BlogLinks } from "../data/links";
 import { customMedia } from "../styles/globalStyle";
 import { theme } from "../styles/theme";
 
-interface Props {}
+interface Props {
+  countdownDate: string;
+}
 
-const LockdropInfo: React.FC<Props> = () => {
+const LockdropInfo: React.FC<Props> = (props: Props) => {
+  const [countdown, setCountdown] = useState({
+    days: 0,
+    hours: 0,
+    mins: 0,
+    secs: 0
+  });
+
+  // Memo: Optional
+  // call {addZeros(mins)}
+  const addZeros = (value: any): any => {
+    value = String(value);
+    while (value.length < 2) {
+      value = `0${value}`;
+    }
+    return value;
+  };
+
+  const runCountdown = () => {
+    const futureDate = moment(props.countdownDate);
+    const today = moment();
+
+    const clockDuration = duration(futureDate.diff(today));
+
+    const days = Math.floor(clockDuration.asDays());
+    const hours = clockDuration.hours();
+    const mins = clockDuration.minutes();
+    const secs = clockDuration.seconds();
+
+    setCountdown({
+      days,
+      hours,
+      mins,
+      secs
+    });
+  };
+
+  useInterval(() => {
+    runCountdown();
+  }, 1000);
+
+  useEffect(() => {
+    runCountdown();
+  }, []);
+  const { days, hours, mins, secs } = countdown;
   return (
     <LockdropInfoContainer>
       <TitleH1>Lockdrop Information</TitleH1>
       <div className="expired">
         <ExpiredH2>Expired:</ExpiredH2>
         <div className="time">
-          <div>
-            <HeaderTimeSpan>7</HeaderTimeSpan>
+          <div className="time-column">
+            <HeaderTimeSpan>{days}</HeaderTimeSpan>
             <p>Days</p>
           </div>
-          <div>
-            <HeaderTimeSpan>12</HeaderTimeSpan>
+          <div className="time-column">
+            <HeaderTimeSpan>{hours}</HeaderTimeSpan>
             <p>Hours</p>
           </div>
-          <div>
-            <HeaderTimeSpan>10</HeaderTimeSpan>
+          <div className="time-column">
+            <HeaderTimeSpan>{mins}</HeaderTimeSpan>
             <p>Min</p>
           </div>
-          <div>
-            <HeaderTimeSpan>25</HeaderTimeSpan>
+          <div className="time-column">
+            <HeaderTimeSpan>{secs}</HeaderTimeSpan>
             <p>Sec</p>
           </div>
         </div>
@@ -79,7 +127,7 @@ const LockdropInfoContainer = styled.div`
     display: grid;
     align-items: center;
     grid-template-columns: 60% 30% 30%;
-    padding: 8px 6%;
+    padding: 8px 2%;
     height: 42px;
     ${customMedia.lessThan("tabletSmall")`
       grid-template-columns: 70% 15% 15%;
@@ -87,10 +135,14 @@ const LockdropInfoContainer = styled.div`
     `}
   }
   .expired {
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 45% 55%;
     padding-bottom: ${customMedia.lessThan("tabletSmall")`
       grid-template-columns: 55% 45%;
     `};
+    .time-column {
+      width: 56px;
+      text-align: center;
+    }
   }
 
   .currency {
@@ -138,7 +190,7 @@ const LockdropInfoContainer = styled.div`
         font-size: 14px;
       `}
       &:hover {
-        border-bottom: double 2px ${theme.colors.blue};
+        border-bottom: solid 2px ${theme.colors.blue};
       }
     }
   }

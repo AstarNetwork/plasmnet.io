@@ -42,6 +42,8 @@ v1.19.2
   - React hooks for RxJS.
 - [react-scroll-progress-bar](https://github.com/thisisadityarao/react-scroll-progress-bar#readme)
   - A scroll progress bar component for React.
+- [moment](https://github.com/moment/moment)
+  - Parse, validate, manipulate, and display dates in javascript.
 
 ### For Development
 
