@@ -133,7 +133,6 @@ export default Title;
 const TitleContainer = styled.div`
   width: 100vw;
   background: black;
-  height: 100vh;
 
   display: grid;
   grid-template-rows: 30% 70%;
@@ -145,6 +144,16 @@ const TitleContainer = styled.div`
     padding-top: -10px;
     height: 1200px;
   `}
+
+  /* Memo: If a user make browser as lower size */
+  /* Assign 'min-height' to avoid collapse the title section */
+  @media only screen and (min-width: 920px) and (min-height: 710px){
+    padding-top: 60px;
+    height: 100vh;
+  }
+  @media only screen and (min-width: 920px) and (max-height: 710px){
+    padding-bottom: 60px;
+  }
 
   .link{
     color:rgb(129, 133, 141);
