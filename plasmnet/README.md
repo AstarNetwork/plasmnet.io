@@ -68,7 +68,7 @@ Contents data is passed as an object array to each react component.
 
 ### Plasm Networks achieves
 
-- src/data/achieveIntroductions.ts
+- src/contents/achieveIntroductions.ts
 
 ```
 export const AchieveIntroductions = [
@@ -85,7 +85,7 @@ export const AchieveIntroductions = [
 
 ### Roadmap
 
-- src/data/roadmapRecord.ts
+- src/contents/roadmapRecord.ts
 
 ```
 RoadmapList = [
@@ -100,7 +100,7 @@ RoadmapList = [
 
 ### Links
 
-- src/data/links.ts
+- src/contents/links.ts
 
 Please define URL in the inside of the object and make an array variable to pass(map) to the react component.
 
@@ -130,6 +130,20 @@ export const Community = [
     icon: "telegram"
   }
 ];
+```
+
+### Countdown
+
+- src/components/Title.tsx
+
+Please pass the countdown date and time as props.
+
+```
+<div className="lockdrop">
+  {/* memo: format must "yyyy-dd-dd hh:mm:ss" */}
+  {/* memo: cannot work on mobile device if props like "2021-1-1 00:00:00"  */}
+  <LockdropInfo countdownDate="2021-01-01 00:00:00" />
+</div>
 ```
 
 ## How To Contribute

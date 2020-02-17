@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { useIntersection } from "react-use";
 import { Button } from "semantic-ui-react";
 import styled from "styled-components";
-import { AppLinks } from "../data/links";
+import { AppLinks } from "../contents/links";
 import coinMiningColorImg from "../resources/coin-mining-color.svg";
 import { TitleH } from "../styles/customH";
 import { customMedia } from "../styles/globalStyle";

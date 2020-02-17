@@ -3,10 +3,9 @@ import React, { useEffect, useState } from "react";
 import useInterval from "react-useinterval";
 import { Icon } from "semantic-ui-react";
 import styled from "styled-components";
-import { BlogLinks } from "../data/links";
+import { BlogLinks } from "../contents/links";
 import { customMedia } from "../styles/globalStyle";
 import { theme } from "../styles/theme";
-import PropTypes from "prop-types";
 interface Props {
   countdownDate: string;
 }
@@ -99,9 +98,6 @@ const LockdropInfo: React.FC<Props> = (props: Props) => {
       </div>
     </LockdropInfoContainer>
   );
-};
-LockdropInfo.propTypes = {
-  countdownDate: PropTypes.string.isRequired
 };
 
 export default LockdropInfo;

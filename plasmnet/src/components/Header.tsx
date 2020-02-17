@@ -12,7 +12,7 @@ import {
 } from "rxjs/operators";
 import { Dropdown, Icon, Menu } from "semantic-ui-react";
 import styled from "styled-components";
-import { Community, Links, Whitepaper } from "../data/links";
+import { Community, Links, Whitepaper } from "../contents/links";
 import plasmLogo from "../resources/plasm-logo.png";
 import { customMedia } from "../styles/globalStyle";
 import { theme } from "../styles/theme";

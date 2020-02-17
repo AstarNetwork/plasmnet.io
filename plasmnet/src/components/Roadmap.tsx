@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { useIntersection } from "react-use";
 import styled from "styled-components";
-import { RoadmapList } from "../data/roadmapRecord";
+import { RoadmapList } from "../contents/roadmapRecord";
 import { TitleH } from "../styles/customH";
 import { customMedia } from "../styles/globalStyle";
 import { IRoadmap } from "../type/types";

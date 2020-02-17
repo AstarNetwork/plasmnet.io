@@ -2,12 +2,12 @@ import React from "react";
 import { Link } from "react-scroll";
 import { Button } from "semantic-ui-react";
 import styled from "styled-components";
-import { AppLinks } from "../data/links";
+import { AppLinks } from "../contents/links";
 import "../styles/animation.scss";
 import { customMedia } from "../styles/globalStyle";
 import { theme } from "../styles/theme";
 import LockdropInfo from "./LockdropInfo";
-interface Props { }
+interface Props {}
 
 const Title: React.FC<Props> = () => {
   return (
@@ -90,6 +90,8 @@ const Title: React.FC<Props> = () => {
         <div className="right">
           <div className="ui SlideUp one">
             <div className="lockdrop">
+              {/* memo: format must "yyyy-dd-dd hh:mm:ss" */}
+              {/* memo: cannot work on mobile device if props like "2021-1-1 00:00:00"  */}
               <LockdropInfo countdownDate="2021-01-01 00:00:00" />
             </div>
             <div className="app-buttons SlideUp two">

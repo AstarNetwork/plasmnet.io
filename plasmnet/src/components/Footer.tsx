@@ -6,7 +6,7 @@ import {
   Blogs,
   Community,
   Discussions
-} from "../data/links";
+} from "../contents/links";
 import { customMedia } from "../styles/globalStyle";
 import { theme } from "../styles/theme";
 
