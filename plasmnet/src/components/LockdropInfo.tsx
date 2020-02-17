@@ -1,17 +1,18 @@
 import moment, { duration } from "moment";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import useInterval from "react-useinterval";
 import { Icon } from "semantic-ui-react";
 import styled from "styled-components";
 import { BlogLinks } from "../contents/links";
 import { customMedia } from "../styles/globalStyle";
 import { theme } from "../styles/theme";
+import { ITime } from "../type/types";
 interface Props {
   countdownDate: string;
 }
 
 const LockdropInfo: React.FC<Props> = (props: Props) => {
-  const [countdown, setCountdown] = useState({
+  const [countdown, setCountdown] = useState<ITime>({
     Days: 0,
     Hours: 0,
     Mins: 0,
@@ -52,24 +53,27 @@ const LockdropInfo: React.FC<Props> = (props: Props) => {
     runCountdown();
   }, 1000);
 
-  useEffect(() => {
-    runCountdown();
-    // eslint-disable-next-line
-  }, []);
+  // useEffect(() => {
+  //   runCountdown();
+  //   // eslint-disable-next-line
+  // }, []);
+
   return (
     <LockdropInfoContainer>
       <TitleH1>Lockdrop Information</TitleH1>
       <div className="expired">
         <ExpiredH2>Expired:</ExpiredH2>
         <div className="time">
-          {Object.keys(countdown).map((key, i) => (
-            <div key={i} className="time-column">
-              {/*
+          {Object.keys(countdown).map(
+            (key: string, i: number): JSX.Element => (
+              <div key={i} className="time-column">
+                {/*
               // @ts-ignore */}
-              <HeaderTimeSpan>{countdown[key]}</HeaderTimeSpan>
-              <p>{key}</p>
-            </div>
-          ))}
+                <HeaderTimeSpan>{countdown[key]}</HeaderTimeSpan>
+                <p>{key}</p>
+              </div>
+            )
+          )}
         </div>
       </div>
       <div className="total">
