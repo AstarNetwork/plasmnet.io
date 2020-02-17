@@ -6,7 +6,7 @@ import styled from "styled-components";
 import { BlogLinks } from "../data/links";
 import { customMedia } from "../styles/globalStyle";
 import { theme } from "../styles/theme";
-
+import PropTypes from "prop-types";
 interface Props {
   countdownDate: string;
 }
@@ -21,15 +21,16 @@ const LockdropInfo: React.FC<Props> = (props: Props) => {
 
   // Memo: Optional
   // call {addZeros(mins)}
-  const addZeros = (value: any): any => {
-    value = String(value);
-    while (value.length < 2) {
-      value = `0${value}`;
+  // eslint-disable-next-line
+  const addZeros = (value: number): string => {
+    let time = String(value);
+    while (time.length < 2) {
+      time = `0${time}`;
     }
-    return value;
+    return time;
   };
 
-  const runCountdown = () => {
+  const runCountdown = (): void => {
     const futureDate = moment(props.countdownDate);
     const today = moment();
 
@@ -54,6 +55,7 @@ const LockdropInfo: React.FC<Props> = (props: Props) => {
 
   useEffect(() => {
     runCountdown();
+    // eslint-disable-next-line
   }, []);
   const { days, hours, mins, secs } = countdown;
   return (
@@ -97,6 +99,9 @@ const LockdropInfo: React.FC<Props> = (props: Props) => {
       </div>
     </LockdropInfoContainer>
   );
+};
+LockdropInfo.propTypes = {
+  countdownDate: PropTypes.string.isRequired
 };
 
 export default LockdropInfo;
