@@ -23,7 +23,7 @@ const RoadmapCard: React.FC<Props> = (props: Props) => {
           <div className="task">
             <ul>
               {list.task.map((task: any) => (
-                <li>{task}</li>
+                <li key={task}>{task}</li>
               ))}
             </ul>
           </div>

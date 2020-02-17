@@ -7,7 +7,7 @@ import { customMedia } from "../styles/globalStyle";
 import { IRoadmap } from "../type/types";
 import { ScrollFadeIn } from "../utils/scrollFadeIn";
 import RoadmapCard from "./RoadmapCard";
-interface Props {}
+interface Props { }
 
 const Roadmap: React.FC<Props> = () => {
   const sectionRef = useRef(null);
@@ -23,7 +23,7 @@ const Roadmap: React.FC<Props> = () => {
       <TitleH>Roadmap</TitleH>
       <div className="roadmap-cards">
         {RoadmapList.map((list: IRoadmap) => (
-          <RoadmapCard list={list} />
+          <RoadmapCard list={list} key={list.id} />
         ))}
       </div>
     </RoadmapContainer>

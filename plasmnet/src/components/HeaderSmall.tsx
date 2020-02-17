@@ -15,7 +15,7 @@ import plasmLogo from "../resources/plasm-logo.png";
 import { customMedia } from "../styles/globalStyle";
 import { theme } from "../styles/theme";
 
-interface Props {}
+interface Props { }
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -127,8 +127,9 @@ const HeaderSmall: React.FC<Props> = () => {
                 href={whitepaper.link}
                 rel="noopener noreferrer"
                 target="_blank"
+                key={whitepaper.description}
               >
-                <ListItem button key={whitepaper.description}>
+                <ListItem button>
                   {/*
                   // @ts-ignore */}
                   <Icon name={whitepaper.icon} color="grey" size="large" />
@@ -145,8 +146,9 @@ const HeaderSmall: React.FC<Props> = () => {
                 href={community.link}
                 rel="noopener noreferrer"
                 target="_blank"
+                key={community.description}
               >
-                <ListItem button key={community.description}>
+                <ListItem button>
                   {/*
                   // @ts-ignore */}
                   <Icon name={community.icon} color="grey" size="large" />
