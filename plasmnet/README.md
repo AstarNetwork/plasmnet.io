@@ -142,7 +142,7 @@ Please pass the countdown date and time as props.
 <div className="lockdrop">
   {/* Memo: format must "yyyy-dd-dd hh:mm:ss" */}
   {/* Memo: cannot work on mobile device if props as "2021-1-1 00:00:00". Date format must dd:dd  */}
-  {/* time standard: UTC  */}
+  {/* Time standard: UTC  */}
 
   <LockdropInfo countdownDate="2021-01-01 00:00:00" />
 </div>
