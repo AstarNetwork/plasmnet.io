@@ -7,7 +7,7 @@ import "../styles/animation.scss";
 import { customMedia } from "../styles/globalStyle";
 import { theme } from "../styles/theme";
 import LockdropInfo from "./LockdropInfo";
-interface Props { }
+interface Props {}
 
 const Title: React.FC<Props> = () => {
   return (

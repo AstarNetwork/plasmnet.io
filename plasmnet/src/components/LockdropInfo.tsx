@@ -12,10 +12,10 @@ interface Props {
 
 const LockdropInfo: React.FC<Props> = (props: Props) => {
   const [countdown, setCountdown] = useState({
-    days: 0,
-    hours: 0,
-    mins: 0,
-    secs: 0
+    Days: 0,
+    Hours: 0,
+    Mins: 0,
+    Secs: 0
   });
 
   // Memo: Optional
@@ -41,10 +41,10 @@ const LockdropInfo: React.FC<Props> = (props: Props) => {
     const secs = clockDuration.seconds();
 
     setCountdown({
-      days,
-      hours,
-      mins,
-      secs
+      Days: days,
+      Hours: hours,
+      Mins: mins,
+      Secs: secs
     });
   };
 
@@ -56,29 +56,21 @@ const LockdropInfo: React.FC<Props> = (props: Props) => {
     runCountdown();
     // eslint-disable-next-line
   }, []);
-  const { days, hours, mins, secs } = countdown;
   return (
     <LockdropInfoContainer>
       <TitleH1>Lockdrop Information</TitleH1>
       <div className="expired">
         <ExpiredH2>Expired:</ExpiredH2>
+
         <div className="time">
-          <div className="time-column">
-            <HeaderTimeSpan>{days}</HeaderTimeSpan>
-            <p>Days</p>
-          </div>
-          <div className="time-column">
-            <HeaderTimeSpan>{hours}</HeaderTimeSpan>
-            <p>Hours</p>
-          </div>
-          <div className="time-column">
-            <HeaderTimeSpan>{mins}</HeaderTimeSpan>
-            <p>Min</p>
-          </div>
-          <div className="time-column">
-            <HeaderTimeSpan>{secs}</HeaderTimeSpan>
-            <p>Sec</p>
-          </div>
+          {Object.keys(countdown).map((key: any, i: any): any => (
+            <div key={i} className="time-column">
+              {/*
+              // @ts-ignore */}
+              <HeaderTimeSpan>{countdown[key]}</HeaderTimeSpan>
+              <p>{key}</p>
+            </div>
+          ))}
         </div>
       </div>
       <div className="total">
@@ -137,8 +129,8 @@ const LockdropInfoContainer = styled.div`
   }
   .expired {
     grid-template-columns: 45% 55%;
-    padding-bottom: ${customMedia.lessThan("tabletSmall")`
-      grid-template-columns: 55% 45%;
+    ${customMedia.lessThan("tabletSmall")`
+      grid-template-columns: 35% 65%;
     `};
     .time-column {
       width: 56px;
