@@ -61,9 +61,8 @@ const LockdropInfo: React.FC<Props> = (props: Props) => {
       <TitleH1>Lockdrop Information</TitleH1>
       <div className="expired">
         <ExpiredH2>Expired:</ExpiredH2>
-
         <div className="time">
-          {Object.keys(countdown).map((key: any, i: any): any => (
+          {Object.keys(countdown).map((key, i) => (
             <div key={i} className="time-column">
               {/*
               // @ts-ignore */}
