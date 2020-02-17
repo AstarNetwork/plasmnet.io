@@ -20,7 +20,6 @@ const LockdropInfo: React.FC<Props> = (props: Props) => {
 
   // Memo: Optional
   // call {addZeros(mins)}
-  // eslint-disable-next-line
   const addZeros = (value: number): string => {
     let time = String(value);
     while (time.length < 2) {
@@ -30,7 +29,7 @@ const LockdropInfo: React.FC<Props> = (props: Props) => {
   };
 
   const runCountdown = (): void => {
-    // Memo: FutureDate: UTC 
+    // Memo: FutureDate: UTC
     const futureDate = moment.utc(props.countdownDate);
     const today = moment();
 
