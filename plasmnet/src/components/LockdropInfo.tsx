@@ -1,5 +1,5 @@
 import moment, { duration } from "moment";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import useInterval from "react-useinterval";
 import { Icon } from "semantic-ui-react";
 import styled from "styled-components";
@@ -49,14 +49,15 @@ const LockdropInfo: React.FC<Props> = (props: Props) => {
     });
   };
 
+
+  useEffect(() => {
+    runCountdown();
+    // eslint-disable-next-line
+  }, []);
+
   useInterval(() => {
     runCountdown();
   }, 1000);
-
-  // useEffect(() => {
-  //   runCountdown();
-  //   // eslint-disable-next-line
-  // }, []);
 
   return (
     <LockdropInfoContainer>
