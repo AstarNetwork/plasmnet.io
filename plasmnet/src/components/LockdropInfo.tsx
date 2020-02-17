@@ -29,6 +29,7 @@ const LockdropInfo: React.FC<Props> = (props: Props) => {
     return time;
   };
 
+  // Fixme: Need to consider how to deal with time difference.
   const runCountdown = (): void => {
     const futureDate = moment(props.countdownDate);
     const today = moment();
