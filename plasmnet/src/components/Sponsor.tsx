@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { useIntersection } from "react-use";
 import styled from "styled-components";
-import { Sponsors } from "../data/links";
+import { Sponsors } from "../contents/links";
 import { customMedia } from "../styles/globalStyle";
 import { ScrollFadeIn, ThresholdPoint } from "../utils/scrollFadeIn";
 interface Props {}

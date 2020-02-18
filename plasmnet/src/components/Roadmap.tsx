@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { useIntersection } from "react-use";
 import styled from "styled-components";
-import { RoadmapList } from "../data/roadmapRecord";
+import { RoadmapList } from "../contents/roadmapRecord";
 import { TitleH } from "../styles/customH";
 import { customMedia } from "../styles/globalStyle";
 import { IRoadmap } from "../type/types";
@@ -23,7 +23,7 @@ const Roadmap: React.FC<Props> = () => {
       <TitleH>Roadmap</TitleH>
       <div className="roadmap-cards">
         {RoadmapList.map((list: IRoadmap) => (
-          <RoadmapCard list={list} />
+          <RoadmapCard list={list} key={list.id} />
         ))}
       </div>
     </RoadmapContainer>
@@ -33,10 +33,6 @@ const Roadmap: React.FC<Props> = () => {
 export default Roadmap;
 
 const RoadmapContainer = styled.div`
-  .next {
-    margin-top: 94px;
-  }
-
   .roadmap-cards {
     display: grid;
     grid-template-columns: 1fr 1fr;

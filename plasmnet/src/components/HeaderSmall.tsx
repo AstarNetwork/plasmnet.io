@@ -10,7 +10,7 @@ import clsx from "clsx";
 import React from "react";
 import { Icon } from "semantic-ui-react";
 import styled from "styled-components";
-import { Community, Links, Whitepaper } from "../data/links";
+import { Community, Links, Whitepaper } from "../contents/links";
 import plasmLogo from "../resources/plasm-logo.png";
 import { customMedia } from "../styles/globalStyle";
 import { theme } from "../styles/theme";
@@ -127,8 +127,9 @@ const HeaderSmall: React.FC<Props> = () => {
                 href={whitepaper.link}
                 rel="noopener noreferrer"
                 target="_blank"
+                key={whitepaper.description}
               >
-                <ListItem button key={whitepaper.description}>
+                <ListItem button>
                   {/*
                   // @ts-ignore */}
                   <Icon name={whitepaper.icon} color="grey" size="large" />
@@ -145,8 +146,9 @@ const HeaderSmall: React.FC<Props> = () => {
                 href={community.link}
                 rel="noopener noreferrer"
                 target="_blank"
+                key={community.description}
               >
-                <ListItem button key={community.description}>
+                <ListItem button>
                   {/*
                   // @ts-ignore */}
                   <Icon name={community.icon} color="grey" size="large" />
@@ -203,6 +205,10 @@ const HeaderSmallContainer = styled.div`
   .MuiIconButton-label {
     color: ${theme.colors.lightGrey} !important;
     margin-left: 20px;
+  }
+  .MuiSvgIcon-root {
+    width: 30px;
+    height: 30px;
   }
 
   .logo {

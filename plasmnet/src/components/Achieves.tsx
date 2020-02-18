@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { useIntersection } from "react-use";
 import styled from "styled-components";
-import { AchieveIntroductions } from "../data/achieveIntroductions";
+import { AchieveIntroductions } from "../contents/achieveIntroductions";
 import { TitleH } from "../styles/customH";
 import { customMedia } from "../styles/globalStyle";
 import { ScrollFadeIn, ThresholdPoint } from "../utils/scrollFadeIn";

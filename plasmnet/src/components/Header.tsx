@@ -1,25 +1,48 @@
 import React from "react";
 import { animateScroll as scroll } from "react-scroll";
+import { animationFrameScheduler, fromEvent, of } from "rxjs";
+import { useObservable } from "rxjs-hooks";
+import {
+  distinctUntilChanged,
+  filter,
+  map,
+  pairwise,
+  switchMap,
+  throttleTime
+} from "rxjs/operators";
 import { Dropdown, Icon, Menu } from "semantic-ui-react";
 import styled from "styled-components";
-import { Community, Links, Whitepaper } from "../data/links";
+import { Community, Links, Whitepaper } from "../contents/links";
 import plasmLogo from "../resources/plasm-logo.png";
 import { customMedia } from "../styles/globalStyle";
 import { theme } from "../styles/theme";
 
 interface Props {}
 
+const watchScroll = () =>
+  of(typeof window === "undefined").pipe(
+    filter(bool => !bool),
+    switchMap(() => fromEvent(window, "scroll", { passive: true })),
+    throttleTime(0, animationFrameScheduler),
+    map(() => window.pageYOffset),
+    pairwise(),
+    map(([y1, y2]) => (y2 < y1 ? "Up" : "Down")),
+    distinctUntilChanged()
+  );
+
 const Header: React.FC<Props> = () => {
+  const scrollDirection = useObservable(watchScroll, "Up");
+
   return (
-    <HeaderContainer>
-      <div className="leftHeader">
+    <HeaderContainer className={`${scrollDirection === "Down" && "hidden"}`}>
+      <div className="leftHeader Fade-in header" id="navbar">
         <div onClick={() => scroll.scrollToTop()} className="logo">
           <img src={plasmLogo} alt="plasmLogo" className="plasm-logo" />
           <h1>Plasm Network</h1>
         </div>
       </div>
 
-      <div className="right-header">
+      <div className="right-header Fade-in header">
         <Dropdown text="Whitepaper" className="header-link">
           <Dropdown.Menu>
             <Dropdown.Header>Whitepaper</Dropdown.Header>
@@ -98,6 +121,11 @@ const HeaderContainer = styled.div`
   padding: 0px 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   z-index: 1000;
+  transition: all 300ms ease-in;
+  &.hidden {
+    transition: all 300ms ease-out;
+    transform: translate(0, -100%);
+  }
 
   a {
     color: ${theme.colors.black};

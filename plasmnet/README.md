@@ -30,8 +30,20 @@ v1.19.2
   - Better media queries for styled-component.
 - [gsap](https://github.com/greensock/GSAP)
   - GreenSock's GSAP JavaScript animation library.
-- [react-use](https://react.semantic-ui.com/)
+- [react-use](https://github.com/streamich/react-use)
   - React hooks.
+- [react-scroll](https://github.com/fisshy/react-scroll)
+  - Component for animating vertical scrolling.
+- [react-scroll-to-component](https://github.com/flyingant/react-scroll-to-component)
+  - Smooth srolls to react component via reference.
+- [rxjs](https://github.com/ReactiveX/rxjs)
+  - A reactive programming library for JavaScript.
+- [rxjs-hooks](https://github.com/LeetCode-OpenSource/rxjs-hooks)
+  - React hooks for RxJS.
+- [react-scroll-progress-bar](https://github.com/thisisadityarao/react-scroll-progress-bar#readme)
+  - A scroll progress bar component for React.
+- [moment](https://github.com/moment/moment)
+  - Parse, validate, manipulate, and display dates in javascript.
 
 ### For Development
 
@@ -56,7 +68,7 @@ Contents data is passed as an object array to each react component.
 
 ### Plasm Networks achieves
 
-- src/data/achieveIntroductions.ts
+- src/contents/achieveIntroductions.ts
 
 ```
 export const AchieveIntroductions = [
@@ -73,7 +85,7 @@ export const AchieveIntroductions = [
 
 ### Roadmap
 
-- src/data/roadmapRecord.ts
+- src/contents/roadmapRecord.ts
 
 ```
 RoadmapList = [
@@ -88,8 +100,8 @@ RoadmapList = [
 
 ### Links
 
-- src/data/links.ts
-  
+- src/contents/links.ts
+
 Please define URL in the inside of the object and make an array variable to pass(map) to the react component.
 
 ```
@@ -120,6 +132,21 @@ export const Community = [
 ];
 ```
 
+### Countdown
+
+- src/components/Title.tsx
+
+Please pass the countdown date and time as props.
+
+```
+<div className="lockdrop">
+  {/* Memo: format must "yyyy-dd-dd hh:mm:ss" */}
+  {/* Memo: cannot work on mobile device if props as "2021-1-1 00:00:00". Date format must dd:dd  */}
+  {/* Time standard: UTC  */}
+
+  <LockdropInfo countdownDate="2021-01-01 00:00:00" />
+</div>
+```
 
 ## How To Contribute
 

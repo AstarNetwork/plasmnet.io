@@ -18,12 +18,18 @@ export const GlobalStyle = createGlobalStyle`
   box-sizing: border-box;
 }
 
-/* To make footer attached to the bottom  */
+/* Memo: To make footer attached to the bottom  */
 /* Need to define 'flex: 1;' in the div above the footer  */
 #root {
   height: 100%;
   display: flex;
   flex-direction: column;
+}
+
+/* Memo: Remove scrollbar space */
+/* https://stackoverflow.com/questions/16670931/hide-scroll-bar-but-while-still-being-able-to-scroll */
+::-webkit-scrollbar {
+    width: 0px;
 }
 
 body {
@@ -33,7 +39,6 @@ body {
   margin: 0;
   font-style: normal;
   height: 100%;
-  /* padding: 10px 20px; */
   font-family: ${theme.font};
   h1, h2, h3,h4, p, span{
     font-family: ${theme.font};

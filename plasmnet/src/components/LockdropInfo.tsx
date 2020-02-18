@@ -1,35 +1,80 @@
-import React from "react";
+import moment, { duration } from "moment";
+import React, { useState, useEffect } from "react";
+import useInterval from "react-useinterval";
 import { Icon } from "semantic-ui-react";
 import styled from "styled-components";
-import { BlogLinks } from "../data/links";
+import { BlogLinks } from "../contents/links";
 import { customMedia } from "../styles/globalStyle";
 import { theme } from "../styles/theme";
+import { ITime } from "../type/types";
+interface Props {
+  countdownDate: string;
+}
 
-interface Props {}
+const LockdropInfo: React.FC<Props> = (props: Props) => {
+  const [countdown, setCountdown] = useState<ITime>({
+    Days: 0,
+    Hours: 0,
+    Mins: 0,
+    Secs: 0
+  });
 
-const LockdropInfo: React.FC<Props> = () => {
+  // Memo: Optional
+  // call {addZeros(mins)}
+  const addZeros = (value: number): string => {
+    let time = String(value);
+    while (time.length < 2) {
+      time = `0${time}`;
+    }
+    return time;
+  };
+
+  const runCountdown = (): void => {
+    // Memo: FutureDate: UTC
+    const futureDate = moment.utc(props.countdownDate);
+    const today = moment();
+
+    const clockDuration = duration(futureDate.diff(today));
+
+    const days = Math.floor(clockDuration.asDays());
+    const hours = clockDuration.hours();
+    const mins = clockDuration.minutes();
+    const secs = clockDuration.seconds();
+
+    setCountdown({
+      Days: days,
+      Hours: hours,
+      Mins: mins,
+      Secs: secs
+    });
+  };
+
+
+  useEffect(() => {
+    runCountdown();
+    // eslint-disable-next-line
+  }, []);
+
+  useInterval(() => {
+    runCountdown();
+  }, 1000);
+
   return (
     <LockdropInfoContainer>
       <TitleH1>Lockdrop Information</TitleH1>
       <div className="expired">
         <ExpiredH2>Expired:</ExpiredH2>
         <div className="time">
-          <div>
-            <HeaderTimeSpan>7</HeaderTimeSpan>
-            <p>Days</p>
-          </div>
-          <div>
-            <HeaderTimeSpan>12</HeaderTimeSpan>
-            <p>Hours</p>
-          </div>
-          <div>
-            <HeaderTimeSpan>10</HeaderTimeSpan>
-            <p>Min</p>
-          </div>
-          <div>
-            <HeaderTimeSpan>25</HeaderTimeSpan>
-            <p>Sec</p>
-          </div>
+          {Object.keys(countdown).map(
+            (key: string, i: number): JSX.Element => (
+              <div key={i} className="time-column">
+                {/*
+              // @ts-ignore */}
+                <HeaderTimeSpan>{countdown[key]}</HeaderTimeSpan>
+                <p>{key}</p>
+              </div>
+            )
+          )}
         </div>
       </div>
       <div className="total">
@@ -65,13 +110,10 @@ const LockdropInfoContainer = styled.div`
 
   ${customMedia.lessThan("tabletSmall")`
       width: 558px;
-      /* height: 250px;
-      border: 3px solid ${theme.colors.black};
-      margin 0;
-      padding: 10px 4px; */
   `}
   ${customMedia.lessThan("mobile")`
-      width: 330px;
+      min-width: 330px;
+      width: 90%;
       height: 250px;
       border: 3px solid ${theme.colors.black};
       margin 0;
@@ -82,7 +124,7 @@ const LockdropInfoContainer = styled.div`
     display: grid;
     align-items: center;
     grid-template-columns: 60% 30% 30%;
-    padding: 8px 6%;
+    padding: 8px 2%;
     height: 42px;
     ${customMedia.lessThan("tabletSmall")`
       grid-template-columns: 70% 15% 15%;
@@ -90,10 +132,14 @@ const LockdropInfoContainer = styled.div`
     `}
   }
   .expired {
-    grid-template-columns: 50% 50%;
-    padding-bottom: ${customMedia.lessThan("tabletSmall")`
-      grid-template-columns: 55% 45%;
+    grid-template-columns: 45% 55%;
+    ${customMedia.lessThan("tabletSmall")`
+      grid-template-columns: 35% 65%;
     `};
+    .time-column {
+      width: 56px;
+      text-align: center;
+    }
   }
 
   .currency {
@@ -141,7 +187,7 @@ const LockdropInfoContainer = styled.div`
         font-size: 14px;
       `}
       &:hover {
-        border-bottom: double 2px ${theme.colors.blue};
+        border-bottom: solid 2px ${theme.colors.blue};
       }
     }
   }

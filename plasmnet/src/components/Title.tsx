@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-scroll";
 import { Button } from "semantic-ui-react";
 import styled from "styled-components";
-import { AppLinks } from "../data/links";
+import { AppLinks } from "../contents/links";
 import "../styles/animation.scss";
 import { customMedia } from "../styles/globalStyle";
 import { theme } from "../styles/theme";
@@ -10,9 +10,6 @@ import LockdropInfo from "./LockdropInfo";
 interface Props {}
 
 const Title: React.FC<Props> = () => {
-  const offsetInitialState = window.screen.width > 920 ? -70 : 0;
-  const [offset] = useState(offsetInitialState);
-
   return (
     <TitleContainer id="ui-id">
       <div className="title">
@@ -28,8 +25,8 @@ const Title: React.FC<Props> = () => {
               className="link"
               to="ui-id"
               smooth={true}
-              offset={offset}
-              duration={700}
+              offset={0}
+              duration={900}
             >
               Launch UI
             </Link>
@@ -39,8 +36,8 @@ const Title: React.FC<Props> = () => {
               className="link"
               to="ui-id"
               smooth={true}
-              offset={offset}
-              duration={700}
+              offset={0}
+              duration={900}
             >
               Lockdrop Information
             </Link>
@@ -50,8 +47,8 @@ const Title: React.FC<Props> = () => {
               className="link"
               to="achieves-id"
               smooth={true}
-              offset={offset}
-              duration={700}
+              offset={0}
+              duration={900}
             >
               Plasm Networks archives
             </Link>
@@ -61,8 +58,8 @@ const Title: React.FC<Props> = () => {
               className="link"
               to="testnet-id"
               smooth={true}
-              offset={offset}
-              duration={700}
+              offset={0}
+              duration={900}
             >
               Plasm Testnet v3
             </Link>
@@ -72,8 +69,8 @@ const Title: React.FC<Props> = () => {
               className="link"
               to="roadmap-id"
               smooth={true}
-              offset={offset}
-              duration={700}
+              offset={0}
+              duration={900}
             >
               Roadmap
             </Link>
@@ -83,8 +80,8 @@ const Title: React.FC<Props> = () => {
               className="link"
               to="sponsor-id"
               smooth={true}
-              offset={offset}
-              duration={700}
+              offset={0}
+              duration={900}
             >
               Sponsors
             </Link>
@@ -92,8 +89,11 @@ const Title: React.FC<Props> = () => {
         </div>
         <div className="right">
           <div className="ui SlideUp one">
-            <div>
-              <LockdropInfo />
+            <div className="lockdrop">
+              {/* Memo: Format must "yyyy-dd-dd hh:mm:ss" */}
+              {/* Memo: Cannot work on mobile device if props as "2021-1-1 00:00:00". Date format must dd:dd  */}
+              {/* Time standard: UTC  */}
+              <LockdropInfo countdownDate="2021-01-01 00:00:00" />
             </div>
             <div className="app-buttons SlideUp two">
               <div>
@@ -134,21 +134,29 @@ const Title: React.FC<Props> = () => {
 export default Title;
 
 const TitleContainer = styled.div`
-
-  /* off-set the header height */
-  margin-top: 60px;
   width: 100vw;
-  height: 690px;
   background: black;
-
 
   display: grid;
   grid-template-rows: 30% 70%;
   align-items: center;
+  ${customMedia.greaterThan("tabletPro")`
+    padding-top: 60px;
+  `}
   ${customMedia.lessThan("laptopSmall")`
-    margin-top: -10px;
+    padding-top: -10px;
     height: 1200px;
   `}
+
+  /* Memo: If a user make browser as lower size */
+  /* Assign 'min-height' to avoid collapse the title section */
+  @media only screen and (min-width: 1032px) and (min-height: 710px){
+    padding-top: 60px;
+    height: 100vh;
+  }
+  @media only screen and (min-width: 1032px) and (max-height: 710px){
+    padding-bottom: 60px;
+  }
 
   .link{
     color:rgb(129, 133, 141);
@@ -162,7 +170,6 @@ const TitleContainer = styled.div`
     align-items: center;
     justify-content: space-evenly;
     margin: 0 24px;
-    height: 100vh;
     ${customMedia.lessThan("laptop")`
       justify-content: space-around;
       padding: 10px;
@@ -175,6 +182,10 @@ const TitleContainer = styled.div`
       margin: 0;
       padding: 0;
     `}
+    @media only screen and (max-height: 708px){
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
     .left{
       ${customMedia.lessThan("laptopSmall")`
           margin-top: 60px;
@@ -207,39 +218,52 @@ const TitleContainer = styled.div`
     }
   }
 
-  .ui {
-    display: grid;
-    align-items: center;
-    grid-row-gap: 30px;
-    ${customMedia.lessThan("tabletPro")`
-    `}
+  .right{
     ${customMedia.lessThan("mobile")`
-       grid-row-gap: 28px;
+       width: 100%;
     `}
-    .app-buttons {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-row-gap: 40px;
-      justify-items: center;
-      ${customMedia.lessThan("laptopSmall")`
-        margin-top: 40px;
-      `}
-      ${customMedia.lessThan("mobile")`
-       /* grid-template-rows: 1fr 1fr; */
-       grid-template: none;
-    `}
-    }
-    .ui-button {
-      margin-top: 0px;
-      width: 270px;
-      font-family: ${theme.font};
 
+    .ui {
+      display: grid;
+      align-items: center;
+      grid-row-gap: 30px;
       ${customMedia.lessThan("tabletPro")`
-        align-items: start;
       `}
       ${customMedia.lessThan("mobile")`
-        width: 330px;
+        grid-row-gap: 28px;
       `}
+
+      .lockdrop{
+        ${customMedia.lessThan("mobile")`
+          display: grid;
+          justify-items: center;
+        `}
+      }
+      .app-buttons {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-row-gap: 40px;
+        justify-items: center;
+        ${customMedia.lessThan("laptopSmall")`
+          margin-top: 40px;
+        `}
+        ${customMedia.lessThan("mobile")`
+        /* grid-template-rows: 1fr 1fr; */
+        grid-template: none;
+      `}
+      }
+      .ui-button {
+        margin-top: 0px;
+        width: 270px;
+        font-family: ${theme.font};
+
+        ${customMedia.lessThan("tabletPro")`
+          align-items: start;
+        `}
+        ${customMedia.lessThan("mobile")`
+          width: 330px;
+        `}
+      }
     }
   }
 `;
