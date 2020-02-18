@@ -2,6 +2,8 @@ import cryptoeconomicsLabImg from "../resources/crypto-economics-lab.png";
 import discordImg from "../resources/discord.svg";
 import githubImg from "../resources/github.svg";
 import longhashImg from "../resources/longhash.png";
+import parityImg from "../resources/parity.png";
+import connectImg from "../resources/co-nect.png";
 import telegramImg from "../resources/telegram.svg";
 import twitterImg from "../resources/twitter.svg";
 import web3Img from "../resources/web3-foundation.png";
@@ -21,10 +23,12 @@ export const SponsorLinks = {
   cryptoEconomicsLab: "https://www.cryptoeconomicslab.com/",
   parityTechnologies: "https://www.parity.io/",
   web3Foundation: "https://web3.foundation/",
-  istudy: "https://www.istudy.co.jp/",
   longhash: "https://longhash.co.jp/en/",
-  universityOfTokyo: "https://www.u-tokyo.ac.jp/en/index.html"
+  universityOfTokyo: "https://www.u-tokyo.ac.jp/en/index.html",
+  connect: "https://www.blockchain.t.u-tokyo.ac.jp/",
+  parityBuilders: "https://builders.parity.io/"
 };
+
 export const BlogLinks = {
   lockdropIntroduction:
     "https://medium.com/stake-technologies/plasm-lockdrop-introduction-54614592a13"
@@ -114,21 +118,33 @@ export const Discussions = [
 
 export const Sponsors = [
   {
-    description: "Cryptoeconomics Lab",
-    link: SponsorLinks.cryptoEconomicsLab,
-    className: "cryptoeconomics-lab",
-    image: cryptoeconomicsLabImg
-  },
-  {
     description: "Web3 Foundation",
     link: SponsorLinks.web3Foundation,
     className: "web3-foundation",
     image: web3Img
   },
   {
+    description: "Parity Builder's Prgram",
+    link: SponsorLinks.parityBuilders,
+    className: "parity-technologies",
+    image: parityImg
+  },
+  {
+    description: "Cryptoeconomics Lab",
+    link: SponsorLinks.cryptoEconomicsLab,
+    className: "cryptoeconomics-lab",
+    image: cryptoeconomicsLabImg
+  },
+  {
     description: "LongHash",
     link: SponsorLinks.longhash,
     className: "long-hash",
     image: longhashImg
+  },
+  {
+    description: "Endowed Chair for Blockchain Innovation, the University of Tokyo",
+    link: SponsorLinks.connect,
+    className: "connect",
+    image: connectImg,
   }
 ];
