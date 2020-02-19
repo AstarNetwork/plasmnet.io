@@ -1,5 +1,5 @@
 import DappsRewardsIcon from "../resources/dappsrewards.svg";
-import LockdropIcon from "../resources/lockdrop.svg";
+import LockdropIcon from "../resources/lockdrop.png";
 import TradingIcon from "../resources/trading.svg";
 
 export const AchieveIntroductions = [
