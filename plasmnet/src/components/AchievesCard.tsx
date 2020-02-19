@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { Card, Icon } from "semantic-ui-react";
+import { Card } from "semantic-ui-react";
+import SvgIcon from '@material-ui/core/SvgIcon';
 import { customMedia } from "../styles/globalStyle";
 import { theme } from "../styles/theme";
 
@@ -20,7 +21,7 @@ const AchievesCard: React.FC<Props> = (props: Props) => {
           <div className="header">
             {/*
           // @ts-ignore */}
-            <Icon name={icon} className="icon" />
+            <SvgIcon className="icon" />
             <div />
           </div>
           <h3>{title}</h3>
