@@ -1,0 +1,35 @@
+{
+  "files": {
+    "main.css": "/static/css/main.12492e45.chunk.css",
+    "main.js": "/static/js/main.08096714.chunk.js",
+    "main.js.map": "/static/js/main.08096714.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.8af08f72.js",
+    "runtime-main.js.map": "/static/js/runtime-main.8af08f72.js.map",
+    "static/js/2.dfd79f5b.chunk.js": "/static/js/2.dfd79f5b.chunk.js",
+    "static/js/2.dfd79f5b.chunk.js.map": "/static/js/2.dfd79f5b.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.11b3a1ab3626a1194cdc492f407675c8.js": "/precache-manifest.11b3a1ab3626a1194cdc492f407675c8.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.12492e45.chunk.css.map": "/static/css/main.12492e45.chunk.css.map",
+    "static/js/2.dfd79f5b.chunk.js.LICENSE.txt": "/static/js/2.dfd79f5b.chunk.js.LICENSE.txt",
+    "static/media/co-nect.png": "/static/media/co-nect.c1e83c1a.png",
+    "static/media/coin-mining-color.svg": "/static/media/coin-mining-color.4057901a.svg",
+    "static/media/crypto-economics-lab.png": "/static/media/crypto-economics-lab.1996f275.png",
+    "static/media/dappsrewards.svg": "/static/media/dappsrewards.c42f1a11.svg",
+    "static/media/discord.svg": "/static/media/discord.936512f6.svg",
+    "static/media/github.svg": "/static/media/github.0a3a0978.svg",
+    "static/media/lock.svg": "/static/media/lock.634f3f16.svg",
+    "static/media/longhash.png": "/static/media/longhash.4dde1f48.png",
+    "static/media/plasm-logo.png": "/static/media/plasm-logo.e814f1e5.png",
+    "static/media/telegram.svg": "/static/media/telegram.4c49693b.svg",
+    "static/media/trading.svg": "/static/media/trading.ab30a0e4.svg",
+    "static/media/twitter.svg": "/static/media/twitter.7137286d.svg",
+    "static/media/web3-foundation.png": "/static/media/web3-foundation.0e3fde0f.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8af08f72.js",
+    "static/js/2.dfd79f5b.chunk.js",
+    "static/css/main.12492e45.chunk.css",
+    "static/js/main.08096714.chunk.js"
+  ]
+}
