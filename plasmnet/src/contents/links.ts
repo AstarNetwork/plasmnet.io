@@ -81,10 +81,38 @@ export const Company = [
 
 export const Products = [
   {
-    description: "Plasm Testnet v3",
+    description: "Plasm",
     link: "https://github.com/staketechnologies/Plasm"
+  },
+  {
+    description: "Plasm Portal Sites",
+    link: "https://github.com/staketechnologies/apps"
+  },
+  {
+    description: "Plasm Lockdrop",
+    link: "https://github.com/staketechnologies/lockdrop-ui"
+  },
+  {
+    description: "Plasm documentations",
+    link: "https://github.com/staketechnologies/plasmdocs"
+  },
+  {
+    description: "Plasm homepage",
+    link: "https://github.com/staketechnologies/plasmnet.io"
   }
 ];
+
+export const Collaboration = [
+  {
+    description: "Substrate Builders Program",
+    link: "https://builders.parity.io/"
+  },
+  {
+    description: "Web3 foundation",
+    link: "https://web3.foundation/"
+  }
+
+]
 
 export const Blogs = [
   {
