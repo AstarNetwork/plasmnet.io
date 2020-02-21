@@ -3,6 +3,7 @@ import styled from "styled-components";
 import {
   Company,
   Products,
+  Collaboration,
   Blogs,
   Community,
   Discussions
@@ -60,21 +61,13 @@ const Footer: React.FC<Props> = () => {
 
         <ul className="footer-column">
           <h3>Collaboration</h3>
-          <li>
-            <a href="/" rel="noopener noreferrer" target="_blank">
-              Example
-            </a>
-          </li>
-          <li>
-            <a href="/" rel="noopener noreferrer" target="_blank">
-              Example
-            </a>
-          </li>
-          <li>
-            <a href="/" rel="noopener noreferrer" target="_blank">
-              Example
-            </a>
-          </li>
+          {Collaboration.map(collaboration=> (
+            <li key={collaboration.description}>
+              <a href={collaboration.link} rel="noopener noreferrer" target="_blank">
+                {collaboration.description}
+              </a>
+            </li>
+          ))}
         </ul>
 
         <ul className="footer-column">

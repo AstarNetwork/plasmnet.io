@@ -29,7 +29,7 @@ const TestnetInfo: React.FC<Props> = () => {
         </div>
         <div className="introduction">
           <div>
-            <p>This is the most interesting network.</p>
+            <p>This is the most latest network.</p>
             <p>
               Testnet v3 DApp owners and users can stake PLM tokens for
               applications and get a part of network block rewards as same as

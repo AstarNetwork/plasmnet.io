@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Card, Icon } from "semantic-ui-react";
+import { Card } from "semantic-ui-react";
 import { customMedia } from "../styles/globalStyle";
 import { theme } from "../styles/theme";
 
@@ -20,7 +20,10 @@ const AchievesCard: React.FC<Props> = (props: Props) => {
           <div className="header">
             {/*
           // @ts-ignore */}
-            <Icon name={icon} className="icon" />
+            <img
+              src={icon}
+              className="icon"
+            />
             <div />
           </div>
           <h3>{title}</h3>
@@ -62,6 +65,8 @@ const CardContainer = styled.div`
     }
 
     .icon {
+      height: 50px;
+      width: 50px;  
       font-size: 40px;
       grid-column: 1/2;
       padding-top: 10px;

@@ -1,20 +1,24 @@
+import DappsRewardsIcon from "../resources/dappsrewards.svg";
+import LockdropIcon from "../resources/lock.svg";
+import TradingIcon from "../resources/trading.svg";
+
 export const AchieveIntroductions = [
   {
-    icon: "gem",
-    title: "Stable Currency",
+    icon: DappsRewardsIcon,
+    title: "Dapps Rewards",
     description:
-      "Asset-backed decentralized currency without volatility. Stable by design and without borders."
+      "It gives application developers a sustainable incentive."
   },
   {
-    icon: "globe",
-    title: "Multi-Collateral Backed",
+    icon: LockdropIcon,
+    title: "Multi Lockdrop",
     description:
-      "Every aUSD is backed in excess by multiple asset collaterals. Safety mechanisms and incentives are in place to counter volatility, ensure security and resilience."
+      "It is a fair and low-risk valuable token issuing system."
   },
   {
-    icon: "fighter jet",
-    title: "Influence by Ownership",
+    icon: TradingIcon,
+    title: "Operator Trading",
     description:
-      "Acala Network Token holders have the responsibility to govern the network's operation, make a decision on its future, and share earnings."
+      "It is possible for plasm application developers  to buy and sell operator’s authorities like M & A."
   }
 ];

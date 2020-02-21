@@ -70,7 +70,6 @@ const SponsorContainer = styled.div`
     .cryptoeconomics-lab,
     .parity-technologies,
     .web3-foundation,
-    .istudy,
     .long-hash,
     .university-of-tokyo {
       height: 130px;
@@ -86,6 +85,7 @@ const SponsorContainer = styled.div`
 
     .cryptoeconomics-lab,
     .parity-technologies,
+    .connect,
     .web3-foundation {
       height: 150px;
     }

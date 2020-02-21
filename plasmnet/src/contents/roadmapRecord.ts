@@ -1,12 +1,12 @@
 export const RoadmapList = [
   {
     id: 1,
-    month: "2019.10",
+    month: "2019.Q3",
     task: ["PoC-0 : Launch Plasm Network minimum testnet(Miniplasm)"]
   },
   {
     id: 2,
-    month: "2019.12",
+    month: "2019.Q4",
     task: [
       "PoC-1: Start the Testnet Lockdrop.",
       "PoC-2: Implement Operator trading modules.",
@@ -16,41 +16,33 @@ export const RoadmapList = [
   },
   {
     id: 3,
-    month: "2020.02",
-    task: ["PoC-4: Start the Mainnet Lcodrop."]
+    month: "2020.Q1",
+    task: ["Start the Mainnet Lcodrop."]
   },
   {
     id: 4,
-    month: "2020.03",
-    task: ["Launch Plasm Network Mainnet"]
+    month: "2020.02",
+    task: [
+      "Launch Plasm Network Mainnet",
+      "Implement OVM Modules."
+    ]
   },
   {
     id: 5,
-    month: "2020.04",
-    task: ["PoC-5: Implement OVM Modules."]
+    month: "2020.03",
+    task: [
+      "Start the second ETH & BTC Lockdrop.",
+      "Start the third ETH & BTC & DOT Lockdrop.",
+      "Plasm Network becomes a parachain. (Depends on Polkadot)"
+    ]
   },
   {
     id: 6,
-    month: "2020.05",
-    task: ["PoC-6: Start the second ETH & BTC Lockdrop."]
+    month: "2020.Q4",
+    task: ["Plasm Network migrate from Proof of Authroities."]
   },
   {
     id: 7,
-    month: "2020.07",
-    task: ["PoC-7: Start the third ETH & BTC & DOT Lockdrop."]
-  },
-  {
-    id: 8,
-    month: "2020.08",
-    task: ["PoC-8: Plasm Network becomes a parachain. (Depends on Polkadot)"]
-  },
-  {
-    id: 9,
-    month: "2020.09",
-    task: ["PoC-9: Plasm Network migrate to NPoS."]
-  },
-  {
-    id: 10,
     month: "2021",
     task: ["Listing!!"]
   }
