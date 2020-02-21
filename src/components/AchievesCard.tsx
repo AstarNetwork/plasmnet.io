@@ -22,6 +22,7 @@ const AchievesCard: React.FC<Props> = (props: Props) => {
           // @ts-ignore */}
             <img
               src={icon}
+              alt={title}
               className="icon"
             />
             <div />
