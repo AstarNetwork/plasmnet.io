@@ -122,6 +122,7 @@ const HeaderContainer = styled.div`
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   transition: all 300ms ease-in;
+  font-family: "Orbitron",${theme.font};
   &.hidden {
     transition: all 300ms ease-out;
     transform: translate(0, -100%);
@@ -166,6 +167,7 @@ const HeaderContainer = styled.div`
       color: ${theme.colors.white};
       margin-top: 0px;
       margin-left: 6px;
+      font-family: "Orbitron",${theme.font};
     }
   }
 `;
