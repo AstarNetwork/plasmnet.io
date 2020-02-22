@@ -13,9 +13,9 @@ const Title: React.FC<Props> = () => {
   return (
     <TitleContainer id="ui-id">
       <div className="title">
-        <TitleH1 className="SlideDown one">The Plasm Network is</TitleH1>
+        <TitleH1 className="SlideDown one">Plasm Network is</TitleH1>
         <TitleH1 className="SlideDown two">
-          Scaling Dapps Platform on Substrate
+          a scaling Dapps platform on Substrate
         </TitleH1>
       </div>
       <div className="container">
@@ -274,6 +274,7 @@ const TitleH1 = styled.h1`
   font-size: 50px;
   font-weight: 700;
   line-height: 56px;
+  font-family: "Orbitron",${theme.font};
   ${customMedia.lessThan("laptop")`
     font-size: 46px;
     line-height: 50px;
