@@ -17,7 +17,7 @@ export const RoadmapList = [
   {
     id: 3,
     month: "2020.Q1",
-    task: ["Start the Mainnet Lcodrop."]
+    task: ["Start the Mainnet Lockdrop."]
   },
   {
     id: 4,
@@ -39,11 +39,6 @@ export const RoadmapList = [
   {
     id: 6,
     month: "2020.Q4",
-    task: ["Plasm Network migrate from Proof of Authroities."]
-  },
-  {
-    id: 7,
-    month: "2021",
-    task: ["Listing!!"]
+    task: ["Plasm Network migrates from Proof of Authroity."]
   }
 ];
