@@ -93,7 +93,7 @@ const Title: React.FC<Props> = () => {
               {/* Memo: Format must "yyyy-dd-dd hh:mm:ss" */}
               {/* Memo: Cannot work on mobile device if props as "2021-1-1 00:00:00". Date format must dd:dd  */}
               {/* Time standard: UTC  */}
-              <LockdropInfo countdownDate="2021-01-01 00:00:00" />
+              <LockdropInfo countdownDate="2020-03-15 00:00:00" />
             </div>
             <div className="app-buttons SlideUp two">
               <div>

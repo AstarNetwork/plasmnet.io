@@ -2,11 +2,13 @@ import cryptoeconomicsLabImg from "../resources/crypto-economics-lab.png";
 import discordImg from "../resources/discord.svg";
 import githubImg from "../resources/github.svg";
 import longhashImg from "../resources/longhash.png";
+// eslint-disable-next-line
 import parityImg from "../resources/parity.png";
 import connectImg from "../resources/co-nect.png";
 import telegramImg from "../resources/telegram.svg";
 import twitterImg from "../resources/twitter.svg";
 import web3Img from "../resources/web3-foundation.png";
+import acalaImg from "../resources/acala.svg";
 
 export const Links = {
   docs: "https://docs.plasmnet.io",
@@ -26,7 +28,8 @@ export const SponsorLinks = {
   longhash: "https://longhash.co.jp/en/",
   universityOfTokyo: "https://www.u-tokyo.ac.jp/en/index.html",
   connect: "https://www.blockchain.t.u-tokyo.ac.jp/",
-  parityBuilders: "https://builders.parity.io/"
+  parityBuilders: "https://builders.parity.io/",
+  acala: "https://acala.network/"
 };
 
 export const BlogLinks = {
@@ -108,7 +111,7 @@ export const Collaboration = [
     link: "https://builders.parity.io/"
   },
   {
-    description: "Web3 foundation",
+    description: "Web3 foundation grants program",
     link: "https://web3.foundation/"
   }
 
@@ -151,12 +154,12 @@ export const Sponsors = [
     className: "web3-foundation",
     image: web3Img
   },
-  {
-    description: "Parity Builder's Prgram",
-    link: SponsorLinks.parityBuilders,
-    className: "parity-technologies",
-    image: parityImg
-  },
+  // {
+  //   description: "Parity Builder's Prgram",
+  //   link: SponsorLinks.parityBuilders,
+  //   className: "parity-technologies",
+  //   image: parityImg
+  // },
   {
     description: "Cryptoeconomics Lab",
     link: SponsorLinks.cryptoEconomicsLab,
@@ -174,5 +177,11 @@ export const Sponsors = [
     link: SponsorLinks.connect,
     className: "connect",
     image: connectImg,
+  },
+  {
+    description: "Aacala Network",
+    link: SponsorLinks.acala,
+    className: "acala",
+    image: acalaImg,
   }
 ];

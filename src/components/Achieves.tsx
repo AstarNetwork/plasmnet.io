@@ -19,16 +19,18 @@ const Achieves: React.FC<Props> = () => {
   ScrollFadeIn(intersection, ".cards", false);
   return (
     <AchievesContainer ref={sectionRef} id="achieves-id">
-      <TitleH>Plasm Networks achieves:</TitleH>
-      <div className="cards">
-        {AchieveIntroductions.map(introduction => (
-          <AchievesCard
-            icon={introduction.icon}
-            title={introduction.title}
-            description={introduction.description}
-            key={introduction.title}
-          />
-        ))}
+      <div className="subContainer">
+        <TitleH>Plasm Networks achieves:</TitleH>
+        <div className="cards">
+          {AchieveIntroductions.map(introduction => (
+            <AchievesCard
+              icon={introduction.icon}
+              title={introduction.title}
+              description={introduction.description}
+              key={introduction.title}
+            />
+          ))}
+        </div>
       </div>
     </AchievesContainer>
   );
@@ -37,7 +39,12 @@ const Achieves: React.FC<Props> = () => {
 export default Achieves;
 
 const AchievesContainer = styled.div`
-  margin: 100px 0px;
+  background: #EEEEFF;
+  padding: 1px 1px;
+
+  .subContainer {
+    margin: 100px 100px;
+  }
 
   .cards {
     display: grid;

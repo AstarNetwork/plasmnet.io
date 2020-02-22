@@ -17,7 +17,7 @@ const Sponsor: React.FC<Props> = () => {
   ScrollFadeIn(intersection, ".sponsor", false);
   return (
     <SponsorContainer ref={sectionRef} id="sponsor-id">
-      <TitleH1>Sponsors</TitleH1>
+      <TitleH1>Collaboration</TitleH1>
       <div className="sponsors">
         {Sponsors.map(sponsor => (
           <div className="sponsor" key={sponsor.className}>
@@ -71,6 +71,7 @@ const SponsorContainer = styled.div`
     .parity-technologies,
     .web3-foundation,
     .long-hash,
+    .acala,
     .university-of-tokyo {
       height: 130px;
       padding: 20px;
@@ -86,9 +87,16 @@ const SponsorContainer = styled.div`
     .cryptoeconomics-lab,
     .parity-technologies,
     .connect,
+    .acala
     .web3-foundation {
       height: 150px;
     }
+
+    .cryptoeconomics-lab {
+      width: 600px;
+      height: auto;
+    }
+
   }
 `;
 
