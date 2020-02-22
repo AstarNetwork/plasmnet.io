@@ -1,15 +1,15 @@
-import { createGlobalStyle } from "styled-components";
-import { generateMedia } from "styled-media-query";
-import { theme } from "./theme";
+import { createGlobalStyle } from 'styled-components';
+import { generateMedia } from 'styled-media-query';
+import { theme } from './theme';
 
 export const customMedia = generateMedia({
-  desktop: "1296px",
-  laptop: "1172px",
-  laptopSmall: "1032px",
-  tabletPro: "920px",
-  tablet: "768px",
-  tabletSmall: "700px",
-  mobile: "652px"
+    desktop: '1296px',
+    laptop: '1172px',
+    laptopSmall: '1032px',
+    tabletPro: '920px',
+    tablet: '768px',
+    tabletSmall: '700px',
+    mobile: '652px'
 });
 
 export const GlobalStyle = createGlobalStyle`

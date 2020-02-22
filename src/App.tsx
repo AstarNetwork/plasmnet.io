@@ -1,25 +1,32 @@
 import React from 'react';
-import ProgressBar from 'react-scroll-progress-bar';
-import Header from './components/Header';
-import HeaderSmall from './components/HeaderSmall';
-import Footer from './components/Footer';
-import { GlobalStyle } from './styles/globalStyle';
-import FooterPush from './components/FooterPush';
-import MainContents from './components/MainContents';
-import './styles/animation.scss';
-import { theme } from './styles/theme';
+import LandingPage from './pages/landingPage/LandingPage';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from 'react-router-dom';
+import Navbar from './components/navbar/Navbar';
+import NavbarSmall from './components/navbar/NavbarSmall';
+import Footer from './components/footer/Footer';
+import FooterPush from './components/footer/FooterPush';
+import './App.css';
 
-const App = () => {
+
+function App() {
   return (
-    <>
-      <ProgressBar height='4px' bgcolor={theme.colors.yellow} />
-      <Header />
-      <HeaderSmall />
-      <MainContents />
+    <div className='App'>
+      <Navbar />
+      <NavbarSmall />
+      <Router>
+        <Switch>
+          <Route exact path='/'>
+            <LandingPage />
+          </Route>
+        </Switch>
+      </Router>
       <FooterPush />
       <Footer />
-      <GlobalStyle />
-    </>
+    </div>
   );
 }
 
