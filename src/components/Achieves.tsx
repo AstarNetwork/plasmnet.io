@@ -40,10 +40,10 @@ export default Achieves;
 
 const AchievesContainer = styled.div`
   background: #EEEEFF;
-  padding: 1px 1px;
+  padding: 1% 1%;
 
   .subContainer {
-    margin: 100px 100px;
+    margin: 5% 2%;
   }
 
   .cards {
