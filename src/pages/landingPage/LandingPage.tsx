@@ -1,13 +1,15 @@
 import React from 'react';
 import TitleHead from './sections/TitleHead';
-import AboutPlasm from './sections/AboutPlasm';
+import Issues from './sections/Issues';
+import WhatWeDo from './sections/WhatWeDo';
 
 const LandingPage: React.FC = () => {
 
     return (
         <div className='landing-page'>
             <TitleHead />
-            <AboutPlasm />
+            <Issues />
+            <WhatWeDo />
         </div>
     )
 }

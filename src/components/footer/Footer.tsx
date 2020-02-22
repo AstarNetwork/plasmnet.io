@@ -1,12 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import {
-    Company,
-    Products,
-    Collaboration,
-    Blogs,
-    Community,
-    Discussions
+  Company,
+  Products,
+  Collaboration,
+  Blogs,
+  Community
 } from '../../database/links';
 import { customMedia } from '../../styles/globalStyle';
 import { theme } from '../../styles/theme';
@@ -14,10 +13,10 @@ import { theme } from '../../styles/theme';
 interface Props { }
 
 const Footer: React.FC<Props> = () => {
-    const currentYear = new Date().getFullYear();
-    return (
-        <FooterContainer>
-            <div className='discussion'>
+  const currentYear = new Date().getFullYear();
+  return (
+    <FooterContainer>
+      {/* <div className='discussion'>
                 <h2>Join the community:</h2>
                 <div className='icons'>
                     {Discussions.map(discussion => (
@@ -35,73 +34,73 @@ const Footer: React.FC<Props> = () => {
                         </a>
                     ))}
                 </div>
-            </div>
-            <div className='footer-columns'>
-                <ul className='footer-column'>
-                    <h3>Company</h3>
-                    {Company.map(company => (
-                        <li key={company.description}>
-                            <a href={company.link} rel='noopener noreferrer' target='_blank'>
-                                {company.description}
-                            </a>
-                        </li>
-                    ))}
-                </ul>
+            </div> */}
+      <div className='footer-columns'>
+        <ul className='footer-column'>
+          <h3>Company</h3>
+          {Company.map(company => (
+            <li key={company.description}>
+              <a href={company.link} rel='noopener noreferrer' target='_blank'>
+                {company.description}
+              </a>
+            </li>
+          ))}
+        </ul>
 
-                <ul className='footer-column'>
-                    <h3>Repositories</h3>
-                    {Products.map(product => (
-                        <li key={product.description}>
-                            <a href={product.link} rel='noopener noreferrer' target='_blank'>
-                                {product.description}
-                            </a>
-                        </li>
-                    ))}
-                </ul>
+        <ul className='footer-column'>
+          <h3>Repositories</h3>
+          {Products.map(product => (
+            <li key={product.description}>
+              <a href={product.link} rel='noopener noreferrer' target='_blank'>
+                {product.description}
+              </a>
+            </li>
+          ))}
+        </ul>
 
-                <ul className='footer-column'>
-                    <h3>Collaboration</h3>
-                    {Collaboration.map(collaboration => (
-                        <li key={collaboration.description}>
-                            <a href={collaboration.link} rel='noopener noreferrer' target='_blank'>
-                                {collaboration.description}
-                            </a>
-                        </li>
-                    ))}
-                </ul>
+        <ul className='footer-column'>
+          <h3>Collaboration</h3>
+          {Collaboration.map(collaboration => (
+            <li key={collaboration.description}>
+              <a href={collaboration.link} rel='noopener noreferrer' target='_blank'>
+                {collaboration.description}
+              </a>
+            </li>
+          ))}
+        </ul>
 
-                <ul className='footer-column'>
-                    <h3>Blog</h3>
-                    {Blogs.map(blog => (
-                        <li key={blog.description}>
-                            <a href={blog.link} rel='noopener noreferrer' target='_blank'>
-                                {blog.description}
-                            </a>
-                        </li>
-                    ))}
-                </ul>
-                <ul className='footer-column'>
-                    <h3>Community</h3>
-                    {Community.map(community => (
-                        <li key={community.description}>
-                            <a
-                                href={community.link}
-                                rel='noopener noreferrer'
-                                target='_blank'
-                            >
-                                {community.description}
-                            </a>
-                        </li>
-                    ))}
-                </ul>
-            </div>
-            <div className='footer-div'>
-                <footer>
-                    © 2019-{currentYear} Stake Technologies, Inc. All Rights Reserved.
+        <ul className='footer-column'>
+          <h3>Blog</h3>
+          {Blogs.map(blog => (
+            <li key={blog.description}>
+              <a href={blog.link} rel='noopener noreferrer' target='_blank'>
+                {blog.description}
+              </a>
+            </li>
+          ))}
+        </ul>
+        <ul className='footer-column'>
+          <h3>Community</h3>
+          {Community.map(community => (
+            <li key={community.description}>
+              <a
+                href={community.link}
+                rel='noopener noreferrer'
+                target='_blank'
+              >
+                {community.description}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div className='footer-div'>
+        <footer>
+          © 2019-{currentYear} Stake Technologies, Inc. All Rights Reserved.
         </footer>
-            </div>
-        </FooterContainer>
-    );
+      </div>
+    </FooterContainer>
+  );
 };
 
 export default Footer;

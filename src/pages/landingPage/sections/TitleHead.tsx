@@ -42,8 +42,8 @@ const TitleHead: React.FC<Props> = () => {
                         Imagine the internet, <br /> but free from tyranny
                     </Typography>
                     <Typography variant='h5' align='center' color='textSecondary' paragraph>
-                        Plasm Network is a blockchain and a scalable dApp platform that
-                        is designed to benefit the developers and the users that creates the future
+                        Plasm Network is a blockchain developed from the Substrate framework and a Layer 2 scalable dApp platform that
+                        is designed to empower the developers and the users that creates the future
                     </Typography>
                     <div className={classes.heroButtons}>
                         <Button variant='contained' color='primary' size='large' className={classes.btnPrimary}>
