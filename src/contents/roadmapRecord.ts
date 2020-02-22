@@ -21,7 +21,7 @@ export const RoadmapList = [
   },
   {
     id: 4,
-    month: "2020.02",
+    month: "2020.Q2",
     task: [
       "Launch Plasm Network Mainnet",
       "Implement OVM Modules."
@@ -29,7 +29,7 @@ export const RoadmapList = [
   },
   {
     id: 5,
-    month: "2020.03",
+    month: "2020.Q3",
     task: [
       "Start the second ETH & BTC Lockdrop.",
       "Start the third ETH & BTC & DOT Lockdrop.",

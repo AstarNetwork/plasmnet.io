@@ -53,7 +53,7 @@ const LockdropInfo: React.FC<Props> = (props: Props) => {
     <LockdropInfoContainer>
       <TitleH1>Lockdrop Information</TitleH1>
       <div className="expired">
-        <ExpiredH2>Expired:</ExpiredH2>
+        <ExpiredH2>Started:</ExpiredH2>
         <div className="time">
           {Object.keys(countdown).map(
             (key: string, i: number): JSX.Element => (
@@ -69,7 +69,7 @@ const LockdropInfo: React.FC<Props> = (props: Props) => {
       </div>
       <div className="total">
         <AmountH2>Total Amount Lock:</AmountH2>
-        <TotalAmountH2>888</TotalAmountH2>
+        <TotalAmountH2>-</TotalAmountH2>
         <span className="currency">ETH</span>
       </div>
       <div className="reference">
