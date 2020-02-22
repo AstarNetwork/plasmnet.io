@@ -58,11 +58,11 @@ const SponsorContainer = styled.div`
   }
   .sponsor {
     opacity: 0;
-    width: 200px;
+    max-width: 100%;
     display: flex;
     text-align: center;
     justify-content: center;
-    padding: 10px;
+    padding: 10%;
     a {
       align-self: center;
     }
@@ -74,7 +74,7 @@ const SponsorContainer = styled.div`
     .acala,
     .university-of-tokyo {
       height: 130px;
-      padding: 20px;
+      padding: 5%;
       display: flex;
       text-align: center;
       justify-content: center;
@@ -82,6 +82,7 @@ const SponsorContainer = styled.div`
       width: 300px;
       height: auto;
     `}
+      max-width: 100%;
     }
 
     .cryptoeconomics-lab,
