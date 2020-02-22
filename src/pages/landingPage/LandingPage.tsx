@@ -2,6 +2,7 @@ import React from 'react';
 import TitleHead from './sections/TitleHead';
 import Issues from './sections/Issues';
 import WhatWeDo from './sections/WhatWeDo';
+import AboutToken from './sections/AboutToken';
 
 const LandingPage: React.FC = () => {
 
@@ -10,6 +11,7 @@ const LandingPage: React.FC = () => {
             <TitleHead />
             <Issues />
             <WhatWeDo />
+            <AboutToken />
         </div>
     )
 }

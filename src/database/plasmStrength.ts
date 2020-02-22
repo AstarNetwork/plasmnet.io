@@ -14,6 +14,6 @@ export const PlasmStrength: ICardItem[] = [
         id: 2,
         icon: TagFacesIcon,
         heading: 'Optimistic Virtual Machine',
-        content: 'Plasm Network implements OVM so that any dApps can can run under a unified environment'
+        content: 'Plasm Network implements OVM so that any dApps can run under a unified environment with minimum issues'
     }
 ]

@@ -29,8 +29,7 @@ const useStyles = makeStyles(theme => ({
 
 interface Props { }
 
-//todo: add flashy background effects
-const TitleHead: React.FC<Props> = () => {
+const HowToHelp: React.FC<Props> = () => {
     const classes = useStyles();
 
     return (
@@ -57,4 +56,4 @@ const TitleHead: React.FC<Props> = () => {
     );
 }
 
-export default TitleHead;
+export default HowToHelp;

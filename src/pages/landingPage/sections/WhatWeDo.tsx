@@ -6,6 +6,7 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import Button from '@material-ui/core/Button';
 
 import { PlasmStrength } from '../../../database/plasmStrength';
 
@@ -31,15 +32,17 @@ const useStyles = makeStyles(theme => ({
         display: 'flex',
         flexDirection: 'column',
     },
-    cardMedia: {
-        paddingTop: '56.25%', // 16:9
-    },
     cardContent: {
         flexGrow: 1,
     },
-    footer: {
-        backgroundColor: theme.palette.background.paper,
-        padding: theme.spacing(6),
+    btnPrimary: {
+        background: 'linear-gradient(45deg, #1d417f 30%, #2e8ec0 90%)',
+        border: 0,
+        borderRadius: 3,
+        boxShadow: '0 3px 5px 2px rgba(0, 0, 0, .3)',
+        color: 'white',
+        height: 48,
+        padding: '0 30px',
     },
 }));
 
@@ -56,31 +59,39 @@ const WhatWeDo: React.FC<Props> = () => {
             {/* Hero unit */}
             <div className={classes.heroContent}>
                 <Container maxWidth="sm">
-                    <Typography component="h3" variant="h3" align="center" color="textPrimary" gutterBottom>
-                        Plasm Network is a Layer 2 blockchain scaling solution
+                    <Typography component="h4" variant="h4" align="center" color="textPrimary" gutterBottom>
+                        Plasm Network works because we have:
                     </Typography>
                 </Container>
+
+                <Container className={classes.cardGrid} maxWidth="md">
+                    {/* End hero unit */}
+                    <Grid container spacing={4}>
+                        {cards.map(card => (
+                            <Grid item key={card.id} xs={12} sm={6} md={4}>
+                                <Card className={classes.card}>
+                                    <card.icon style={{ fontSize: 60 }} className={classes.icon}></card.icon>
+                                    <CardContent className={classes.cardContent}>
+                                        <Typography gutterBottom variant="h5" component="h2">
+                                            {card.heading}
+                                        </Typography>
+                                        <Typography>
+                                            {card.content}
+                                        </Typography>
+                                    </CardContent>
+                                </Card>
+                            </Grid>
+                        ))}
+                    </Grid>
+                </Container>
+                <Container maxWidth="sm">
+                    <div className={classes.heroButtons}>
+                        <Button variant='contained' color='primary' size='large' className={classes.btnPrimary}>
+                            Want to know more?
+                        </Button>
+                    </div>
+                </Container>
             </div>
-            <Container className={classes.cardGrid} maxWidth="md">
-                {/* End hero unit */}
-                <Grid container spacing={4}>
-                    {cards.map(card => (
-                        <Grid item key={card.id} xs={12} sm={6} md={4}>
-                            <Card className={classes.card}>
-                                <card.icon style={{ fontSize: 60 }} className={classes.icon}></card.icon>
-                                <CardContent className={classes.cardContent}>
-                                    <Typography gutterBottom variant="h5" component="h2">
-                                        {card.heading}
-                                    </Typography>
-                                    <Typography>
-                                        {card.content}
-                                    </Typography>
-                                </CardContent>
-                            </Card>
-                        </Grid>
-                    ))}
-                </Grid>
-            </Container>
         </div>
     );
 }
