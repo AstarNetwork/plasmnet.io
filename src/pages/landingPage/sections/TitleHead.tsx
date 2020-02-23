@@ -34,25 +34,23 @@ const TitleHead: React.FC<Props> = () => {
     const classes = useStyles();
 
     return (
-        <div className='section'>
+        <div className={classes.heroContent}>
             <CssBaseline />
-            <div className={classes.heroContent}>
-                <Container maxWidth='md'>
-                    <br />
-                    <Typography component='h1' variant='h2' align='center' color='textPrimary' gutterBottom>
-                        Imagine the internet, <br /> but free from tyranny
+            <Container maxWidth='md'>
+                <br />
+                <Typography component='h1' variant='h2' align='center' color='textPrimary' gutterBottom>
+                    Imagine the internet, <br /> but free from tyranny
                     </Typography>
-                    <Typography variant='h5' align='center' color='textSecondary' paragraph>
-                        Plasm Network is a blockchain developed from the Substrate framework and a Layer 2 scalable dApp platform that
-                        is designed to empower the developers and the users that creates the future
+                <Typography variant='h5' align='center' color='textSecondary' paragraph>
+                    Plasm Network is a blockchain developed from the Substrate framework and a Layer 2 scalable dApp platform that
+                    is designed to empower the developers and the users that creates the future
                     </Typography>
-                    <div className={classes.heroButtons}>
-                        <Button variant='contained' color='primary' size='large' className={classes.btnPrimary}>
-                            Learn more about Plasm Network
+                <div className={classes.heroButtons}>
+                    <Button variant='contained' color='primary' size='large' className={classes.btnPrimary}>
+                        Learn more about Plasm Network
                         </Button>
-                    </div>
-                </Container>
-            </div>
+                </div>
+            </Container>
         </div>
     );
 }

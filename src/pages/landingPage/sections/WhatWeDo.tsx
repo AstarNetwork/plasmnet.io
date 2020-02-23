@@ -58,13 +58,13 @@ const WhatWeDo: React.FC<Props> = () => {
             <CssBaseline />
             {/* Hero unit */}
             <div className={classes.heroContent}>
-                <Container maxWidth="sm">
-                    <Typography component="h4" variant="h4" align="center" color="textPrimary" gutterBottom>
+                <Container maxWidth='sm'>
+                    <Typography component='h3' variant='h3' align='center' color='textPrimary' gutterBottom>
                         Plasm Network works because we have:
                     </Typography>
                 </Container>
 
-                <Container className={classes.cardGrid} maxWidth="md">
+                <Container className={classes.cardGrid} maxWidth='md'>
                     {/* End hero unit */}
                     <Grid container spacing={4}>
                         {cards.map(card => (
@@ -72,7 +72,7 @@ const WhatWeDo: React.FC<Props> = () => {
                                 <Card className={classes.card}>
                                     <card.icon style={{ fontSize: 60 }} className={classes.icon}></card.icon>
                                     <CardContent className={classes.cardContent}>
-                                        <Typography gutterBottom variant="h5" component="h2">
+                                        <Typography gutterBottom variant='h5' component='h2'>
                                             {card.heading}
                                         </Typography>
                                         <Typography>
@@ -84,7 +84,7 @@ const WhatWeDo: React.FC<Props> = () => {
                         ))}
                     </Grid>
                 </Container>
-                <Container maxWidth="sm">
+                <Container maxWidth='sm'>
                     <div className={classes.heroButtons}>
                         <Button variant='contained' color='primary' size='large' className={classes.btnPrimary}>
                             Want to know more?

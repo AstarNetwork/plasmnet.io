@@ -1,37 +1,31 @@
 import React from 'react';
 import { Theme, createStyles, makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
+import ListItemAvatar from '@material-ui/core/ListItemAvatar';
+import Avatar from '@material-ui/core/Avatar';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
-import coNect from '../../../resources/co-nect.png';
+import Grid from '@material-ui/core/Grid';
+import { TokenInfo } from '../../../database/tokenInfo';
+import { blue } from '@material-ui/core/colors';
+
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
-        cardRoot: {
-            display: 'flex',
-            maxWidth: 345,
-        },
-        details: {
-            display: 'flex',
-            flexDirection: 'column',
-        },
-        content: {
-            flex: '1 0 auto',
-        },
-        media: {
-            width: 151,
-        },
-        playIcon: {
-            height: 38,
-            width: 38,
-        },
         heroContent: {
             padding: theme.spacing(8, 0, 6),
+            background: '#47BCFF',
+        },
+        avatar: {
+            color: '#fff',
+            backgroundColor: blue[500],
         }
     }),
 );
+
+const listItems = TokenInfo;
 
 interface Props { }
 
@@ -40,27 +34,39 @@ const AboutToken: React.FC<Props> = () => {
     //const theme = useTheme();
 
     return (
-        <div className='section'>
-            <div className={classes.heroContent}>
-                <Container maxWidth='sm'>
-                    <Card className={classes.cardRoot}>
-                        <div className={classes.details}>
-                            <CardContent className={classes.content}>
-                                <Typography component="h5" variant="h5">
-                                    Co-Nect the company
-                            </Typography>
-                                <Typography variant="subtitle1" color="textSecondary">
-                                    Mac Miller
-                            </Typography>
-                            </CardContent>
-                        </div>
-                        <CardMedia
-                            className={classes.media}
-                            image={coNect}
-                        />
-                    </Card>
-                </Container>
-            </div>
+        <div className={classes.heroContent}>
+
+            <Container maxWidth='md'>
+
+                <Typography component='h3' variant='h3' align='center' color='textPrimary' gutterBottom>
+                    The PLM token gives everyone the power to utilize Plasm Network
+                    </Typography>
+                <List>
+                    <Grid container spacing={4}>
+                        {listItems.map(item => (
+                            <Grid item key={item.id} xs={12} sm={6} md={4}>
+                                <ListItem>
+                                    <ListItemAvatar>
+                                        <Avatar className={classes.avatar}>
+                                            <item.icon style={{ color: 'white' }} size='large'></item.icon>
+                                        </Avatar>
+                                    </ListItemAvatar>
+
+
+                                    <ListItemText >
+                                        <Typography gutterBottom variant='h5' component='h2'>
+                                            {item.heading}
+                                        </Typography>
+                                        <Typography>
+                                            {item.content}
+                                        </Typography>
+                                    </ListItemText>
+                                </ListItem>
+                            </Grid>
+                        ))}
+                    </Grid>
+                </List>
+            </Container>
         </div>
 
     );
