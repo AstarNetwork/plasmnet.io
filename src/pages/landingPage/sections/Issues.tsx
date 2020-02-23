@@ -24,7 +24,7 @@ const Issues: React.FC<Props> = () => {
             <CssBaseline />
             <Container maxWidth='md'>
                 <Typography component='h1' variant='h2' align='center' color='textPrimary' gutterBottom>
-                    Public Blockchains are 'full',<br />but we but can fix that
+                    Public Blockchains are 'full',<br />but we can fix that
                     </Typography>
                 <Typography variant='h5' align='center' color='textSecondary' paragraph>
                     Ever since the blockchain technology was released to the public,
