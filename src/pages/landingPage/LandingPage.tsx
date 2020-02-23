@@ -6,6 +6,7 @@ import AboutToken from './sections/AboutToken';
 import HowToHelp from './sections/HowToHelp';
 import OurTeam from './sections/OurTeam';
 import WeWorkWith from './sections/WeWorkWith';
+import Roadmap from './sections/Roadmap';
 
 const LandingPage: React.FC = () => {
 
@@ -18,7 +19,7 @@ const LandingPage: React.FC = () => {
             <HowToHelp />
             <OurTeam />
             <WeWorkWith />
-
+            <Roadmap />
         </div>
     )
 }
