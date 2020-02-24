@@ -57,7 +57,7 @@ const HowToHelp: React.FC<Props> = () => {
     const classes = useStyles();
 
     return (
-        <div className={classes.heroContent}>
+        <div className={classes.heroContent} id='help-section'>
             <CssBaseline />
             <Container maxWidth='md'>
                 <br />

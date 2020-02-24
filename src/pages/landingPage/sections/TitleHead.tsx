@@ -4,6 +4,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import { Link } from "react-scroll";
 
 const useStyles = makeStyles(theme => ({
     heroContent: {
@@ -31,7 +32,7 @@ const TitleHead: React.FC<Props> = () => {
     const classes = useStyles();
 
     return (
-        <div className={classes.heroContent}>
+        <div className={classes.heroContent} id='title-section'>
             <CssBaseline />
             <Container maxWidth='md'>
                 <br />
@@ -43,9 +44,18 @@ const TitleHead: React.FC<Props> = () => {
                     is designed to empower the developers and the users that creates the future
                 </Typography>
                 <div className={classes.heroButtons}>
-                    <Button variant='contained' color='primary' size='large' className={classes.btnPrimary}>
-                        Learn more about Plasm Network
-                    </Button>
+                    <Link
+                        className="link"
+                        to="ourWork-section"
+                        smooth={true}
+                        offset={0}
+                        duration={900}
+                    >
+                        <Button variant='contained' color='primary' size='large' className={classes.btnPrimary}>
+                            Learn more about Plasm Network
+                        </Button>
+                    </Link>
+
                 </div>
             </Container>
         </div>

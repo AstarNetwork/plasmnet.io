@@ -57,35 +57,32 @@ const OurTeam: React.FC<Props> = () => {
     const classes = useStyles();
 
     return (
-        <div className='section'>
+        <div className={classes.heroContent} id='sponsor-section'>
             <CssBaseline />
-            {/* Hero unit */}
-            <div className={classes.heroContent}>
-                <Container maxWidth='sm'>
-                    <Typography component='h3' variant='h3' align='center' color='textPrimary' gutterBottom>
-                        Other teams working with us
+            <Container maxWidth='sm'>
+                <Typography component='h3' variant='h3' align='center' color='textPrimary' gutterBottom>
+                    Other teams working with us
                     </Typography>
-                </Container>
+            </Container>
 
-                <Container className={classes.cardGrid} maxWidth='md'>
-                    {/* End hero unit */}
-                    <Grid container spacing={4}>
-                        {cards.map(card => (
-                            <Grid item key={card.className} xs={12} sm={6} md={4}>
-                                <div className='sponsor' key={card.className}>
-                                    <a href={card.link} rel='noopener noreferrer' target='_blank'>
-                                        <img
-                                            src={card.image}
-                                            alt={card.description}
-                                            className={classes.logo}
-                                        />
-                                    </a>
-                                </div>
-                            </Grid>
-                        ))}
-                    </Grid>
-                </Container>
-            </div>
+            <Container className={classes.cardGrid} maxWidth='md'>
+                {/* End hero unit */}
+                <Grid container spacing={4}>
+                    {cards.map(card => (
+                        <Grid item key={card.className} xs={12} sm={6} md={4}>
+                            <div className='sponsor' key={card.className}>
+                                <a href={card.link} rel='noopener noreferrer' target='_blank'>
+                                    <img
+                                        src={card.image}
+                                        alt={card.description}
+                                        className={classes.logo}
+                                    />
+                                </a>
+                            </div>
+                        </Grid>
+                    ))}
+                </Grid>
+            </Container>
         </div>
     );
 }

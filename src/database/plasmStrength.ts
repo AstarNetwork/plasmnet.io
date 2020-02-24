@@ -4,12 +4,13 @@ import TagFacesOutlinedIcon from '@material-ui/icons/TagFacesOutlined';
 import DehazeOutlinedIcon from '@material-ui/icons/DehazeOutlined';
 import FilterTiltShiftOutlinedIcon from '@material-ui/icons/FilterTiltShiftOutlined';
 import LastPageOutlinedIcon from '@material-ui/icons/LastPageOutlined';
+import LayersIcon from '@material-ui/icons/Layers';
 
 //todo: add more content here
 export const PlasmStrength: ICardItem[] = [
     {
         id: 1,
-        icon: TagFacesOutlinedIcon,
+        icon: LayersIcon,
         heading: 'Layer 2',
         content: 'Plasm Network is in it\'s core, bringing Layer 2 to the Polkadot network'
     },

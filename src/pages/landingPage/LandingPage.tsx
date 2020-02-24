@@ -23,6 +23,7 @@ const toastContent = () => {
     );
 }
 
+// this will run as soon as the component is mounted when there is content
 if (toastContent) {
     // toast configuration
     toast.configure()

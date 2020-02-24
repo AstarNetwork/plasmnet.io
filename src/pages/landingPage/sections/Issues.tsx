@@ -20,7 +20,7 @@ const Issues: React.FC<Props> = () => {
     const classes = useStyles();
 
     return (
-        <div className={classes.heroContent}>
+        <div className={classes.heroContent} id='issues-section'>
             <CssBaseline />
             <Container maxWidth='md'>
                 <Typography component='h1' variant='h2' align='center' color='textPrimary' gutterBottom>

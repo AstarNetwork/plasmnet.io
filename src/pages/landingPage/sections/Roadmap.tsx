@@ -1,6 +1,4 @@
 import React from 'react';
-//import Card from '@material-ui/core/Card';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
@@ -27,20 +25,16 @@ const Roadmap: React.FC<Props> = () => {
     const classes = useStyles();
 
     return (
-        <div className='section'>
-            <CssBaseline />
-            {/* Hero unit */}
-            <div className={classes.heroContent}>
-                <Container maxWidth='sm'>
-                    <Typography component='h3' variant='h3' align='center' color='textPrimary' gutterBottom>
-                        Our development timeline
+        <div className={classes.heroContent} id='roadmap-section'>
+            <Container maxWidth='sm'>
+                <Typography component='h3' variant='h3' align='center' color='textPrimary' gutterBottom>
+                    Our development timeline
                     </Typography>
-                </Container>
+            </Container>
 
-                <Container className={classes.timeline} maxWidth='md'>
-                    <TimelineVerticle data={roadmapData} backgroundColor='rgb(33, 150, 243)' />
-                </Container>
-            </div>
+            <Container className={classes.timeline} maxWidth='md'>
+                <TimelineVerticle data={roadmapData} backgroundColor='rgb(33, 150, 243)' />
+            </Container>
         </div>
     );
 }

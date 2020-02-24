@@ -21,7 +21,7 @@ const Timeline: React.FC<Props> = ({ data, backgroundColor }) => {
 
                     <VerticalTimelineElement
                         className='vertical-timeline-element--work'
-                        contentArrowStyle={{ borderRight: `7px solid  ${backgroundColor}` }}
+                        contentArrowStyle={{ borderRight: `7px solid #fff` }}
                         date={item.date}
                         iconStyle={{ background: `${backgroundColor}`, color: '#fff' }}
                         icon={<item.icon />}

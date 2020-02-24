@@ -34,7 +34,7 @@ const AboutToken: React.FC<Props> = () => {
     //const theme = useTheme();
 
     return (
-        <div className={classes.heroContent}>
+        <div className={classes.heroContent} id='aboutToken-section'>
 
             <Container maxWidth='md'>
 
