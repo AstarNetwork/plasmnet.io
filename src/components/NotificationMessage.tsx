@@ -39,7 +39,7 @@ const NotificationMessage: React.FC<Props> = ({ message, gotoUrl, btnName }) => 
             <span />
             {gotoUrl ?
                 <a href={gotoUrl}>
-                    < Button color='primary' size='small'>
+                    <Button color='primary' size='small'>
                         {btnName}
                     </Button>
                 </a> :

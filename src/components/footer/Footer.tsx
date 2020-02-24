@@ -16,25 +16,6 @@ const Footer: React.FC<Props> = () => {
   const currentYear = new Date().getFullYear();
   return (
     <FooterContainer>
-      {/* <div className='discussion'>
-                <h2>Join the community:</h2>
-                <div className='icons'>
-                    {Discussions.map(discussion => (
-                        <a
-                            href={discussion.link}
-                            rel='noopener noreferrer'
-                            target='_blank'
-                            key={discussion.className}
-                        >
-                            <img
-                                src={discussion.image}
-                                alt={discussion.className}
-                                className={discussion.className}
-                            />
-                        </a>
-                    ))}
-                </div>
-            </div> */}
       <div className='footer-columns'>
         <ul className='footer-column'>
           <h3>Company</h3>
@@ -115,7 +96,7 @@ const FooterContainer = styled.div`
     display: grid;
     justify-items: center;
     align-items: center;
-    ${customMedia.lessThan("mobile")`
+    ${customMedia.lessThan('mobile')`
       width: auto;
     `}
 
@@ -123,7 +104,7 @@ const FooterContainer = styled.div`
       font-size: 38px;
       margin-bottom: 20px;
       margin-top: 0;
-      ${customMedia.lessThan("mobile")`
+      ${customMedia.lessThan('mobile')`
         font-size: 28px;
       `}
     }
@@ -131,7 +112,7 @@ const FooterContainer = styled.div`
       display: flex;
       width: 370px;
       justify-content: space-evenly;
-      ${customMedia.lessThan("mobile")`
+      ${customMedia.lessThan('mobile')`
         width: auto;
         justify-content: space-evenly
      `}
@@ -142,7 +123,7 @@ const FooterContainer = styled.div`
     .discord {
       height: 60px;
       margin: 0px 4px;
-      ${customMedia.lessThan("mobile")`
+      ${customMedia.lessThan('mobile')`
         margin: 0px 8px;
       `}
     }
@@ -158,7 +139,7 @@ const FooterContainer = styled.div`
     display: flex;
     justify-content: center;
     margin: 10px 0px;
-    ${customMedia.lessThan("mobile")`
+    ${customMedia.lessThan('mobile')`
       width: 252px;
       text-align: center;
     `}
@@ -172,7 +153,7 @@ const FooterContainer = styled.div`
     display: grid;
     grid-template-columns: repeat(5, 1fr);
 
-    ${customMedia.lessThan("tabletSmall")`
+    ${customMedia.lessThan('tabletSmall')`
       grid-template-columns: repeat(2, 1fr);
     `}
     ul li {
@@ -192,7 +173,7 @@ const FooterContainer = styled.div`
   }
   .footer-column {
     text-align: center;
-    ${customMedia.lessThan("mobile")`
+    ${customMedia.lessThan('mobile')`
       padding-left: 0px;;
     `}
   }

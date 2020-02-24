@@ -11,7 +11,7 @@ import CommunityLinks from './sections/CommunityLinks';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import NotificationMessage from '../../components/NotificationMessage';
-import { AppLinks } from "../../database/links";
+import { AppLinks } from '../../database/links';
 
 // toast content
 const toastContent = () => {
@@ -27,7 +27,7 @@ if (toastContent) {
     // toast configuration
     toast.configure()
     toast.info(toastContent, {
-        position: "top-center",
+        position: 'top-center',
         autoClose: false,
         hideProgressBar: false,
         closeOnClick: true,

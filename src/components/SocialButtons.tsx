@@ -25,14 +25,14 @@ const SocialButtons: React.FC<Props> = () => {
         <div className='community'>
             <Typography component='h1' variant='h2' align='center' color='textPrimary' gutterBottom>
                 Join the community
-        </Typography>
+            </Typography>
 
             <div className={classes.socialButton}>
                 {Discussions.map(discussion => (
                     <a
                         href={discussion.link}
-                        rel="noopener noreferrer"
-                        target="_blank"
+                        rel='noopener noreferrer'
+                        target='_blank'
                         key={discussion.className}
                     >
                         <img

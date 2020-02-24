@@ -86,7 +86,7 @@ const OurTeam: React.FC<Props> = () => {
                                         <Typography gutterBottom variant='h5' component='h2'>
                                             {card.heading}
                                         </Typography>
-                                        <Typography variant="body2" color="textSecondary" component="p">
+                                        <Typography variant='body2' color='textSecondary' component='p'>
                                             {card.content}
                                         </Typography>
                                     </CardContent>

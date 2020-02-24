@@ -38,7 +38,7 @@ const Roadmap: React.FC<Props> = () => {
                 </Container>
 
                 <Container className={classes.timeline} maxWidth='md'>
-                    <TimelineVerticle data={roadmapData} />
+                    <TimelineVerticle data={roadmapData} backgroundColor='rgb(33, 150, 243)' />
                 </Container>
             </div>
         </div>

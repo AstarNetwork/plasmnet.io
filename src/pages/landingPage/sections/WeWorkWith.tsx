@@ -72,8 +72,8 @@ const OurTeam: React.FC<Props> = () => {
                     <Grid container spacing={4}>
                         {cards.map(card => (
                             <Grid item key={card.className} xs={12} sm={6} md={4}>
-                                <div className="sponsor" key={card.className}>
-                                    <a href={card.link} rel="noopener noreferrer" target="_blank">
+                                <div className='sponsor' key={card.className}>
+                                    <a href={card.link} rel='noopener noreferrer' target='_blank'>
                                         <img
                                             src={card.image}
                                             alt={card.description}
