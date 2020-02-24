@@ -25,7 +25,7 @@ const Issues: React.FC<Props> = () => {
             <Container maxWidth='md'>
                 <Typography component='h1' variant='h2' align='center' color='textPrimary' gutterBottom>
                     Public Blockchains are 'full',<br />but we can fix that
-                    </Typography>
+                </Typography>
                 <Typography variant='h5' align='center' color='textSecondary' paragraph>
                     Ever since the blockchain technology was released to the public,
                     people from different backgrounds came together to create
@@ -34,7 +34,7 @@ const Issues: React.FC<Props> = () => {
 
                     However, <a href='https://www.bloomberg.com/news/articles/2019-08-26/ethereum-almost-full-as-controversial-coin-gobbles-up-capacity'>existing blockchains </a>
                     are just not scalable enough to make this dream into a reality. People deserve something better.
-                    </Typography>
+                </Typography>
             </Container>
         </div>
     );

@@ -40,7 +40,7 @@ const AboutToken: React.FC<Props> = () => {
 
                 <Typography component='h3' variant='h3' align='center' color='textPrimary' gutterBottom>
                     The PLM token gives everyone the power to utilize Plasm Network
-                    </Typography>
+                </Typography>
                 <List>
                     <Grid container spacing={4}>
                         {listItems.map(item => (

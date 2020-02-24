@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import LandingPage from './pages/landingPage/LandingPage';
 import {
   BrowserRouter as Router,
@@ -11,23 +11,26 @@ import Footer from './components/footer/Footer';
 import FooterPush from './components/footer/FooterPush';
 import './App.css';
 
+class App extends Component {
 
-function App() {
-  return (
-    <div className='App'>
-      <Navbar />
-      <NavbarSmall />
-      <Router>
-        <Switch>
-          <Route exact path='/'>
-            <LandingPage />
-          </Route>
-        </Switch>
-      </Router>
-      <FooterPush />
-      <Footer />
-    </div>
-  );
+  render() {
+    return (
+      <div className='App'>
+        <Navbar />
+        <NavbarSmall />
+        <Router>
+          <Switch>
+            <Route exact path='/'>
+              <LandingPage />
+            </Route>
+          </Switch>
+        </Router>
+        <FooterPush />
+        <Footer />
+      </div>
+    );
+  }
+
 }
 
 export default App;

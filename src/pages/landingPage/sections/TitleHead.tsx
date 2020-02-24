@@ -6,9 +6,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 
 const useStyles = makeStyles(theme => ({
-    icon: {
-        marginRight: theme.spacing(2),
-    },
     heroContent: {
         padding: theme.spacing(8, 0, 6),
     },
@@ -40,15 +37,15 @@ const TitleHead: React.FC<Props> = () => {
                 <br />
                 <Typography component='h1' variant='h2' align='center' color='textPrimary' gutterBottom>
                     Imagine the internet, <br /> but free from tyranny
-                    </Typography>
+                </Typography>
                 <Typography variant='h5' align='center' color='textSecondary' paragraph>
                     Plasm Network is a blockchain developed from the Substrate framework and a Layer 2 scalable dApp platform that
                     is designed to empower the developers and the users that creates the future
-                    </Typography>
+                </Typography>
                 <div className={classes.heroButtons}>
                     <Button variant='contained' color='primary' size='large' className={classes.btnPrimary}>
                         Learn more about Plasm Network
-                        </Button>
+                    </Button>
                 </div>
             </Container>
         </div>
