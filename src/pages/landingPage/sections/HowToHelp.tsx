@@ -15,6 +15,7 @@ import MonetizationOnIcon from '@material-ui/icons/MonetizationOn';
 import EmojiPeopleIcon from '@material-ui/icons/EmojiPeople';
 import { Links, AppLinks } from '../../../database/links';
 import SocialButtons from '../../../components/SocialButtons';
+import { blue } from '@material-ui/core/colors';
 
 const useStyles = makeStyles(theme => ({
     listRoot: {
@@ -22,8 +23,9 @@ const useStyles = makeStyles(theme => ({
         maxWidth: 360,
         margin: 'auto',
     },
-    icon: {
-        marginRight: theme.spacing(2),
+    avatar: {
+        color: '#fff',
+        backgroundColor: blue[500],
     },
     heroContent: {
         padding: theme.spacing(8, 0, 6),
@@ -71,7 +73,7 @@ const HowToHelp: React.FC<Props> = () => {
                 <List className={classes.listRoot}>
                     <ListItem>
                         <ListItemAvatar>
-                            <Avatar>
+                            <Avatar className={classes.avatar}>
                                 <CodeIcon />
                             </Avatar>
                         </ListItemAvatar>
@@ -84,7 +86,7 @@ const HowToHelp: React.FC<Props> = () => {
                     </ListItem>
                     <ListItem>
                         <ListItemAvatar>
-                            <Avatar>
+                            <Avatar className={classes.avatar}>
                                 <LocalLibraryIcon />
                             </Avatar>
                         </ListItemAvatar>
@@ -97,7 +99,7 @@ const HowToHelp: React.FC<Props> = () => {
                     </ListItem>
                     <ListItem>
                         <ListItemAvatar>
-                            <Avatar>
+                            <Avatar className={classes.avatar}>
                                 <MonetizationOnIcon />
                             </Avatar>
                         </ListItemAvatar>
@@ -108,7 +110,7 @@ const HowToHelp: React.FC<Props> = () => {
                     </ListItem>
                     <ListItem>
                         <ListItemAvatar>
-                            <Avatar>
+                            <Avatar className={classes.avatar}>
                                 <EmojiPeopleIcon />
                             </Avatar>
                         </ListItemAvatar>

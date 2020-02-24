@@ -20,7 +20,8 @@ const useStyles = makeStyles((theme: Theme) =>
         },
         avatar: {
             color: '#fff',
-            backgroundColor: blue[500],
+            backgroundColor: blue[50],
+
         }
     }),
 );
@@ -48,11 +49,9 @@ const AboutToken: React.FC<Props> = () => {
                                 <ListItem>
                                     <ListItemAvatar>
                                         <Avatar className={classes.avatar}>
-                                            <item.icon style={{ color: 'white' }} size='large'></item.icon>
+                                            <item.icon style={{ color: '#47BCFF' }} size='large'></item.icon>
                                         </Avatar>
                                     </ListItemAvatar>
-
-
                                     <ListItemText >
                                         <Typography gutterBottom variant='h5' component='h2'>
                                             {item.heading}
