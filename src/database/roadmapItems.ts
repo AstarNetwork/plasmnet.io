@@ -9,44 +9,36 @@ export const RoadmapItems = [
     {
         id: 1,
         icon: TagFacesOutlinedIcon,
-        heading: 'Launch testnet V3',
-        content: 'PoC-0 : Launch Plasm Network minimum testnet(Miniplasm)',
+        heading: 'Launch Plasm Network minimum testnet',
+        content: 'Launch Plasm Network minimum testnet(Miniplasm)',
         date: '2019-Q3'
     },
     {
         id: 2,
+        icon: LastPageOutlinedIcon,
+        heading: 'Launch Plasm Network Testnet v3',
+        content: 'Start the Testnet Lockdrop. Implemented Operator trading modules. Implemented Dapps Rewards modules.',
+        date: '2019-Q4'
+    },
+    {
+        id: 2,
         icon: TimerOutlinedIcon,
-        heading: 'Layer 2',
-        content: 'Plasm Network is in it\'s core, bringing Layer 2 to the Polkadot network',
+        heading: 'Start the Mainnet Lockdrop',
+        content: 'Starting Mainnet Lockdrop only ETH, March 15th.',
         date: '2020-Q1'
     },
     {
         id: 3,
         icon: DehazeOutlinedIcon,
-        heading: 'Layer 2',
-        content: 'Plasm Network is in it\'s core, bringing Layer 2 to the Polkadot network',
-        date: '2020-Q1'
+        heading: 'Launch Plasm Network Mainnet',
+        content: 'Implements OVM Modules and starting Mainnet!',
+        date: '2020-Q2'
     },
     {
         id: 4,
         icon: FilterTiltShiftOutlinedIcon,
-        heading: 'Layer 2',
-        content: 'Plasm Network is in it\'s core, bringing Layer 2 to the Polkadot network',
-        date: '2020-Q1'
+        heading: 'Becomes a parachain.',
+        content: 'Plasm Network is in it\'s core, bringing Layer 2 to the Polkadot network (Depends on Polkadot). And Starts 2-nd, 3-rd Lockdrop with ETC, BTC and DOT.',
+        date: '2020-Q3'
     },
-    {
-        id: 5,
-        icon: LastPageOutlinedIcon,
-        heading: 'Layer 2',
-        content: 'Plasm Network is in it\'s core, bringing Layer 2 to the Polkadot network',
-        date: '2020-Q1'
-    },
-    {
-        id: 6,
-        icon: LastPageOutlinedIcon,
-        heading: 'Implement Cumulus',
-        content: 'Plasm Network migrates from Proof of Authroity',
-        date: '2020-Q1'
-    },
-
 ]
