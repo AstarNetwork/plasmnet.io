@@ -29,8 +29,8 @@ enum LockState {
 
 const LockdropPanel: React.FC<Props> = ({ startTime, endTime }) => {
     const calculateTimeLeft = () => {
-        const tillStart = +new Date(startTime) - +new Date();
-        const tillEnd = +new Date(endTime) - +new Date();
+        const tillStart = +new Date(startTime) - +Date.now();
+        const tillEnd = +new Date(endTime) - +Date.now();
 
         let difference = tillStart;
         // if it has already started
@@ -57,10 +57,10 @@ const LockdropPanel: React.FC<Props> = ({ startTime, endTime }) => {
     };
 
     const getLockState = () => {
-        const tillStart = +new Date(startTime) - +new Date();
+        const tillStart = +new Date(startTime) - +Date.now();
         if (tillStart > 0) {
             return LockState.notStart;
-        } else if (tillStart <= 0 && !(+new Date(endTime) - +new Date() < 0)) {
+        } else if (tillStart <= 0 && !(+new Date(endTime) - +Date.now() < 0)) {
             return LockState.start;
         } else {
             return LockState.end;

@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import React from 'react';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
@@ -45,9 +44,8 @@ const NotificationMessage: React.FC<Props> = ({ message, gotoUrl, btnName }) => 
                     </Button>
                 </a>
             ) : (
-
-                    <></>
-                )}
+                <></>
+            )}
         </div>
     );
 };

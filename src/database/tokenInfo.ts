@@ -40,6 +40,7 @@ export const TokenInfo: CardItem[] = [
 ];
 
 // this is just a temporary date
+// the time zone is set to UTC as default
 export const LockdropEnd = '2020-06-10';
 export const LockdropStart = '2020-05-10';
 // this is just a temporary value
