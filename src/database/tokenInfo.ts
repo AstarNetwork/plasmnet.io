@@ -41,6 +41,6 @@ export const TokenInfo: ICardItem[] = [
 
 // this is just a temporary date
 export const LockdropEnd = '2020-06-10';
-export const LockdropStart = '2020-3-10';
+export const LockdropStart = '2020-05-10';
 // this is just a temporary value
 export const LockValue = 5235;

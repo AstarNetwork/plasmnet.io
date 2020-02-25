@@ -81,83 +81,54 @@ const LockdropPanel: React.FC<Props> = ({ startTime, endTime }) => {
         }, 1000);
     });
 
-    switch (lockState) {
-        case LockState.notStart:
-            return (
-                <>
-                    <PanelWrapper>
-                        <div className="time">
-                            <Grid container spacing={2} justify="center">
-                                <Grid item>
+    if (lockState !== LockState.end) {
+        return (
+            <>
+                <PanelWrapper>
+                    <div className="time">
+                        <Grid container spacing={2} justify="center">
+                            <Grid item>
+                                {lockState === LockState.notStart ?
                                     <Typography variant='h4' component='h2'>
                                         Lockdrop starting in:
-                                    </Typography>
-                                </Grid>
-                                <Grid item>
-                                    <h3>{timeLeft.days}</h3>
-                                    <p>Days</p>
-                                </Grid>
-                                <Grid item>
-                                    <h3>{timeLeft.hours}</h3>
-                                    <p>Hours</p>
-                                </Grid>
-                                <Grid item>
-                                    <h3>{timeLeft.minutes}</h3>
-                                    <p>Minutes</p>
-                                </Grid>
-                                <Grid item>
-                                    <h3>{timeLeft.seconds}</h3>
-                                    <p>Seconds</p>
-                                </Grid>
-                            </Grid>
-                        </div>
-                    </PanelWrapper>
-                </>
-            );
-        case LockState.start:
-            return (
-                <>
-                    <PanelWrapper>
-                        <div className="time">
-                            <Grid container spacing={2} justify="center">
-                                <Grid item>
+                                    </Typography> :
                                     <Typography variant='h4' component='h2'>
                                         Lockdrop ending in:
-                                    </Typography>
-                                </Grid>
-                                <Grid item>
-                                    <h3>{timeLeft.days}</h3>
-                                    <p>Days</p>
-                                </Grid>
-                                <Grid item>
-                                    <h3>{timeLeft.hours}</h3>
-                                    <p>Hours</p>
-                                </Grid>
-                                <Grid item>
-                                    <h3>{timeLeft.minutes}</h3>
-                                    <p>Minutes</p>
-                                </Grid>
-                                <Grid item>
-                                    <h3>{timeLeft.seconds}</h3>
-                                    <p>Seconds</p>
-                                </Grid>
+                                    </Typography>}
                             </Grid>
-                        </div>
-                    </PanelWrapper>
-
-                </>
-            );
-        case LockState.end:
-            return (
-                <>
-                    <PanelWrapper>
-                        <Typography variant='h2' align='center'>
-                            Lockdrop has ended
+                            <Grid item>
+                                <h3>{timeLeft.days}</h3>
+                                <p>Days</p>
+                            </Grid>
+                            <Grid item>
+                                <h3>{timeLeft.hours}</h3>
+                                <p>Hours</p>
+                            </Grid>
+                            <Grid item>
+                                <h3>{timeLeft.minutes}</h3>
+                                <p>Minutes</p>
+                            </Grid>
+                            <Grid item>
+                                <h3>{timeLeft.seconds}</h3>
+                                <p>Seconds</p>
+                            </Grid>
+                        </Grid>
+                    </div>
+                </PanelWrapper>
+            </>
+        );
+    }
+    else {
+        return (
+            <>
+                <PanelWrapper>
+                    <Typography variant='h2' align='center'>
+                        Lockdrop has ended
                         </Typography>
-                    </PanelWrapper>
+                </PanelWrapper>
 
-                </>
-            );
+            </>
+        );
     }
 };
 
