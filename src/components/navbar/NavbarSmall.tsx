@@ -15,68 +15,67 @@ import plasmLogo from '../../resources/plasm-logo.png';
 import { customMedia } from '../../styles/globalStyle';
 import { theme } from '../../styles/theme';
 
-interface Props { }
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         root: {
-            display: 'flex'
+            display: 'flex',
         },
         appBar: {
             transition: theme.transitions.create(['margin', 'width'], {
                 easing: theme.transitions.easing.sharp,
-                duration: theme.transitions.duration.leavingScreen
-            })
+                duration: theme.transitions.duration.leavingScreen,
+            }),
         },
         appBarShift: {
             width: `calc(100% - ${drawerWidth}px)`,
             marginLeft: drawerWidth,
             transition: theme.transitions.create(['margin', 'width'], {
                 easing: theme.transitions.easing.easeOut,
-                duration: theme.transitions.duration.enteringScreen
-            })
+                duration: theme.transitions.duration.enteringScreen,
+            }),
         },
         menuButton: {
-            marginRight: theme.spacing(2)
+            marginRight: theme.spacing(2),
         },
         hide: {
-            display: 'none'
+            display: 'none',
         },
         drawer: {
             width: drawerWidth,
-            flexShrink: 0
+            flexShrink: 0,
         },
         drawerPaper: {
-            width: drawerWidth
+            width: drawerWidth,
         },
         drawerHeader: {
             display: 'flex',
             alignItems: 'center',
             padding: theme.spacing(0, 1),
             ...theme.mixins.toolbar,
-            justifyContent: 'flex-end'
+            justifyContent: 'flex-end',
         },
         content: {
             flexGrow: 1,
             padding: theme.spacing(3),
             transition: theme.transitions.create('margin', {
                 easing: theme.transitions.easing.sharp,
-                duration: theme.transitions.duration.leavingScreen
+                duration: theme.transitions.duration.leavingScreen,
             }),
-            marginLeft: -drawerWidth
+            marginLeft: -drawerWidth,
         },
         contentShift: {
             transition: theme.transitions.create('margin', {
                 easing: theme.transitions.easing.easeOut,
-                duration: theme.transitions.duration.enteringScreen
+                duration: theme.transitions.duration.enteringScreen,
             }),
-            marginLeft: 0
-        }
-    })
+            marginLeft: 0,
+        },
+    }),
 );
 
-const HeaderSmall: React.FC<Props> = () => {
+const HeaderSmall: React.FC = () => {
     const classes = useStyles();
     // const theme = useTheme();
     const [open, setOpen] = React.useState(false);
@@ -93,26 +92,26 @@ const HeaderSmall: React.FC<Props> = () => {
         <HeaderSmallContainer style={{ zIndex: 100 }}>
             <div className={classes.root}>
                 <IconButton
-                    color='inherit'
-                    aria-label='open drawer'
+                    color="inherit"
+                    aria-label="open drawer"
                     onClick={handleDrawerOpen}
-                    edge='start'
+                    edge="start"
                     className={clsx(classes.menuButton, open && classes.hide)}
                 >
                     <MenuIcon />
                 </IconButton>
                 <Drawer
                     className={classes.drawer}
-                    variant='persistent'
-                    anchor='left'
+                    variant="persistent"
+                    anchor="left"
                     open={open}
                     classes={{
-                        paper: classes.drawerPaper
+                        paper: classes.drawerPaper,
                     }}
                 >
                     <div className={classes.drawerHeader}>
-                        <div className='logo'>
-                            <img src={plasmLogo} alt='plasm-logo' className='plasm-logo' />
+                        <div className="logo">
+                            <img src={plasmLogo} alt="plasm-logo" className="plasm-logo" />
                             <h4>Plasm Network</h4>
                         </div>
                         <IconButton onClick={handleDrawerClose}>
@@ -125,14 +124,14 @@ const HeaderSmall: React.FC<Props> = () => {
                         {Whitepaper.map(whitepaper => (
                             <a
                                 href={whitepaper.link}
-                                rel='noopener noreferrer'
-                                target='_blank'
+                                rel="noopener noreferrer"
+                                target="_blank"
                                 key={whitepaper.description}
                             >
                                 <ListItem button>
                                     {/*
                   // @ts-ignore */}
-                                    <Icon name={whitepaper.icon} color='grey' size='large' />
+                                    <Icon name={whitepaper.icon} color="grey" size="large" />
                                     <SmallMenuP>{whitepaper.description}</SmallMenuP>
                                 </ListItem>
                             </a>
@@ -144,14 +143,14 @@ const HeaderSmall: React.FC<Props> = () => {
                         {Community.map(community => (
                             <a
                                 href={community.link}
-                                rel='noopener noreferrer'
-                                target='_blank'
+                                rel="noopener noreferrer"
+                                target="_blank"
                                 key={community.description}
                             >
                                 <ListItem button>
                                     {/*
                   // @ts-ignore */}
-                                    <Icon name={community.icon} color='grey' size='large' />
+                                    <Icon name={community.icon} color="grey" size="large" />
                                     <SmallMenuP>{community.description}</SmallMenuP>
                                 </ListItem>
                             </a>
@@ -159,27 +158,27 @@ const HeaderSmall: React.FC<Props> = () => {
                     </List>
                     <Divider style={{ marginBottom: '10px' }} />
                     <div>
-                        <a href={Links.docs} rel='noopener noreferrer' target='_blank'>
+                        <a href={Links.docs} rel="noopener noreferrer" target="_blank">
                             <ListItem button>
-                                <Icon name='book' color='grey' size='large' />
+                                <Icon name="book" color="grey" size="large" />
                                 <SmallMenuP>Docs</SmallMenuP>
                             </ListItem>
                         </a>
                     </div>
 
                     <div>
-                        <a href={Links.twitter} rel='noopener noreferrer' target='_blank'>
+                        <a href={Links.twitter} rel="noopener noreferrer" target="_blank">
                             <ListItem button>
-                                <Icon name='twitter' color='grey' size='large' />
+                                <Icon name="twitter" color="grey" size="large" />
                                 <SmallMenuP>Twitter</SmallMenuP>
                             </ListItem>
                         </a>
                     </div>
 
                     <div>
-                        <a href={Links.github} rel='noopener noreferrer' target='_blank'>
+                        <a href={Links.github} rel="noopener noreferrer" target="_blank">
                             <ListItem button>
-                                <Icon name='github' color='grey' size='large' />
+                                <Icon name="github" color="grey" size="large" />
                                 <SmallMenuP>GitHub</SmallMenuP>
                             </ListItem>
                         </a>
@@ -192,51 +191,51 @@ const HeaderSmall: React.FC<Props> = () => {
 
 export default HeaderSmall;
 
-const HeaderSmallContainer = styled.div`  
-  ${customMedia.greaterThan('tabletPro')`
+const HeaderSmallContainer = styled.div`
+    ${customMedia.greaterThan('tabletPro')`
     display: none;
   `}
 
-  position: fixed;
-  .MuiToolbar-gutters {
-    background: ${theme.colors.creamWhite};
-  }
-
-  .MuiIconButton-label {
-    color: ${theme.colors.lightGrey} !important;
-    margin-left: 20px;
-  }
-  .MuiSvgIcon-root {
-    width: 30px;
-    height: 30px;
-  }
-
-  .logo {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: black;
-    opacity: 0.9;
-    .plasm-logo {
-      height: 38px;
-      margin-right: 10px;
+    position: fixed;
+    .MuiToolbar-gutters {
+        background: ${theme.colors.creamWhite};
     }
-    h4 {
-      font-size: 18px;
-      margin-top: 0px;
+
+    .MuiIconButton-label {
+        color: ${theme.colors.lightGrey} !important;
+        margin-left: 20px;
     }
-  }
+    .MuiSvgIcon-root {
+        width: 30px;
+        height: 30px;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: black;
+        opacity: 0.9;
+        .plasm-logo {
+            height: 38px;
+            margin-right: 10px;
+        }
+        h4 {
+            font-size: 18px;
+            margin-top: 0px;
+        }
+    }
 `;
 const SmallMenuP = styled.p`
-  font-size: 16px;
-  margin-left: 18px;
-  margin-bottom: 0px;
-  color: ${theme.colors.black};
+    font-size: 16px;
+    margin-left: 18px;
+    margin-bottom: 0px;
+    color: ${theme.colors.black};
 `;
 const TitleP = styled.p`
-  font-size: 18px;
-  margin-bottom: 6px !important;
-  margin-bottom: 0px;
-  color: ${theme.colors.black};
-  text-align: center;
+    font-size: 18px;
+    margin-bottom: 6px !important;
+    margin-bottom: 0px;
+    color: ${theme.colors.black};
+    text-align: center;
 `;

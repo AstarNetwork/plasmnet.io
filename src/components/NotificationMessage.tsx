@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React from 'react';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
@@ -14,12 +15,12 @@ const useStyles = makeStyles(() => ({
         padding: '0 30px',
     },
     messageBox: {
-        display: 'flex'
+        display: 'flex',
     },
 
     messageText: {
-        color: 'white'
-    }
+        color: 'white',
+    },
 }));
 
 interface Props {
@@ -33,21 +34,22 @@ const NotificationMessage: React.FC<Props> = ({ message, gotoUrl, btnName }) => 
 
     return (
         <div className={classes.messageBox}>
-            <Typography component='p' align='center' className={classes.messageText}>
+            <Typography component="p" align="center" className={classes.messageText}>
                 {message}
             </Typography>
             <span />
-            {gotoUrl ?
+            {gotoUrl ? (
                 <a href={gotoUrl}>
-                    <Button color='primary' size='small'>
+                    <Button color="primary" size="small">
                         {btnName}
                     </Button>
-                </a> :
-                <></>
-            }
+                </a>
+            ) : (
 
+                    <></>
+                )}
         </div>
-    )
-}
+    );
+};
 
 export default NotificationMessage;

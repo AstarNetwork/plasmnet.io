@@ -12,16 +12,14 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-interface Props { }
-
-const CommunityLinks: React.FC<Props> = () => {
+const CommunityLinks: React.FC = () => {
     const classes = useStyles();
 
     return (
-        <div className={classes.heroContent} id='community-section'>
+        <div className={classes.heroContent} id="community-section">
             <CssBaseline />
-            <Container maxWidth='md'>
-                <Typography component='h1' variant='h2' align='center' color='textPrimary' gutterBottom>
+            <Container maxWidth="md">
+                <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
                     Want to be part of all this?
                 </Typography>
 
@@ -29,6 +27,6 @@ const CommunityLinks: React.FC<Props> = () => {
             </Container>
         </div>
     );
-}
+};
 
 export default CommunityLinks;

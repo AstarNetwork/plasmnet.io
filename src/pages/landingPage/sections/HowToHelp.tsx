@@ -31,7 +31,6 @@ const useStyles = makeStyles(theme => ({
     },
     heroButtons: {
         marginTop: theme.spacing(4),
-
     },
     btnPrimary: {
         background: 'linear-gradient(45deg, #1d417f 30%, #2e8ec0 90%)',
@@ -52,20 +51,18 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-interface Props { }
-
-const HowToHelp: React.FC<Props> = () => {
+const HowToHelp: React.FC = () => {
     const classes = useStyles();
 
     return (
-        <div className={classes.heroContent} id='help-section'>
+        <div className={classes.heroContent} id="help-section">
             <CssBaseline />
-            <Container maxWidth='md'>
+            <Container maxWidth="md">
                 <br />
-                <Typography component='h1' variant='h2' align='center' color='textPrimary' gutterBottom>
+                <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
                     How you can help us
                 </Typography>
-                <Typography variant='h5' align='center' color='textSecondary' paragraph>
+                <Typography variant="h5" align="center" color="textSecondary" paragraph>
                     Are you interested in our project? Then please consider the following, it really helps us!
                 </Typography>
 
@@ -76,11 +73,14 @@ const HowToHelp: React.FC<Props> = () => {
                                 <CodeIcon />
                             </Avatar>
                         </ListItemAvatar>
-                        <ListItemText primary='For Developing'
-                            secondary={<>
-                                Give our <a href={Links.github}>repo</a> a look and provide us with feedback.
-                                    Or develop <a href={AppLinks.inkPlayground}>smart contracts</a> with Plasm!
-                                    </>}
+                        <ListItemText
+                            primary="For Developing"
+                            secondary={
+                                <>
+                                    Give our <a href={Links.github}>repo</a> a look and provide us with feedback. Or
+                                    develop <a href={AppLinks.inkPlayground}>smart contracts</a> with Plasm!
+                                </>
+                            }
                         />
                     </ListItem>
                     <ListItem>
@@ -89,12 +89,19 @@ const HowToHelp: React.FC<Props> = () => {
                                 <LocalLibraryIcon />
                             </Avatar>
                         </ListItemAvatar>
-                        <ListItemText primary='For Learning' secondary={<>
-                            We have prepared several working documentation for beginners to get started hacking Plasm Network.
-                            You can start from <a href={Links.docs}>our docs</a> and
-                            our <a href='https://github.com/staketechnologies/plasmdocs/blob/master/wp/en.pdf'>whitepaper</a>.
-                            Interact with our <a href={AppLinks.plasmnetIo}>Plasm Network client</a>.
-                            </>} />
+                        <ListItemText
+                            primary="For Learning"
+                            secondary={
+                                <>
+                                    We have prepared several working documentation for beginners to get started hacking
+                                    Plasm Network. You can start from <a href={Links.docs}>our docs</a> and our{' '}
+                                    <a href="https://github.com/staketechnologies/plasmdocs/blob/master/wp/en.pdf">
+                                        whitepaper
+                                    </a>
+                                    . Interact with our <a href={AppLinks.plasmnetIo}>Plasm Network client</a>.
+                                </>
+                            }
+                        />
                     </ListItem>
                     <ListItem>
                         <ListItemAvatar>
@@ -102,10 +109,15 @@ const HowToHelp: React.FC<Props> = () => {
                                 <MonetizationOnIcon />
                             </Avatar>
                         </ListItemAvatar>
-                        <ListItemText primary='For Trading' secondary={<>
-                            Are you interested in getting PLM tokens? You can start from our <a href={AppLinks.joinLockdrop}>lockdrop</a>.
-
-                            </>} />
+                        <ListItemText
+                            primary="For Trading"
+                            secondary={
+                                <>
+                                    Are you interested in getting PLM tokens? You can start from our{' '}
+                                    <a href={AppLinks.joinLockdrop}>lockdrop</a>.
+                                </>
+                            }
+                        />
                     </ListItem>
                     <ListItem>
                         <ListItemAvatar>
@@ -113,17 +125,22 @@ const HowToHelp: React.FC<Props> = () => {
                                 <EmojiPeopleIcon />
                             </Avatar>
                         </ListItemAvatar>
-                        <ListItemText primary='For Everyone' secondary={<>
-                            Please consider joining our community for more discussion and announcements.
-                            We have events like hackathons, channels for testnet faucet, talks and more!
-                            Spread the word and considering being part of our community,
-                            you don't have to know anything about blockchain as long as you love freedom.
-                            </>} />
+                        <ListItemText
+                            primary="For Everyone"
+                            secondary={
+                                <>
+                                    Please consider joining our community for more discussion and announcements. We have
+                                    events like hackathons, channels for testnet faucet, talks and more! Spread the word
+                                    and considering being part of our community, you don&apos;t have to know anything
+                                    about blockchain as long as you love freedom.
+                                </>
+                            }
+                        />
                     </ListItem>
                 </List>
             </Container>
         </div>
     );
-}
+};
 
 export default HowToHelp;

@@ -14,30 +14,31 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-interface Props { }
-
-const Issues: React.FC<Props> = () => {
+const Issues: React.FC = () => {
     const classes = useStyles();
 
     return (
-        <div className={classes.heroContent} id='issues-section'>
+        <div className={classes.heroContent} id="issues-section">
             <CssBaseline />
-            <Container maxWidth='md'>
-                <Typography component='h1' variant='h2' align='center' color='textPrimary' gutterBottom>
-                    Public Blockchains are 'full',<br />but we can fix that
+            <Container maxWidth="md">
+                <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
+                    Public Blockchains are &quot;full&quot;,
+                    <br />
+                    but we can fix that
                 </Typography>
-                <Typography variant='h5' align='center' color='textSecondary' paragraph>
-                    Ever since the blockchain technology was released to the public,
-                    people from different backgrounds came together to create
-                    something magnificent, something that can change the structure
-                        of information as we know it. The <b>Web3</b> revolution. <br />
-
-                    However, <a href='https://www.bloomberg.com/news/articles/2019-08-26/ethereum-almost-full-as-controversial-coin-gobbles-up-capacity'>existing blockchains </a>
+                <Typography variant="h5" align="center" color="textSecondary" paragraph>
+                    Ever since the blockchain technology was released to the public, people from different backgrounds
+                    came together to create something magnificent, something that can change the structure of
+                    information as we know it. The <b>Web3</b> revolution. <br />
+                    However,{' '}
+                    <a href="https://www.bloomberg.com/news/articles/2019-08-26/ethereum-almost-full-as-controversial-coin-gobbles-up-capacity">
+                        existing blockchains{' '}
+                    </a>
                     are just not scalable enough to make this dream into a reality. People deserve something better.
                 </Typography>
             </Container>
         </div>
     );
-}
+};
 
 export default Issues;

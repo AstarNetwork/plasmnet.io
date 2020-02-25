@@ -1,13 +1,11 @@
-
-
-export interface ICardItem {
+export interface CardItem {
     id: number;
     icon: any;
     heading: string;
     content: string;
 }
 
-export interface ITimeline {
+export interface TimelineItem {
     id: number;
     icon: any;
     heading: string;

@@ -13,7 +13,7 @@ const useStyles = makeStyles(theme => ({
         maxHeight: 160,
         maxWidth: '100%',
         height: 'auto',
-        width: 'auto'
+        width: 'auto',
     },
     heroContent: {
         //backgroundColor: theme.palette.background.paper,
@@ -46,37 +46,31 @@ const useStyles = makeStyles(theme => ({
     },
     media: {
         height: 210,
-    }
+    },
 }));
 
 const cards = Sponsors;
 
-interface Props { }
-
-const OurTeam: React.FC<Props> = () => {
+const OurTeam: React.FC = () => {
     const classes = useStyles();
 
     return (
-        <div className={classes.heroContent} id='sponsor-section'>
+        <div className={classes.heroContent} id="sponsor-section">
             <CssBaseline />
-            <Container maxWidth='sm'>
-                <Typography component='h3' variant='h3' align='center' color='textPrimary' gutterBottom>
+            <Container maxWidth="sm">
+                <Typography component="h3" variant="h3" align="center" color="textPrimary" gutterBottom>
                     Other teams working with us
-                    </Typography>
+                </Typography>
             </Container>
 
-            <Container className={classes.cardGrid} maxWidth='md'>
+            <Container className={classes.cardGrid} maxWidth="md">
                 {/* End hero unit */}
                 <Grid container spacing={4}>
                     {cards.map(card => (
                         <Grid item key={card.className} xs={12} sm={6} md={4}>
-                            <div className='sponsor' key={card.className}>
-                                <a href={card.link} rel='noopener noreferrer' target='_blank'>
-                                    <img
-                                        src={card.image}
-                                        alt={card.description}
-                                        className={classes.logo}
-                                    />
+                            <div className="sponsor" key={card.className}>
+                                <a href={card.link} rel="noopener noreferrer" target="_blank">
+                                    <img src={card.image} alt={card.description} className={classes.logo} />
                                 </a>
                             </div>
                         </Grid>
@@ -85,6 +79,6 @@ const OurTeam: React.FC<Props> = () => {
             </Container>
         </div>
     );
-}
+};
 
 export default OurTeam;

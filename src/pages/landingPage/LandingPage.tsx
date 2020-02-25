@@ -18,31 +18,30 @@ import SocialButtons from '../../components/SocialButtons';
 const toastContent = () => {
     return (
         <NotificationMessage
-            message='Our lockdrop is about to launch!'
+            message="Our lockdrop is about to launch!"
             gotoUrl={BlogLinks.lockdropIntroduction}
-            btnName='Learn More' />
+            btnName="Learn More"
+        />
     );
-}
+};
 
 // this will run as soon as the component is mounted when there is content
 if (toastContent) {
     // toast configuration
-    toast.configure()
+    toast.configure();
     toast.info(toastContent, {
         position: 'top-center',
         autoClose: false,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
-        draggable: true
+        draggable: true,
     });
 }
 
-
 const LandingPage: React.FC = () => {
-
     return (
-        <div className='landing-page'>
+        <div className="landing-page">
             <TitleHead />
             <SocialButtons />
             <Issues />
@@ -54,7 +53,7 @@ const LandingPage: React.FC = () => {
             <Roadmap />
             <CommunityLinks />
         </div>
-    )
-}
+    );
+};
 
 export default LandingPage;

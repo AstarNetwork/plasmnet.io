@@ -11,7 +11,6 @@ import Grid from '@material-ui/core/Grid';
 import { TokenInfo } from '../../../database/tokenInfo';
 import { blue } from '@material-ui/core/colors';
 
-
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         heroContent: {
@@ -21,25 +20,20 @@ const useStyles = makeStyles((theme: Theme) =>
         avatar: {
             color: '#fff',
             backgroundColor: blue[50],
-
-        }
+        },
     }),
 );
 
 const listItems = TokenInfo;
 
-interface Props { }
-
-const AboutToken: React.FC<Props> = () => {
+const AboutToken: React.FC = () => {
     const classes = useStyles();
     //const theme = useTheme();
 
     return (
-        <div className={classes.heroContent} id='aboutToken-section'>
-
-            <Container maxWidth='md'>
-
-                <Typography component='h3' variant='h3' align='center' color='textPrimary' gutterBottom>
+        <div className={classes.heroContent} id="aboutToken-section">
+            <Container maxWidth="md">
+                <Typography component="h3" variant="h3" align="center" color="textPrimary" gutterBottom>
                     The PLM token gives everyone the power to utilize Plasm Network
                 </Typography>
                 <List>
@@ -49,16 +43,14 @@ const AboutToken: React.FC<Props> = () => {
                                 <ListItem>
                                     <ListItemAvatar>
                                         <Avatar className={classes.avatar}>
-                                            <item.icon style={{ color: '#47BCFF' }} size='large'></item.icon>
+                                            <item.icon style={{ color: '#47BCFF' }} size="large"></item.icon>
                                         </Avatar>
                                     </ListItemAvatar>
-                                    <ListItemText >
-                                        <Typography gutterBottom variant='h5' component='h2'>
+                                    <ListItemText>
+                                        <Typography gutterBottom variant="h5" component="h2">
                                             {item.heading}
                                         </Typography>
-                                        <Typography>
-                                            {item.content}
-                                        </Typography>
+                                        <Typography>{item.content}</Typography>
                                     </ListItemText>
                                 </ListItem>
                             </Grid>
@@ -67,8 +59,7 @@ const AboutToken: React.FC<Props> = () => {
                 </List>
             </Container>
         </div>
-
     );
-}
+};
 
 export default AboutToken;

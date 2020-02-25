@@ -12,39 +12,27 @@ const useStyles = makeStyles(theme => ({
     socialIcon: {
         height: 60,
         margin: theme.spacing(0, 5, 4),
-    }
+    },
 }));
 
-interface Props { }
-
-const SocialButtons: React.FC<Props> = () => {
+const SocialButtons: React.FC = () => {
     const classes = useStyles();
 
     return (
-        <div className='community'>
-            <Typography component='h1' variant='h2' align='center' color='textPrimary' gutterBottom>
+        <div className="community">
+            <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
                 Join the community
             </Typography>
 
             <div className={classes.socialButton}>
                 {Discussions.map(discussion => (
-                    <a
-                        href={discussion.link}
-                        rel='noopener noreferrer'
-                        target='_blank'
-                        key={discussion.className}
-                    >
-                        <img
-                            src={discussion.image}
-                            alt={discussion.className}
-                            className={classes.socialIcon}
-                        />
+                    <a href={discussion.link} rel="noopener noreferrer" target="_blank" key={discussion.className}>
+                        <img src={discussion.image} alt={discussion.className} className={classes.socialIcon} />
                     </a>
                 ))}
             </div>
         </div>
-
     );
-}
+};
 
 export default SocialButtons;

@@ -18,7 +18,7 @@ export const Links = {
     telegram: 'https://t.me/PlasmOfficial',
     discord: 'https://discordapp.com/invite/Dnfn5eT',
     email: 'example@example.com',
-    home: 'https://stake.co.jp/'
+    home: 'https://stake.co.jp/',
 };
 
 export const SponsorLinks = {
@@ -29,123 +29,119 @@ export const SponsorLinks = {
     universityOfTokyo: 'https://www.u-tokyo.ac.jp/en/index.html',
     connect: 'https://www.blockchain.t.u-tokyo.ac.jp/',
     parityBuilders: 'https://builders.parity.io/',
-    acala: 'https://acala.network/'
+    acala: 'https://acala.network/',
 };
 
 export const BlogLinks = {
-    lockdropIntroduction:
-        'https://medium.com/stake-technologies/plasm-lockdrop-introduction-54614592a13'
+    lockdropIntroduction: 'https://medium.com/stake-technologies/plasm-lockdrop-introduction-54614592a13',
 };
 
 export const AppLinks = {
     plasmnetIo: 'https://apps.plasmnet.io/',
     polkadotNetwork: 'https://telemetry.polkadot.io/#list/Plasm%20Testnet%20v3',
     joinLockdrop: 'https://lockdrop.plasmnet.io',
-    inkPlayground: 'https://ink-playground.com/'
+    inkPlayground: 'https://ink-playground.com/',
 };
 
 export const Whitepaper = [
     {
         description: 'English',
-        link:
-            'https://github.com/stakedtechnologies/plasmdocs/blob/master/wp/en.pdf',
-        icon: `sticky note outline`
+        link: 'https://github.com/stakedtechnologies/plasmdocs/blob/master/wp/en.pdf',
+        icon: `sticky note outline`,
     },
     {
         description: 'Japanese',
-        link:
-            'https://github.com/stakedtechnologies/plasmdocs/blob/master/wp/jp.pdf',
-        icon: `sticky note outline`
-    }
+        link: 'https://github.com/stakedtechnologies/plasmdocs/blob/master/wp/jp.pdf',
+        icon: `sticky note outline`,
+    },
 ];
 
 export const Community = [
     {
         description: 'Discord',
         link: Links.discord,
-        icon: 'discord'
+        icon: 'discord',
     },
     {
         description: 'Telegram',
         link: Links.telegram,
-        icon: 'telegram'
-    }
+        icon: 'telegram',
+    },
 ];
 
 export const Company = [
     {
         description: 'Home',
-        link: Links.home
+        link: Links.home,
     },
     {
         description: 'Contact us',
-        link: `mailto:${Links.email}`
-    }
+        link: `mailto:${Links.email}`,
+    },
 ];
 
 export const Products = [
     {
         description: 'Plasm',
-        link: 'https://github.com/staketechnologies/Plasm'
+        link: 'https://github.com/staketechnologies/Plasm',
     },
     {
         description: 'Plasm Portal Sites',
-        link: 'https://github.com/staketechnologies/apps'
+        link: 'https://github.com/staketechnologies/apps',
     },
     {
         description: 'Plasm Lockdrop',
-        link: 'https://github.com/staketechnologies/lockdrop-ui'
+        link: 'https://github.com/staketechnologies/lockdrop-ui',
     },
     {
         description: 'Plasm documentations',
-        link: 'https://github.com/staketechnologies/plasmdocs'
+        link: 'https://github.com/staketechnologies/plasmdocs',
     },
     {
         description: 'Plasm homepage',
-        link: 'https://github.com/staketechnologies/plasmnet.io'
-    }
+        link: 'https://github.com/staketechnologies/plasmnet.io',
+    },
 ];
 
 export const Collaboration = [
     {
         description: 'Substrate Builders Program',
-        link: 'https://builders.parity.io/'
+        link: 'https://builders.parity.io/',
     },
     {
         description: 'Web3 foundation grants program',
-        link: 'https://web3.foundation/'
-    }
-
-]
+        link: 'https://web3.foundation/',
+    },
+];
 
 export const Blogs = [
     {
         description: 'Medium',
-        link: Links.blog
-    }
+        link: Links.blog,
+    },
 ];
 
 export const Discussions = [
     {
         link: Links.discord,
         className: 'discord',
-        image: discordImg
+        image: discordImg,
     },
     {
         link: Links.telegram,
         className: 'telegram',
-        image: telegramImg
+        image: telegramImg,
     },
     {
         link: Links.twitter,
         className: 'twitter',
-        image: twitterImg
+        image: twitterImg,
     },
     {
         link: Links.github,
         className: 'github',
-        image: githubImg
-    }
+        image: githubImg,
+    },
 ];
 
 export const Sponsors = [
@@ -153,7 +149,7 @@ export const Sponsors = [
         description: 'Web3 Foundation',
         link: SponsorLinks.web3Foundation,
         className: 'web3-foundation',
-        image: web3Img
+        image: web3Img,
     },
     // {
     //   description: 'Parity Builder's Prgram',
@@ -165,13 +161,13 @@ export const Sponsors = [
         description: 'Cryptoeconomics Lab',
         link: SponsorLinks.cryptoEconomicsLab,
         className: 'cryptoeconomics-lab',
-        image: cryptoeconomicsLabImg
+        image: cryptoeconomicsLabImg,
     },
     {
         description: 'LongHash',
         link: SponsorLinks.longhash,
         className: 'long-hash',
-        image: longhashImg
+        image: longhashImg,
     },
     {
         description: 'Endowed Chair for Blockchain Innovation, the University of Tokyo',
@@ -184,5 +180,5 @@ export const Sponsors = [
         link: SponsorLinks.acala,
         className: 'acala',
         image: acalaImg,
-    }
+    },
 ];

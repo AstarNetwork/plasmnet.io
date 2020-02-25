@@ -1,10 +1,10 @@
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import React from 'react';
-import { ITimeline } from '../types/types';
+import { TimelineItem } from '../types/types';
 
 interface Props {
-    data: ITimeline[];
+    data: TimelineItem[];
     backgroundColor?: string;
 }
 
@@ -18,24 +18,21 @@ const Timeline: React.FC<Props> = ({ data, backgroundColor }) => {
         <>
             <VerticalTimeline>
                 {data.map(item => (
-
                     <VerticalTimelineElement
-                        className='vertical-timeline-element--work'
+                        className="vertical-timeline-element--work"
                         contentArrowStyle={{ borderRight: `7px solid #fff` }}
                         date={item.date}
+                        key={item.id}
                         iconStyle={{ background: `${backgroundColor}`, color: '#fff' }}
                         icon={<item.icon />}
                     >
-                        <h3 className='vertical-timeline-element-title'>{item.heading}</h3>
-                        <p>
-                            {item.content}
-                        </p>
+                        <h3 className="vertical-timeline-element-title">{item.heading}</h3>
+                        <p>{item.content}</p>
                     </VerticalTimelineElement>
-
                 ))}
             </VerticalTimeline>
         </>
-    )
-}
+    );
+};
 
 export default Timeline;

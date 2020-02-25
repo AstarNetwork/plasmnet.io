@@ -27,7 +27,7 @@ const colors = {
     softGrey: '#1D1B4D',
     slaty: '#797992',
     lavender: '#e5e5f8',
-    rat: '#cecddc'
+    rat: '#cecddc',
 };
 
 const secondaryColors = {
@@ -61,34 +61,12 @@ const secondaryColors = {
     gold20: '#ffda8b',
     gold30: '#f0b95b',
     gold40: '#e5a229',
-    gold50: '#6a4a24'
+    gold50: '#6a4a24',
 };
 
 const breakpoints = ['31.25em', '43.75em', '46.875em'];
-const fontSizes = [
-    '1.2rem',
-    '1.4rem',
-    '1.6rem',
-    '1.8rem',
-    '2.4rem',
-    '2.8rem',
-    '3.2rem',
-    '4.0rem',
-    '4.8rem',
-    '6.4rem'
-];
-const space = [
-    '0',
-    '.4rem',
-    '.8rem',
-    '1.2rem',
-    '1.6rem',
-    '2.0rem',
-    '3.2rem',
-    '4.8rem',
-    '6.4rem',
-    '9.6rem'
-];
+const fontSizes = ['1.2rem', '1.4rem', '1.6rem', '1.8rem', '2.4rem', '2.8rem', '3.2rem', '4.0rem', '4.8rem', '6.4rem'];
+const space = ['0', '.4rem', '.8rem', '1.2rem', '1.6rem', '2.0rem', '3.2rem', '4.8rem', '6.4rem', '9.6rem'];
 
 const font =
     'sans-serif, -apple-system, BlinkMacSystemFont,"Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans","Droid Sans", "Helvetica Neue";-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;';
@@ -108,5 +86,5 @@ export const theme: StyleClosetTheme = {
     space,
     colors,
     secondaryColors,
-    font
+    font,
 };

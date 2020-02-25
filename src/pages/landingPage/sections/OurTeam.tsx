@@ -47,25 +47,23 @@ const useStyles = makeStyles(theme => ({
     },
     media: {
         height: 210,
-    }
+    },
 }));
 
 const cards = TeamMembers;
 
-interface Props { }
-
-const OurTeam: React.FC<Props> = () => {
+const OurTeam: React.FC = () => {
     const classes = useStyles();
 
     return (
-        <div className={classes.heroContent} id='ourTeam-section' >
-            <Container maxWidth='sm'>
-                <Typography component='h3' variant='h3' align='center' color='textPrimary' gutterBottom>
+        <div className={classes.heroContent} id="ourTeam-section">
+            <Container maxWidth="sm">
+                <Typography component="h3" variant="h3" align="center" color="textPrimary" gutterBottom>
                     Our team can get the job done
-                    </Typography>
+                </Typography>
             </Container>
 
-            <Container className={classes.cardGrid} maxWidth='md'>
+            <Container className={classes.cardGrid} maxWidth="md">
                 {/* End hero unit */}
                 <Grid container spacing={4}>
                     {cards.map(card => (
@@ -73,16 +71,12 @@ const OurTeam: React.FC<Props> = () => {
                             <Card className={classes.card}>
                                 {/* <card.icon style={{ fontSize: 60 }} className={classes.icon}></card.icon> */}
 
-                                <CardMedia
-                                    className={classes.media}
-                                    image={card.image}
-                                    title={card.heading}
-                                />
+                                <CardMedia className={classes.media} image={card.image} title={card.heading} />
                                 <CardContent className={classes.cardContent}>
-                                    <Typography gutterBottom variant='h5' component='h2'>
+                                    <Typography gutterBottom variant="h5" component="h2">
                                         {card.heading}
                                     </Typography>
-                                    <Typography variant='body2' color='textSecondary' component='p'>
+                                    <Typography variant="body2" color="textSecondary" component="p">
                                         {card.content}
                                     </Typography>
                                 </CardContent>
@@ -91,17 +85,17 @@ const OurTeam: React.FC<Props> = () => {
                     ))}
                 </Grid>
             </Container>
-            <Container maxWidth='sm'>
+            <Container maxWidth="sm">
                 <div className={classes.heroButtons}>
                     <a href={Links.discord}>
-                        <Button variant='contained' color='primary' size='large' className={classes.btnPrimary}>
+                        <Button variant="contained" color="primary" size="large" className={classes.btnPrimary}>
                             Learn more about the team
                         </Button>
                     </a>
                 </div>
             </Container>
-        </div >
+        </div>
     );
-}
+};
 
 export default OurTeam;

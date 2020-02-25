@@ -48,20 +48,18 @@ const useStyles = makeStyles(theme => ({
 
 const cards = PlasmStrength;
 
-interface Props { }
-
-const WhatWeDo: React.FC<Props> = () => {
+const WhatWeDo: React.FC = () => {
     const classes = useStyles();
 
     return (
-        <div className={classes.heroContent} id='ourWork-section'>
-            <Container maxWidth='sm'>
-                <Typography component='h3' variant='h3' align='center' color='textPrimary' gutterBottom>
+        <div className={classes.heroContent} id="ourWork-section">
+            <Container maxWidth="sm">
+                <Typography component="h3" variant="h3" align="center" color="textPrimary" gutterBottom>
                     Plasm Network works because we have:
-                    </Typography>
+                </Typography>
             </Container>
 
-            <Container className={classes.cardGrid} maxWidth='md'>
+            <Container className={classes.cardGrid} maxWidth="md">
                 {/* End hero unit */}
                 <Grid container spacing={4}>
                     {cards.map(card => (
@@ -69,30 +67,27 @@ const WhatWeDo: React.FC<Props> = () => {
                             <Card className={classes.card}>
                                 <card.icon style={{ fontSize: 60 }} className={classes.icon}></card.icon>
                                 <CardContent className={classes.cardContent}>
-                                    <Typography gutterBottom variant='h5' component='h2'>
+                                    <Typography gutterBottom variant="h5" component="h2">
                                         {card.heading}
                                     </Typography>
-                                    <Typography>
-                                        {card.content}
-                                    </Typography>
+                                    <Typography>{card.content}</Typography>
                                 </CardContent>
                             </Card>
                         </Grid>
                     ))}
                 </Grid>
             </Container>
-            <Container maxWidth='sm'>
+            <Container maxWidth="sm">
                 <div className={classes.heroButtons}>
                     <a href={Links.docs}>
-                        <Button variant='contained' color='primary' size='large' className={classes.btnPrimary}>
+                        <Button variant="contained" color="primary" size="large" className={classes.btnPrimary}>
                             Want to know more?
                         </Button>
                     </a>
-
                 </div>
             </Container>
         </div>
     );
-}
+};
 
 export default WhatWeDo;

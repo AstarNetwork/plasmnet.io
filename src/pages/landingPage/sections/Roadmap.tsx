@@ -19,24 +19,22 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-interface Props { }
-
-const Roadmap: React.FC<Props> = () => {
+const Roadmap: React.FC = () => {
     const classes = useStyles();
 
     return (
-        <div className={classes.heroContent} id='roadmap-section'>
-            <Container maxWidth='sm'>
-                <Typography component='h3' variant='h3' align='center' color='textPrimary' gutterBottom>
+        <div className={classes.heroContent} id="roadmap-section">
+            <Container maxWidth="sm">
+                <Typography component="h3" variant="h3" align="center" color="textPrimary" gutterBottom>
                     Our development timeline
-                    </Typography>
+                </Typography>
             </Container>
 
-            <Container className={classes.timeline} maxWidth='md'>
-                <TimelineVerticle data={roadmapData} backgroundColor='rgb(33, 150, 243)' />
+            <Container className={classes.timeline} maxWidth="md">
+                <TimelineVerticle data={roadmapData} backgroundColor="rgb(33, 150, 243)" />
             </Container>
         </div>
     );
-}
+};
 
 export default Roadmap;
