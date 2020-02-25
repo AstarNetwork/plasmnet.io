@@ -33,7 +33,7 @@ const NotificationMessage: React.FC<Props> = ({ message, gotoUrl, btnName }) => 
 
     return (
         <div className={classes.messageBox}>
-            <Typography component='p' align='center' color='textPrimary' className={classes.messageText}>
+            <Typography component='p' align='center' className={classes.messageText}>
                 {message}
             </Typography>
             <span />

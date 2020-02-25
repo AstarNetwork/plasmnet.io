@@ -10,7 +10,7 @@ import { Sponsors } from '../../../database/links';
 
 const useStyles = makeStyles(theme => ({
     logo: {
-        maxHeight: '100%',
+        maxHeight: 160,
         maxWidth: '100%',
         height: 'auto',
         width: 'auto'

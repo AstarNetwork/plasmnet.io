@@ -14,7 +14,6 @@ import LocalLibraryIcon from '@material-ui/icons/LocalLibrary';
 import MonetizationOnIcon from '@material-ui/icons/MonetizationOn';
 import EmojiPeopleIcon from '@material-ui/icons/EmojiPeople';
 import { Links, AppLinks } from '../../../database/links';
-import SocialButtons from '../../../components/SocialButtons';
 import { blue } from '@material-ui/core/colors';
 
 const useStyles = makeStyles(theme => ({
@@ -122,8 +121,6 @@ const HowToHelp: React.FC<Props> = () => {
                             </>} />
                     </ListItem>
                 </List>
-
-                <SocialButtons />
             </Container>
         </div>
     );

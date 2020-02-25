@@ -7,12 +7,11 @@ const useStyles = makeStyles(theme => ({
     socialButton: {
         '& > *': {
             margin: theme.spacing(1),
-
         },
     },
     socialIcon: {
         height: 60,
-        margin: theme.spacing(0, 8),
+        margin: theme.spacing(0, 5, 4),
     }
 }));
 

@@ -4,7 +4,10 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import { Link } from "react-scroll";
+import { Link } from 'react-scroll';
+import LockdropPanel from '../../../components/LockdropPanel';
+import Grid from '@material-ui/core/Grid';
+import { LockdropEnd, LockdropStart } from '../../../database/tokenInfo';
 
 const useStyles = makeStyles(theme => ({
     heroContent: {
@@ -22,7 +25,12 @@ const useStyles = makeStyles(theme => ({
         color: 'white',
         height: 48,
         padding: '0 30px',
+        margin: theme.spacing(4, 0, 0)
+
     },
+    panel: {
+        padding: theme.spacing(8, 0, 6),
+    }
 }));
 
 interface Props { }
@@ -44,6 +52,15 @@ const TitleHead: React.FC<Props> = () => {
                     is designed to empower the developers and the users that creates the future
                 </Typography>
                 <div className={classes.heroButtons}>
+                    <Grid container spacing={2} justify="center">
+                        <Grid item>
+                            <LockdropPanel endTime={LockdropEnd} startTime={LockdropStart} />
+                        </Grid>
+                        <Grid item justify='center'>
+                            {/* todo: Add Table of contents here */}
+                        </Grid>
+                    </Grid>
+
                     <Link
                         className="link"
                         to="ourWork-section"
@@ -51,10 +68,11 @@ const TitleHead: React.FC<Props> = () => {
                         offset={0}
                         duration={900}
                     >
-                        <Button variant='contained' color='primary' size='large' className={classes.btnPrimary}>
-                            Learn more about Plasm Network
+                        <Button variant='contained' color='primary' size='medium' className={classes.btnPrimary}>
+                            Learn more
                         </Button>
                     </Link>
+
 
                 </div>
             </Container>

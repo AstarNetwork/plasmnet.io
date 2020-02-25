@@ -4,21 +4,22 @@ import Issues from './sections/Issues';
 import WhatWeDo from './sections/WhatWeDo';
 import AboutToken from './sections/AboutToken';
 import HowToHelp from './sections/HowToHelp';
-import OurTeam from './sections/OurTeam';
+//import OurTeam from './sections/OurTeam';
 import WeWorkWith from './sections/WeWorkWith';
 import Roadmap from './sections/Roadmap';
 import CommunityLinks from './sections/CommunityLinks';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import NotificationMessage from '../../components/NotificationMessage';
-import { AppLinks } from '../../database/links';
+import { BlogLinks } from '../../database/links';
+import SocialButtons from '../../components/SocialButtons';
 
 // toast content
 const toastContent = () => {
     return (
         <NotificationMessage
             message='Our lockdrop is about to launch!'
-            gotoUrl={AppLinks.joinLockdrop}
+            gotoUrl={BlogLinks.lockdropIntroduction}
             btnName='Learn More' />
     );
 }
@@ -43,11 +44,12 @@ const LandingPage: React.FC = () => {
     return (
         <div className='landing-page'>
             <TitleHead />
+            <SocialButtons />
             <Issues />
             <WhatWeDo />
             <AboutToken />
             <HowToHelp />
-            <OurTeam />
+            {/* <OurTeam /> */}
             <WeWorkWith />
             <Roadmap />
             <CommunityLinks />

@@ -38,3 +38,9 @@ export const TokenInfo: ICardItem[] = [
         content: 'PLM is distributed via a Multi-Lockdrop, which is a modified lockdrop, popularized by Edgeware'
     }
 ]
+
+// this is just a temporary date
+export const LockdropEnd = '2020-06-10';
+export const LockdropStart = '2020-3-10';
+// this is just a temporary value
+export const LockValue = 5235;
