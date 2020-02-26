@@ -10,41 +10,40 @@ import LockdropPanel from '../../../components/LockdropPanel';
 import Grid from '@material-ui/core/Grid';
 import { LockdropEnd, LockdropStart } from '../../../database/tokenInfo';
 
-
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface Props {}
 
 const useStyles = makeStyles(theme => ({
-  heroContent: {
-      padding: theme.spacing(8, 2, 6),
-      width: '100%',
-      background: 'black',
-      display: 'grid',
-      alignItems: 'center',
-  },
-  heroGrid: {
-    justifyContent: 'center',
-  },
-  btnRow: {
-    color: '#FFFFFF',
-    height: theme.spacing(5.3),
-    cursor: 'pointer',
-    lineHeight: theme.spacing(0.5),
-    fontSize: 18,
-    position: 'relative',
-    '&::before': {
-      position: 'absolute',
-      content: '',
-      width: 36,
-      height: 1,
-      background: '#323232',
-      top: theme.spacing(50),
-      left: theme.spacing(10),
+    heroContent: {
+        padding: theme.spacing(8, 2, 6),
+        width: '100%',
+        background: 'black',
+        display: 'grid',
+        alignItems: 'center',
     },
-  },
-  link: {
-    color: 'rgb(129, 133, 141)',
-  },
+    heroGrid: {
+        justifyContent: 'center',
+    },
+    btnRow: {
+        color: '#FFFFFF',
+        height: theme.spacing(5.3),
+        cursor: 'pointer',
+        lineHeight: theme.spacing(0.5),
+        fontSize: 18,
+        position: 'relative',
+        '&::before': {
+            position: 'absolute',
+            content: '',
+            width: 36,
+            height: 1,
+            background: '#323232',
+            top: theme.spacing(50),
+            left: theme.spacing(10),
+        },
+    },
+    link: {
+        color: 'rgb(129, 133, 141)',
+    },
 }));
 
 const Title: React.FC<Props> = () => {
@@ -69,29 +68,29 @@ const Title: React.FC<Props> = () => {
                     {/* <LockdropInfo countdownDate="2020-03-15 00:00:00" /> */}
                     <LockdropPanel endTime={LockdropEnd} startTime={LockdropStart} />
                     <Grid container spacing={1} justify="center">
-                      <Grid item>
-                        <Grid container spacing={2} justify="center" className="SlideUp two">
-                            <Grid item>
-                                <a href={AppLinks.plasmnetIo} rel="noopener noreferrer" target="_blank">
-                                    <Button color="violet" size="massive" className="ui-button">
-                                        Launch UI
-                                    </Button>
-                                </a>
-                            </Grid>
-                            <Grid item>
-                                <a href={AppLinks.joinLockdrop} rel="noopener noreferrer" target="_blank">
-                                    <Button size="massive" className="ui-button" inverted color="violet">
-                                        Join Lockdrop
-                                    </Button>
-                                </a>
+                        <Grid item>
+                            <Grid container spacing={2} justify="center" className="SlideUp two">
+                                <Grid item>
+                                    <a href={AppLinks.plasmnetIo} rel="noopener noreferrer" target="_blank">
+                                        <Button color="violet" size="massive" className="ui-button">
+                                            Launch UI
+                                        </Button>
+                                    </a>
+                                </Grid>
+                                <Grid item>
+                                    <a href={AppLinks.joinLockdrop} rel="noopener noreferrer" target="_blank">
+                                        <Button size="massive" className="ui-button" inverted color="violet">
+                                            Join Lockdrop
+                                        </Button>
+                                    </a>
+                                </Grid>
                             </Grid>
                         </Grid>
-                      </Grid>
                     </Grid>
                 </Grid>
                 <Grid item xs={12} sm={6}>
                     {TableOfContents.map(content => (
-                        <div className={classes.btnRow+ " Fade-in one"} key={content.id}>
+                        <div className={classes.btnRow + ' Fade-in one'} key={content.id}>
                             <Link className={classes.link} to={content.link} smooth={true} offset={0} duration={900}>
                                 {content.content}
                             </Link>
