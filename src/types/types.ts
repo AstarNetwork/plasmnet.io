@@ -12,3 +12,9 @@ export interface TimelineItem {
     content: string;
     date: string;
 }
+
+export interface TableOfItem {
+    id: number;
+    content: string;
+    link: string;
+}
