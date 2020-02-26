@@ -7,7 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import { LockValue } from '../database/tokenInfo';
-import { AppLinks } from '../database/links';
+import { BlogLinks } from '../database/links';
 
 interface TimeFormat {
     days: number;
@@ -82,16 +82,18 @@ const LockdropPanel: React.FC<Props> = ({ startTime, endTime }) => {
         return (
             <>
                 <PanelWrapper>
+                    <Typography variant="h5">Lockdrop Information</Typography>
+                    <br />
                     <div className="time">
                         <Grid container spacing={2} justify="center">
                             <Grid item>
                                 {lockState === LockState.notStart ? (
                                     <Typography variant="h4" component="h2">
-                                        Lockdrop starting in:
+                                        Starting in:
                                     </Typography>
                                 ) : (
                                     <Typography variant="h4" component="h2">
-                                        Lockdrop ending in:
+                                        Ending in:
                                     </Typography>
                                 )}
                             </Grid>
@@ -154,12 +156,12 @@ const PanelWrapper: React.FC = ({ children }) => {
                 <Paper elevation={5} className={classes.paper}>
                     {children}
                     <Typography variant="h5" className={classes.lockedVal}>
-                        Total Lock Value is ${LockValue}
+                        Total Lock Value is {LockValue} ETH
                     </Typography>
 
-                    <a href={AppLinks.joinLockdrop}>
+                    <a href={BlogLinks.lockdropIntroduction}>
                         <Button variant="contained" size="large" className={classes.btnPrimary}>
-                            Open Lockdrop
+                            What is the Lockdrop?
                         </Button>
                     </a>
                 </Paper>

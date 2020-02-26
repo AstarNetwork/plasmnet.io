@@ -1,5 +1,6 @@
 import React from 'react';
-import TitleHead from './sections/TitleHead';
+// import TitleHead from './sections/TitleHead';
+import Title from './sections/Title';
 import Issues from './sections/Issues';
 import WhatWeDo from './sections/WhatWeDo';
 import AboutToken from './sections/AboutToken';
@@ -26,7 +27,7 @@ const toastContent = () => {
 };
 
 // this will run as soon as the component is mounted when there is content
-if (toastContent) {
+if (!toastContent) {//Currently not used.(!)
     // toast configuration
     toast.configure();
     toast.info(toastContent, {
@@ -42,7 +43,7 @@ if (toastContent) {
 const LandingPage: React.FC = () => {
     return (
         <div className="landing-page">
-            <TitleHead />
+            <Title />
             <SocialButtons />
             <Issues />
             <WhatWeDo />
