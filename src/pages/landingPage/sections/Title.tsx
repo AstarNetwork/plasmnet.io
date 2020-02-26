@@ -1,18 +1,18 @@
-import React from "react";
-import { Link } from "react-scroll";
-import { Button } from "semantic-ui-react";
-import styled from "styled-components";
-import { AppLinks } from "../../../database/links";
-import { TableOfContents } from "../../../database/tableOfContents";
+import React from 'react';
+import { Link } from 'react-scroll';
+import { Button } from 'semantic-ui-react';
+import styled from 'styled-components';
+import { AppLinks } from '../../../database/links';
+import { TableOfContents } from '../../../database/tableOfContents';
 // import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-import "../../../styles/animation.scss";
-import { customMedia } from "../../../styles/globalStyle";
-import { theme } from "../../../styles/theme";
-// import LockdropInfo from "../../../components/LockdropInfo";
-import LockdropPanel from "../../../components/LockdropPanel";
+import '../../../styles/animation.scss';
+import { customMedia } from '../../../styles/globalStyle';
+import { theme } from '../../../styles/theme';
+import LockdropPanel from '../../../components/LockdropPanel';
 import { LockdropEnd, LockdropStart } from '../../../database/tokenInfo';
 
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface Props {}
 
 // const useStyles = makeStyles(theme => ({
@@ -38,74 +38,61 @@ interface Props {}
 // }));
 
 const Title: React.FC<Props> = () => {
-  // const classes = useStyles();
+    // const classes = useStyles();
 
-  return (
-    <TitleContainer id="ui-id">
-      <div className="title">
-        <Typography className="SlideDown one" component="h1" variant="h2" align="center" color="primary" gutterBottom>
-          Plasm Network is<br /> a scaling Dapps platform on Substrate
-        </Typography>
-      </div>
-      <div className="container">
-        <div className="left">
-          {
-            TableOfContents.map(content => (
-              <div className="btn-row Fade-in one">
-              <Link
-                className="link"
-                to={content.link}
-                smooth={true}
-                offset={0}
-                duration={900}
-              >
-                {content.content}
-              </Link>
-            </div>  
-            ))
-          }
-        </div>
-        <div className="right">
-          <div className="ui SlideUp one">
-              {/* Memo: Format must "yyyy-dd-dd hh:mm:ss" */}
-              {/* Memo: Cannot work on mobile device if props as "2021-1-1 00:00:00". Date format must dd:dd  */}
-              {/* Time standard: UTC  */}
-              {/* <LockdropInfo countdownDate="2020-03-15 00:00:00" /> */}
-            <LockdropPanel endTime={LockdropEnd} startTime={LockdropStart} />
-            <div className="app-buttons SlideUp two">
-              <div>
-                <a
-                  href={AppLinks.plasmnetIo}
-                  rel="noopener noreferrer"
-                  target="_blank"
+    return (
+        <TitleContainer id="ui-id">
+            <div className="title">
+                <Typography
+                    className="SlideDown one"
+                    component="h1"
+                    variant="h2"
+                    align="center"
+                    color="primary"
+                    gutterBottom
                 >
-                  <Button color="violet" size="massive" className="ui-button">
-                    Launch UI
-                  </Button>
-                </a>
-              </div>
-              <div>
-                <a
-                  href={AppLinks.joinLockdrop}
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  <Button
-                    size="massive"
-                    className="ui-button"
-                    inverted
-                    color="violet"
-                  >
-                    Join Lockdrop
-                  </Button>
-                </a>
-              </div>
+                    Plasm Network is
+                    <br /> a scaling Dapps platform on Substrate
+                </Typography>
             </div>
-          </div>
-        </div>
-      </div>
-    </TitleContainer>
-  );
+            <div className="container">
+                <div className="left">
+                  {TableOfContents.map(content => (
+                      <div className="btn-row Fade-in one">
+                          <Link className="link" to={content.link} smooth={true} offset={0} duration={900}>
+                              {content.content}
+                          </Link>
+                      </div>
+                  ))}
+                </div>
+                <div className="right">
+                    <div className="ui SlideUp one">
+                        {/* Memo: Format must "yyyy-dd-dd hh:mm:ss" */}
+                        {/* Memo: Cannot work on mobile device if props as "2021-1-1 00:00:00". Date format must dd:dd  */}
+                        {/* Time standard: UTC  */}
+                        {/* <LockdropInfo countdownDate="2020-03-15 00:00:00" /> */}
+                        <LockdropPanel endTime={LockdropEnd} startTime={LockdropStart} />
+                        <div className="app-buttons SlideUp two">
+                            <div>
+                                <a href={AppLinks.plasmnetIo} rel="noopener noreferrer" target="_blank">
+                                    <Button color="violet" size="massive" className="ui-button">
+                                        Launch UI
+                                    </Button>
+                                </a>
+                            </div>
+                            <div>
+                                <a href={AppLinks.joinLockdrop} rel="noopener noreferrer" target="_blank">
+                                    <Button size="massive" className="ui-button" inverted color="violet">
+                                        Join Lockdrop
+                                    </Button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </TitleContainer>
+    );
 };
 
 export default Title;
@@ -117,10 +104,10 @@ const TitleContainer = styled.div`
   display: grid;
   grid-template-rows: 30% 70%;
   align-items: center;
-  ${customMedia.greaterThan("tabletPro")`
+  ${customMedia.greaterThan('tabletPro')`
     padding-top: 0px;
   `}
-  ${customMedia.lessThan("laptopSmall")`
+  ${customMedia.lessThan('laptopSmall')`
     padding-top: -10px;
     height: 1200px;
   `}
@@ -147,14 +134,14 @@ const TitleContainer = styled.div`
     align-items: center;
     justify-content: space-evenly;
     margin: 0 24px;
-    ${customMedia.lessThan("laptop")`
+    ${customMedia.lessThan('laptop')`
       justify-content: space-around;
       padding: 10px;
     `}
-    ${customMedia.lessThan("laptopSmall")`
+    ${customMedia.lessThan('laptopSmall')`
       flex-direction: column-reverse;
     `}
-    ${customMedia.lessThan("mobile")`
+    ${customMedia.lessThan('mobile')`
       width: 100%;
       margin: 0;
       padding: 0;
@@ -164,7 +151,7 @@ const TitleContainer = styled.div`
     margin-bottom: 30px;
   }
     .left{
-      ${customMedia.lessThan("laptopSmall")`
+      ${customMedia.lessThan('laptopSmall')`
           margin-top: 60px;
         `}
       .btn-row {
@@ -174,7 +161,7 @@ const TitleContainer = styled.div`
         line-height: 40px;
         font-size: 18px;
         position: relative;
-        ${customMedia.lessThan("laptop")`
+        ${customMedia.lessThan('laptop')`
             padding-left: 50px;
           `}
 
@@ -187,7 +174,7 @@ const TitleContainer = styled.div`
           background: #323232;
           top: 50%;
           left: -58px;
-          ${customMedia.lessThan("laptop")`
+          ${customMedia.lessThan('laptop')`
             left: 0px;
           `}
         }
@@ -196,7 +183,7 @@ const TitleContainer = styled.div`
   }
 
   .right{
-    ${customMedia.lessThan("mobile")`
+    ${customMedia.lessThan('mobile')`
        width: 100%;
     `}
 
@@ -204,14 +191,14 @@ const TitleContainer = styled.div`
       display: grid;
       align-items: center;
       grid-row-gap: 30px;
-      ${customMedia.lessThan("tabletPro")`
+      ${customMedia.lessThan('tabletPro')`
       `}
-      ${customMedia.lessThan("mobile")`
+      ${customMedia.lessThan('mobile')`
         grid-row-gap: 28px;
       `}
 
       .lockdrop{
-        ${customMedia.lessThan("mobile")`
+        ${customMedia.lessThan('mobile')`
           display: grid;
           justify-items: center;
         `}
@@ -221,10 +208,10 @@ const TitleContainer = styled.div`
         grid-template-columns: 1fr 1fr;
         grid-row-gap: 40px;
         justify-items: center;
-        ${customMedia.lessThan("laptopSmall")`
+        ${customMedia.lessThan('laptopSmall')`
           margin-top: 40px;
         `}
-        ${customMedia.lessThan("mobile")`
+        ${customMedia.lessThan('mobile')`
         /* grid-template-rows: 1fr 1fr; */
         grid-template: none;
       `}
@@ -234,10 +221,10 @@ const TitleContainer = styled.div`
         width: 270px;
         font-family: ${theme.font};
 
-        ${customMedia.lessThan("tabletPro")`
+        ${customMedia.lessThan('tabletPro')`
           align-items: start;
         `}
-        ${customMedia.lessThan("mobile")`
+        ${customMedia.lessThan('mobile')`
           width: 330px;
         `}
       }

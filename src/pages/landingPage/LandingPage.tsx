@@ -27,7 +27,8 @@ const toastContent = () => {
 };
 
 // this will run as soon as the component is mounted when there is content
-if (!toastContent) {//Currently not used.(!)
+if (!toastContent) {
+    //Currently not used.(!)
     // toast configuration
     toast.configure();
     toast.info(toastContent, {

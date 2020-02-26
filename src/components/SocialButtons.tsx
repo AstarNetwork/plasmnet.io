@@ -5,8 +5,8 @@ import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles(theme => ({
     community: {
-        margin: theme.spacing(2,2),
-        padding: theme.spacing(4,0),
+        margin: theme.spacing(2, 2),
+        padding: theme.spacing(4, 0),
         display: 'grid',
         justifyItems: 'center',
         alignItems: 'center',
