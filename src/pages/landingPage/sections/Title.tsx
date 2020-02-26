@@ -57,13 +57,13 @@ const Title: React.FC<Props> = () => {
             </div>
             <div className="container">
                 <div className="left">
-                  {TableOfContents.map(content => (
-                      <div className="btn-row Fade-in one">
-                          <Link className="link" to={content.link} smooth={true} offset={0} duration={900}>
-                              {content.content}
-                          </Link>
-                      </div>
-                  ))}
+                    {TableOfContents.map(content => (
+                        <div className="btn-row Fade-in one" key={content.id}>
+                            <Link className="link" to={content.link} smooth={true} offset={0} duration={900}>
+                                {content.content}
+                            </Link>
+                        </div>
+                    ))}
                 </div>
                 <div className="right">
                     <div className="ui SlideUp one">
