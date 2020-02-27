@@ -23,7 +23,7 @@ export const TableOfContents: TableOfItem[] = [
     },
     {
         id: 6,
-        content: 'Sponsors',
+        content: 'Collaboration',
         link: 'sponsor-section',
     },
     {
