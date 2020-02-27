@@ -20,7 +20,6 @@ const useStyles = makeStyles(theme => ({
         fontSize: theme.spacing(5),
         fontWeight: 700,
         maxWidth: '100%',
-        fontFamily: 'Orbitron',
         overflowWrap: 'normal',
     },
     heroContent: {
@@ -79,7 +78,7 @@ const Title: React.FC<Props> = () => {
                     <LockdropPanel endTime={LockdropEnd} startTime={LockdropStart} />
                     <Grid container spacing={1} justify="center">
                         <Grid item>
-                            <Grid container spacing={2} justify="center" className="SlideUp two">
+                            <Grid container spacing={2} justify="center" className={classes.heroGrid + ' SlideUp two'}>
                                 <Grid item>
                                     <a href={AppLinks.plasmnetIo} rel="noopener noreferrer" target="_blank">
                                         <Button color="violet" size="massive" className="ui-button">

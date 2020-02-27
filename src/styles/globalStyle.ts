@@ -39,9 +39,5 @@ body {
   margin: 0;
   font-style: normal;
   height: 100%;
-  font-family: ${theme.font};
-  h1, h2, h3,h4, p, span{
-    font-family: ${theme.font};
-  }
 }
 `;
