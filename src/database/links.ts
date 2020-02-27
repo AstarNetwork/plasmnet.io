@@ -17,7 +17,7 @@ export const Links = {
     github: 'https://github.com/staketechnologies/Plasm',
     telegram: 'https://t.me/PlasmOfficial',
     discord: 'https://discordapp.com/invite/Dnfn5eT',
-    email: 'example@example.com',
+    email: 'info@stake.co.jp',
     home: 'https://stake.co.jp/',
 };
 
