@@ -15,13 +15,13 @@ interface Props {}
 
 const useStyles = makeStyles(theme => ({
     title: {
-      color: '#FFFFFF',
-      textAlign: 'center',
-      fontSize: theme.spacing(5),
-      fontWeight: 700,
-      maxWidth: '100%',
-      fontFamily: "Orbitron",
-      overflowWrap: 'normal',
+        color: '#FFFFFF',
+        textAlign: 'center',
+        fontSize: theme.spacing(5),
+        fontWeight: 700,
+        maxWidth: '100%',
+        fontFamily: 'Orbitron',
+        overflowWrap: 'normal',
     },
     heroContent: {
         padding: theme.spacing(15, 10, 15),
@@ -32,7 +32,7 @@ const useStyles = makeStyles(theme => ({
     },
     heroGrid: {
         justifyContent: 'center',
-        padding: theme.spacing(5,0.6,5),
+        padding: theme.spacing(5, 0.6, 5),
     },
     btnRow: {
         color: '#FFFFFF',
@@ -62,7 +62,7 @@ const Title: React.FC<Props> = () => {
     return (
         <div className={classes.heroContent} id="ui-id">
             <Typography
-                className={classes.title + " SlideDown one"}
+                className={classes.title + ' SlideDown one'}
                 component="h1"
                 variant="h2"
                 align="center"

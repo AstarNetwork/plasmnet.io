@@ -34,7 +34,10 @@ const Issues: React.FC = () => {
                     came together to create something magnificent, something that can change the structure of
                     information as we know it. The <b>Web3</b> revolution. <br />
                     However,{' '}
-                    <a className={classes.link} href="https://www.bloomberg.com/news/articles/2019-08-26/ethereum-almost-full-as-controversial-coin-gobbles-up-capacity">
+                    <a
+                        className={classes.link}
+                        href="https://www.bloomberg.com/news/articles/2019-08-26/ethereum-almost-full-as-controversial-coin-gobbles-up-capacity"
+                    >
                         existing blockchains{' '}
                     </a>
                     are just not scalable enough to make this dream into a reality. People deserve something better.
