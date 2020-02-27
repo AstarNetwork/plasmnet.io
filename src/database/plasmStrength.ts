@@ -40,7 +40,7 @@ export const PlasmStrength: CardItem[] = [
         icon: FilterTiltShiftOutlinedIcon,
         heading: 'Parachain',
         content:
-            'Plasm Network will become a Parachain that provides interoperability with other blockchains who are either a Parachian themselves or via a Bridge',
+            'Plasm Network can be a Polkadot Parachain that provides interoperability with other blockchains who are either a Parachian themselves or via a Bridge',
     },
     {
         id: 6,

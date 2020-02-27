@@ -69,7 +69,7 @@ const fontSizes = ['1.2rem', '1.4rem', '1.6rem', '1.8rem', '2.4rem', '2.8rem', '
 const space = ['0', '.4rem', '.8rem', '1.2rem', '1.6rem', '2.0rem', '3.2rem', '4.8rem', '6.4rem', '9.6rem'];
 
 const font =
-    'sans-serif, -apple-system, BlinkMacSystemFont,"Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans","Droid Sans", "Helvetica Neue";-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;';
+    'Work Sans, sans-serif, -apple-system, BlinkMacSystemFont,"Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans","Droid Sans", "Helvetica Neue";-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;';
 
 export interface StyleClosetTheme {
     breakpoints: string[];
