@@ -14,8 +14,18 @@ import { LockdropEnd, LockdropStart } from '../../../database/tokenInfo';
 interface Props {}
 
 const useStyles = makeStyles(theme => ({
+    title: {
+      color: '#FFFFFF',
+      textAlign: 'center',
+      fontSize: theme.spacing(5),
+      fontWeight: 700,
+      maxWidth: '100%',
+      fontFamily: "Orbitron",
+      overflowWrap: 'normal',
+    },
     heroContent: {
-        padding: theme.spacing(8, 2, 6),
+        // paddingTop: theme.spacing(10),
+        padding: theme.spacing(15, 10, 15),
         width: '100%',
         background: 'black',
         display: 'grid',
@@ -23,6 +33,7 @@ const useStyles = makeStyles(theme => ({
     },
     heroGrid: {
         justifyContent: 'center',
+        padding: theme.spacing(5,0.6,5),
     },
     btnRow: {
         color: '#FFFFFF',
@@ -52,7 +63,7 @@ const Title: React.FC<Props> = () => {
     return (
         <div className={classes.heroContent} id="ui-id">
             <Typography
-                className="SlideDown one"
+                className={classes.title + " SlideDown one"}
                 component="h1"
                 variant="h2"
                 align="center"
@@ -62,7 +73,7 @@ const Title: React.FC<Props> = () => {
                 Plasm Network is
                 <br /> a scaling Dapps platform on Substrate
             </Typography>
-            <Grid className="heroGrid" container direction="row-reverse" spacing={1} alignItems="center">
+            <Grid className={classes.heroGrid} container direction="row-reverse" spacing={1} alignItems="center">
                 <Grid item xs={12} sm={6} md className="SlideUp one">
                     {/* Time standard: UTC  */}
                     {/* <LockdropInfo countdownDate="2020-03-15 00:00:00" /> */}

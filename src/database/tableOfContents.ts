@@ -18,7 +18,7 @@ export const TableOfContents: TableOfItem[] = [
     },
     {
         id: 5,
-        content: 'Help us',
+        content: 'Get involved with Plasm',
         link: 'help-section',
     },
     {
