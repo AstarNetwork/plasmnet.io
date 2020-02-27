@@ -23,8 +23,9 @@ const useStyles = makeStyles(theme => ({
         overflowWrap: 'normal',
     },
     heroContent: {
-        padding: theme.spacing(15, 10, 15),
+        padding: '10% 10% 10%',
         width: '100%',
+        maxWidth: '100%',
         background: 'black',
         display: 'grid',
         alignItems: 'center',
