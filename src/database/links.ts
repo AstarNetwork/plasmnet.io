@@ -33,7 +33,7 @@ export const SponsorLinks = {
 };
 
 export const BlogLinks = {
-    lockdropIntroduction: 'https://medium.com/stake-technologies/plasm-lockdrop-introduction-54614592a13',
+    lockdropIntroduction: 'https://docs.plasmnet.io/PlasmNetwork/Lockdrop.html',
 };
 
 export const AppLinks = {
