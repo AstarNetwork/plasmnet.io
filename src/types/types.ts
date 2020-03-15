@@ -1,3 +1,5 @@
+import BN from 'bn.js';
+
 export interface CardItem {
     id: number;
     icon: any;
@@ -17,4 +19,13 @@ export interface TableOfItem {
     id: number;
     content: string;
     link: string;
+}
+
+export interface LockEvent {
+    eth: BN;
+    duration: number;
+    lock: string;
+    introducer: string;
+    blockNo: number;
+    txHash: string;
 }

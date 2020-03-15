@@ -6,8 +6,12 @@ import Typography from '@material-ui/core/Typography';
 //import Chip from '@material-ui/core/Chip';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
-import { LockValue } from '../database/tokenInfo';
+import { LockEvent } from '../types/types';
 import { BlogLinks } from '../database/links';
+import { getLockEvents, connectWeb3 } from '../helpers/EthereumLockdrop';
+import BigNumber from 'bignumber.js';
+import Web3Utils from 'web3-utils';
+import { Contract } from 'web3-eth-contract';
 
 interface TimeFormat {
     days: number;
@@ -69,6 +73,12 @@ const LockdropPanel: React.FC<Props> = ({ startTime, endTime }) => {
 
     const [timeLeft, setTimeLeft] = useState<TimeFormat>(calculateTimeLeft());
     const [lockState, setLockState] = useState(getLockState());
+    const [contractState, setContractState] = useState<Contract>({} as Contract);
+
+    // get and set the web3 state when the component is mounted
+    useEffect(() => {
+        connectWeb3().then(contract => setContractState(contract));
+    }, []);
 
     // update time value every second
     useEffect(() => {
@@ -81,7 +91,7 @@ const LockdropPanel: React.FC<Props> = ({ startTime, endTime }) => {
     if (lockState !== LockState.end) {
         return (
             <>
-                <PanelWrapper>
+                <PanelWrapper contractInstance={contractState}>
                     <Typography variant="h5">Lockdrop Information</Typography>
                     <br />
                     <div className="time">
@@ -121,7 +131,7 @@ const LockdropPanel: React.FC<Props> = ({ startTime, endTime }) => {
     } else {
         return (
             <>
-                <PanelWrapper>
+                <PanelWrapper contractInstance={contractState}>
                     <Typography variant="h2" align="center">
                         Lockdrop has ended
                     </Typography>
@@ -131,7 +141,11 @@ const LockdropPanel: React.FC<Props> = ({ startTime, endTime }) => {
     }
 };
 
-const PanelWrapper: React.FC = ({ children }) => {
+interface PanelWrapperProps {
+    contractInstance: Contract;
+}
+
+const PanelWrapper: React.FC<PanelWrapperProps> = ({ children, contractInstance }) => {
     const useStyles = makeStyles(theme => ({
         paper: {
             backgroundColor: 'white',
@@ -147,6 +161,25 @@ const PanelWrapper: React.FC = ({ children }) => {
             color: 'white',
         },
     }));
+    const [lockEvents, setEvents] = useState<LockEvent[]>([]);
+
+    const getTotalLockVal = (locks: LockEvent[]): string => {
+        console.log('locks', locks);
+        let totalVal = new BigNumber(0);
+        if (locks.length > 0) {
+            locks.forEach(i => {
+                const currentEth = new BigNumber(i.eth.toString());
+                totalVal = totalVal.plus(currentEth);
+            });
+        }
+        return Web3Utils.fromWei(totalVal.toString(), 'ether');
+    };
+
+    useEffect(() => {
+        setTimeout(() => {
+            getLockEvents(contractInstance).then(i => setEvents(i));
+        }, 1000);
+    });
 
     const classes = useStyles();
 
@@ -156,7 +189,7 @@ const PanelWrapper: React.FC = ({ children }) => {
                 <Paper elevation={5} className={classes.paper}>
                     {children}
                     <Typography variant="h5" className={classes.lockedVal}>
-                        Total Lock Value is {LockValue} ETH
+                        Total Lock Value is {getTotalLockVal(lockEvents)} ETH
                     </Typography>
 
                     <a href={BlogLinks.lockdropIntroduction}>
