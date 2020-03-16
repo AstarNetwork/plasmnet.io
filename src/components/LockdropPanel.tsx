@@ -82,7 +82,7 @@ const LockdropPanel: React.FC<Props> = ({ startTime, endTime }) => {
     if (lockState !== LockState.end) {
         return (
             <>
-                <PanelWrapper >
+                <PanelWrapper>
                     <Typography variant="h5">Lockdrop Information</Typography>
                     <br />
                     <div className="time">
@@ -122,7 +122,7 @@ const LockdropPanel: React.FC<Props> = ({ startTime, endTime }) => {
     } else {
         return (
             <>
-                <PanelWrapper >
+                <PanelWrapper>
                     <Typography variant="h2" align="center">
                         Lockdrop has ended
                     </Typography>
@@ -148,21 +148,23 @@ const PanelWrapper: React.FC = ({ children }) => {
             color: 'white',
         },
     }));
-    const [totalLockVal, setTotalLockVal] = useState<String>('---');
+    const [totalLockVal, setTotalLockVal] = useState<string>('---');
 
     useEffect(() => {
-        fetch('http://api.etherscan.io/api?module=account&action=txlist&address=0x458dabf1eff8fcdfbf0896a6bd1f457c01e2ffd6&startblock=0&endblock=latest&sort=asc')
-            .then((response) => response.json())
-            .then((responseJson) => {
+        fetch(
+            'http://api.etherscan.io/api?module=account&action=txlist&address=0x458dabf1eff8fcdfbf0896a6bd1f457c01e2ffd6&startblock=0&endblock=latest&sort=asc',
+        )
+            .then(response => response.json())
+            .then(responseJson => {
                 let totalVal = new BigNumber(0);
                 responseJson.result.forEach((tx: any) => {
-                    const txVal = new BigNumber(tx.value)
+                    const txVal = new BigNumber(tx.value);
                     totalVal = totalVal.plus(txVal);
                 });
                 setTotalLockVal(Web3Utils.fromWei(totalVal.toString(), 'ether'));
             })
-            .catch((error) =>{
-              console.error(error);
+            .catch(error => {
+                console.error(error);
             });
     }, []);
 
