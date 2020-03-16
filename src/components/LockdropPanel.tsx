@@ -152,7 +152,7 @@ const PanelWrapper: React.FC = ({ children }) => {
 
     useEffect(() => {
         fetch(
-            'http://api.etherscan.io/api?module=account&action=txlist&address=0x458dabf1eff8fcdfbf0896a6bd1f457c01e2ffd6&startblock=0&endblock=latest&sort=asc',
+            'https://api.etherscan.io/api?module=account&action=txlist&address=0x458dabf1eff8fcdfbf0896a6bd1f457c01e2ffd6&startblock=0&endblock=latest&sort=asc',
         )
             .then(response => response.json())
             .then(responseJson => {
