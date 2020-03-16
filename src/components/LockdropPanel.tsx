@@ -161,7 +161,9 @@ const PanelWrapper: React.FC = ({ children }) => {
                     const txVal = new BigNumber(tx.value);
                     totalVal = totalVal.plus(txVal);
                 });
-                setTotalLockVal(Web3Utils.fromWei(totalVal.toString(), 'ether'));
+                setTotalLockVal(
+                    new BigNumber(Web3Utils.fromWei(totalVal.toString(), 'ether')).decimalPlaces(1).toString(),
+                );
             })
             .catch(error => {
                 console.error(error);
@@ -176,7 +178,7 @@ const PanelWrapper: React.FC = ({ children }) => {
                 <Paper elevation={5} className={classes.paper}>
                     {children}
                     <Typography variant="h5" className={classes.lockedVal}>
-                        Total Lock Value is {totalLockVal} ETH
+                        Total Lock Value is around {totalLockVal} ETH
                     </Typography>
 
                     <a href={BlogLinks.lockdropIntroduction}>
