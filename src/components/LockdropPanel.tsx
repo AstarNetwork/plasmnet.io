@@ -6,8 +6,9 @@ import Typography from '@material-ui/core/Typography';
 //import Chip from '@material-ui/core/Chip';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
-import { LockValue } from '../database/tokenInfo';
 import { BlogLinks } from '../database/links';
+import BigNumber from 'bignumber.js';
+import Web3Utils from 'web3-utils';
 
 interface TimeFormat {
     days: number;
@@ -147,6 +148,25 @@ const PanelWrapper: React.FC = ({ children }) => {
             color: 'white',
         },
     }));
+    const [totalLockVal, setTotalLockVal] = useState<string>('---');
+
+    useEffect(() => {
+        fetch(
+            'http://api.etherscan.io/api?module=account&action=txlist&address=0x458dabf1eff8fcdfbf0896a6bd1f457c01e2ffd6&startblock=0&endblock=latest&sort=asc',
+        )
+            .then(response => response.json())
+            .then(responseJson => {
+                let totalVal = new BigNumber(0);
+                responseJson.result.forEach((tx: any) => {
+                    const txVal = new BigNumber(tx.value);
+                    totalVal = totalVal.plus(txVal);
+                });
+                setTotalLockVal(Web3Utils.fromWei(totalVal.toString(), 'ether'));
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    }, []);
 
     const classes = useStyles();
 
@@ -156,7 +176,7 @@ const PanelWrapper: React.FC = ({ children }) => {
                 <Paper elevation={5} className={classes.paper}>
                     {children}
                     <Typography variant="h5" className={classes.lockedVal}>
-                        Total Lock Value is {LockValue} ETH
+                        Total Lock Value is {totalLockVal} ETH
                     </Typography>
 
                     <a href={BlogLinks.lockdropIntroduction}>
