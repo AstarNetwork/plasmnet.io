@@ -6,12 +6,9 @@ import Typography from '@material-ui/core/Typography';
 //import Chip from '@material-ui/core/Chip';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
-import { LockEvent } from '../types/types';
 import { BlogLinks } from '../database/links';
-import { getLockEvents, connectWeb3 } from '../helpers/EthereumLockdrop';
 import BigNumber from 'bignumber.js';
 import Web3Utils from 'web3-utils';
-import { Contract } from 'web3-eth-contract';
 
 interface TimeFormat {
     days: number;
@@ -73,12 +70,6 @@ const LockdropPanel: React.FC<Props> = ({ startTime, endTime }) => {
 
     const [timeLeft, setTimeLeft] = useState<TimeFormat>(calculateTimeLeft());
     const [lockState, setLockState] = useState(getLockState());
-    const [contractState, setContractState] = useState<Contract>({} as Contract);
-
-    // get and set the web3 state when the component is mounted
-    useEffect(() => {
-        connectWeb3().then(contract => setContractState(contract));
-    }, []);
 
     // update time value every second
     useEffect(() => {
@@ -91,7 +82,7 @@ const LockdropPanel: React.FC<Props> = ({ startTime, endTime }) => {
     if (lockState !== LockState.end) {
         return (
             <>
-                <PanelWrapper contractInstance={contractState}>
+                <PanelWrapper >
                     <Typography variant="h5">Lockdrop Information</Typography>
                     <br />
                     <div className="time">
@@ -131,7 +122,7 @@ const LockdropPanel: React.FC<Props> = ({ startTime, endTime }) => {
     } else {
         return (
             <>
-                <PanelWrapper contractInstance={contractState}>
+                <PanelWrapper >
                     <Typography variant="h2" align="center">
                         Lockdrop has ended
                     </Typography>
@@ -141,11 +132,7 @@ const LockdropPanel: React.FC<Props> = ({ startTime, endTime }) => {
     }
 };
 
-interface PanelWrapperProps {
-    contractInstance: Contract;
-}
-
-const PanelWrapper: React.FC<PanelWrapperProps> = ({ children, contractInstance }) => {
+const PanelWrapper: React.FC = ({ children }) => {
     const useStyles = makeStyles(theme => ({
         paper: {
             backgroundColor: 'white',
@@ -161,25 +148,23 @@ const PanelWrapper: React.FC<PanelWrapperProps> = ({ children, contractInstance 
             color: 'white',
         },
     }));
-    const [lockEvents, setEvents] = useState<LockEvent[]>([]);
-
-    const getTotalLockVal = (locks: LockEvent[]): string => {
-        console.log('locks', locks);
-        let totalVal = new BigNumber(0);
-        if (locks.length > 0) {
-            locks.forEach(i => {
-                const currentEth = new BigNumber(i.eth.toString());
-                totalVal = totalVal.plus(currentEth);
-            });
-        }
-        return Web3Utils.fromWei(totalVal.toString(), 'ether');
-    };
+    const [totalLockVal, setTotalLockVal] = useState<String>('---');
 
     useEffect(() => {
-        setTimeout(() => {
-            getLockEvents(contractInstance).then(i => setEvents(i));
-        }, 1000);
-    });
+        fetch('http://api.etherscan.io/api?module=account&action=txlist&address=0x458dabf1eff8fcdfbf0896a6bd1f457c01e2ffd6&startblock=0&endblock=latest&sort=asc')
+            .then((response) => response.json())
+            .then((responseJson) => {
+                let totalVal = new BigNumber(0);
+                responseJson.result.forEach((tx: any) => {
+                    const txVal = new BigNumber(tx.value)
+                    totalVal = totalVal.plus(txVal);
+                });
+                setTotalLockVal(Web3Utils.fromWei(totalVal.toString(), 'ether'));
+            })
+            .catch((error) =>{
+              console.error(error);
+            });
+    }, []);
 
     const classes = useStyles();
 
@@ -189,7 +174,7 @@ const PanelWrapper: React.FC<PanelWrapperProps> = ({ children, contractInstance 
                 <Paper elevation={5} className={classes.paper}>
                     {children}
                     <Typography variant="h5" className={classes.lockedVal}>
-                        Total Lock Value is {getTotalLockVal(lockEvents)} ETH
+                        Total Lock Value is {totalLockVal} ETH
                     </Typography>
 
                     <a href={BlogLinks.lockdropIntroduction}>

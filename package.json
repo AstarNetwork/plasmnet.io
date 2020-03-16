@@ -17,7 +17,6 @@
     "@types/react-vertical-timeline-component": "^2.5.0",
     "bignumber.js": "^9.0.0",
     "clsx": "^1.1.0",
-    "lockdrop-ui": "git+ssh://git@github.com:staketechnologies/lockdrop-ui.git",
     "node-sass": "^4.13.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
@@ -34,8 +33,6 @@
     "styled-components": "^5.0.1",
     "styled-media-query": "^2.1.2",
     "typescript": "~3.7.2",
-    "web3": "^1.2.6",
-    "web3-eth-contract": "^1.2.6",
     "web3-utils": "^1.2.6"
   },
   "scripts": {
