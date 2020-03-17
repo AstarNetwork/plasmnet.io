@@ -162,7 +162,7 @@ const PanelWrapper: React.FC = ({ children }) => {
                     totalVal = totalVal.plus(txVal);
                 });
                 setTotalLockVal(
-                    new BigNumber(Web3Utils.fromWei(totalVal.toString(), 'ether')).decimalPlaces(1).toString(),
+                    new BigNumber(Web3Utils.fromWei(totalVal.toFixed(), 'ether')).decimalPlaces(1).toFixed(),
                 );
             })
             .catch(error => {
