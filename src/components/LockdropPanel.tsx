@@ -10,12 +10,12 @@ import { BlogLinks } from '../database/links';
 import BigNumber from 'bignumber.js';
 import Web3Utils from 'web3-utils';
 
-interface TimeFormat {
-    days: number;
-    hours: number;
-    minutes: number;
-    seconds: number;
-}
+// interface TimeFormat {
+//     days: number;
+//     hours: number;
+//     minutes: number;
+//     seconds: number;
+// }
 
 interface Props {
     startTime: string;
@@ -29,33 +29,33 @@ enum LockState {
 }
 
 const LockdropPanel: React.FC<Props> = ({ startTime, endTime }) => {
-    const calculateTimeLeft = () => {
-        const tillStart = +new Date(startTime) - +Date.now();
-        const tillEnd = +new Date(endTime) - +Date.now();
+    // const calculateTimeLeft = () => {
+    //     const tillStart = +new Date(startTime) - +Date.now();
+    //     const tillEnd = +new Date(endTime) - +Date.now();
 
-        let difference = tillStart;
-        // if it has already started
-        if (tillStart < 0) {
-            difference = tillEnd;
-        }
+    //     let difference = tillStart;
+    //     // if it has already started
+    //     if (tillStart < 0) {
+    //         difference = tillEnd;
+    //     }
 
-        let timeLeft: TimeFormat = {
-            days: 0,
-            hours: 0,
-            minutes: 0,
-            seconds: 0,
-        };
+    //     let timeLeft: TimeFormat = {
+    //         days: 0,
+    //         hours: 0,
+    //         minutes: 0,
+    //         seconds: 0,
+    //     };
 
-        if (difference > 0) {
-            timeLeft = {
-                days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-                hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-                minutes: Math.floor((difference / 1000 / 60) % 60),
-                seconds: Math.floor((difference / 1000) % 60),
-            };
-        }
-        return timeLeft;
-    };
+    //     if (difference > 0) {
+    //         timeLeft = {
+    //             days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+    //             hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+    //             minutes: Math.floor((difference / 1000 / 60) % 60),
+    //             seconds: Math.floor((difference / 1000) % 60),
+    //         };
+    //     }
+    //     return timeLeft;
+    // };
 
     const getLockState = () => {
         const tillStart = +new Date(startTime) - +Date.now();
@@ -68,68 +68,104 @@ const LockdropPanel: React.FC<Props> = ({ startTime, endTime }) => {
         }
     };
 
-    const [timeLeft, setTimeLeft] = useState<TimeFormat>(calculateTimeLeft());
+    //const [timeLeft, setTimeLeft] = useState<TimeFormat>(calculateTimeLeft());
     const [lockState, setLockState] = useState(getLockState());
 
     // update time value every second
     useEffect(() => {
         setTimeout(() => {
-            setTimeLeft(calculateTimeLeft());
+            //setTimeLeft(calculateTimeLeft());
             setLockState(getLockState());
         }, 1000);
     });
 
-    if (lockState !== LockState.end) {
-        return (
-            <>
-                <PanelWrapper>
-                    <Typography variant="h5">Lockdrop Information</Typography>
-                    <br />
-                    <div className="time">
-                        <Grid container spacing={2} justify="center">
-                            <Grid item>
-                                {lockState === LockState.notStart ? (
-                                    <Typography variant="h4" component="h2">
-                                        Starting in:
-                                    </Typography>
-                                ) : (
-                                    <Typography variant="h4" component="h2">
-                                        Ending in:
-                                    </Typography>
-                                )}
-                            </Grid>
-                            <Grid item>
-                                <h3>{timeLeft.days}</h3>
-                                <p>Days</p>
-                            </Grid>
-                            <Grid item>
-                                <h3>{timeLeft.hours}</h3>
-                                <p>Hours</p>
-                            </Grid>
-                            <Grid item>
-                                <h3>{timeLeft.minutes}</h3>
-                                <p>Minutes</p>
-                            </Grid>
-                            <Grid item>
-                                <h3>{timeLeft.seconds}</h3>
-                                <p>Seconds</p>
-                            </Grid>
+    return (
+        <>
+            <PanelWrapper>
+                <Typography variant="h5">Lockdrop Information</Typography>
+                <br />
+                <div className="time">
+                    <Grid container spacing={2} justify="center">
+                        <Grid item>
+                            {lockState === LockState.notStart ? (
+                                <Typography variant="h4" component="h2">
+                                    Starting in:
+                                </Typography>
+                            ) : (
+                                <Typography variant="h4" component="h2">
+                                    Ending in:
+                                </Typography>
+                            )}
                         </Grid>
-                    </div>
-                </PanelWrapper>
-            </>
-        );
-    } else {
-        return (
-            <>
-                <PanelWrapper>
-                    <Typography variant="h2" align="center">
-                        Lockdrop has ended
-                    </Typography>
-                </PanelWrapper>
-            </>
-        );
-    }
+                        <Grid item>
+                            <h3>April</h3>
+                        </Grid>
+                        <Grid item>
+                            <h3>13th</h3>
+                        </Grid>
+                        <Grid item>
+                            <h3>00:00</h3>
+                        </Grid>
+                        <Grid item>
+                            <h3>UTC</h3>
+                        </Grid>
+                    </Grid>
+                </div>
+            </PanelWrapper>
+        </>
+    );
+
+    // if (lockState !== LockState.end) {
+    //     return (
+    //         <>
+    //             <PanelWrapper>
+    //                 <Typography variant="h5">Lockdrop Information</Typography>
+    //                 <br />
+    //                 <div className="time">
+    //                     <Grid container spacing={2} justify="center">
+    //                         <Grid item>
+    //                             {lockState === LockState.notStart ? (
+    //                                 <Typography variant="h4" component="h2">
+    //                                     Starting in:
+    //                                 </Typography>
+    //                             ) : (
+    //                                 <Typography variant="h4" component="h2">
+    //                                     Ending in:
+    //                                 </Typography>
+    //                             )}
+    //                         </Grid>
+    //                         <Grid item>
+    //                             <h3>{timeLeft.days}</h3>
+    //                             <p>Days</p>
+    //                         </Grid>
+    //                         <Grid item>
+    //                             <h3>{timeLeft.hours}</h3>
+    //                             <p>Hours</p>
+    //                         </Grid>
+    //                         <Grid item>
+    //                             <h3>{timeLeft.minutes}</h3>
+    //                             <p>Minutes</p>
+    //                         </Grid>
+    //                         <Grid item>
+    //                             <h3>{timeLeft.seconds}</h3>
+    //                             <p>Seconds</p>
+    //                         </Grid>
+    //                     </Grid>
+    //                 </div>
+    //             </PanelWrapper>
+    //         </>
+    //     );
+    // } else {
+    //     return (
+    //         <>
+    //             <PanelWrapper>
+    //                 <Typography variant="h2" align="center">
+    //                     Lockdrop has ended
+    //                 </Typography>
+    //             </PanelWrapper>
+    //         </>
+    //     );
+    // }
 };
 
 const PanelWrapper: React.FC = ({ children }) => {
