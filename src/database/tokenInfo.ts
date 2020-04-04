@@ -4,6 +4,7 @@ import FlashOnOutlinedIcon from '@material-ui/icons/FlashOnOutlined';
 import AutorenewOutlinedIcon from '@material-ui/icons/AutorenewOutlined';
 import CodeOutlinedIcon from '@material-ui/icons/CodeOutlined';
 import LockIcon from '@material-ui/icons/Lock';
+import moment from 'moment';
 
 //todo: add more content here
 export const TokenInfo: CardItem[] = [
@@ -39,9 +40,9 @@ export const TokenInfo: CardItem[] = [
     },
 ];
 
-// this is just a temporary date
 // the time zone is set to UTC as default
-export const LockdropEnd = '2020-04-13 00:00:00';
-export const LockdropStart = '2020-03-15 00:00:00';
-// this is just a temporary value
-export const LockValue = '-';
+//export const LockdropStart = moment.utc('2020-03-15 00:00:00');
+export const LockdropStart = moment.utc(1584230400000);
+console.log(LockdropStart.toString());
+// the 1st lockdrop will last for 30 days
+export const LockdropEnd = LockdropStart.add(30, 'day');
