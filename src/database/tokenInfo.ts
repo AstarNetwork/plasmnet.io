@@ -42,7 +42,7 @@ export const TokenInfo: CardItem[] = [
 
 // the time zone is set to UTC as default
 //export const LockdropStart = moment.utc('2020-03-15 00:00:00');
-export const LockdropStart = moment.utc(1584230400000);
+export const LockdropStart = moment.utc('2020-03-15 00:00:00');
 console.log(LockdropStart.toString());
 // the 1st lockdrop will last for 30 days
-export const LockdropEnd = LockdropStart.add(30, 'day');
+export const LockdropEnd = moment.utc('2020-04-13 00:00:00');
