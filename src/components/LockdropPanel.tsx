@@ -8,7 +8,7 @@ import Grid from '@material-ui/core/Grid';
 import { BlogLinks } from '../database/links';
 import BigNumber from 'bignumber.js';
 import Web3Utils from 'web3-utils';
-import moment, { Moment } from 'moment';
+import moment, { Moment, duration } from 'moment';
 
 interface TimeFormat {
     days: number;
@@ -29,14 +29,17 @@ enum LockState {
 }
 
 const LockdropPanel: React.FC<Props> = ({ startTime, endTime }) => {
-    const calculateTimeLeft = (): TimeFormat => {
-        const tillStart = moment(startTime).valueOf() - moment().valueOf();
-        const tillEnd = moment(endTime).valueOf() - moment().valueOf();
+    const now = moment().utc();
 
-        let difference = tillStart;
-        // if it has already started
+    const calculateTimeLeft = (): TimeFormat => {
+        const tillStart = moment(startTime).valueOf() - now.valueOf();
+
+        //let difference = tillStart;
+        let difference = duration(startTime.diff(now));
+
+        // if the lockdrop has already started
         if (tillStart < 0) {
-            difference = tillEnd;
+            difference = duration(endTime.diff(now));
         }
 
         let timeLeft: TimeFormat = {
@@ -46,22 +49,25 @@ const LockdropPanel: React.FC<Props> = ({ startTime, endTime }) => {
             seconds: 0,
         };
 
-        if (difference > 0) {
+        const tillEnd = moment(endTime).valueOf() - now.valueOf();
+        // check if the duration has ended
+        if (tillEnd > 0) {
             timeLeft = {
-                days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-                hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-                minutes: Math.floor((difference / 1000 / 60) % 60),
-                seconds: Math.floor((difference / 1000) % 60),
+                days: difference.days(),
+                hours: difference.hours(),
+                minutes: difference.minutes(),
+                seconds: difference.seconds(),
             };
         }
+
         return timeLeft;
     };
 
     const getLockState = (): LockState => {
-        const tillStart = moment(startTime).valueOf() - moment().valueOf();
+        const tillStart = moment(startTime).valueOf() - now.valueOf();
         if (tillStart > 0) {
             return LockState.notStart;
-        } else if (tillStart <= 0 && !(moment(endTime).valueOf() - moment().valueOf() < 0)) {
+        } else if (tillStart <= 0 && !(moment(endTime).valueOf() - now.valueOf() < 0)) {
             return LockState.start;
         } else {
             return LockState.end;
