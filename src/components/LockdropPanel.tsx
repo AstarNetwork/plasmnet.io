@@ -9,6 +9,8 @@ import { BlogLinks } from '../database/links';
 import BigNumber from 'bignumber.js';
 import Web3Utils from 'web3-utils';
 import moment, { Moment, duration } from 'moment';
+import { LockTxArray } from '../types/types';
+import { addComma } from '../utils/addComma';
 
 interface TimeFormat {
     days: number;
@@ -154,27 +156,65 @@ const PanelWrapper: React.FC = ({ children }) => {
             color: 'white',
         },
     }));
+
     const [totalLockVal, setTotalLockVal] = useState<string>('---');
+    const getLockValue = async (): Promise<void> => {
+        const url =
+            'https://api.etherscan.io/api?module=account&action=txlist&address=0x458dabf1eff8fcdfbf0896a6bd1f457c01e2ffd6&startblock=0&endblock=latest&sort=asc';
+
+        try {
+            const res = await fetch(url);
+            const data = await res.json();
+            const result: LockTxArray = data.result;
+            let totalVal = new BigNumber(0);
+
+            // Memo: forEach will occur `forEach Is Not a Function` error sometime
+            for (let i = 0; i < result.length; i++) {
+                const txVal = new BigNumber(result[i].value);
+                totalVal = totalVal.plus(txVal);
+            }
+
+            // Memo: Recursion
+            if (totalVal.s !== null) {
+                setTotalLockVal(
+                    addComma(
+                        new BigNumber(Web3Utils.fromWei(totalVal.toFixed(), 'ether')).decimalPlaces(1).toFixed(),
+                        1,
+                    ),
+                );
+            } else {
+                getLockValue();
+            }
+        } catch (err) {
+            console.error(err);
+        }
+    };
 
     useEffect(() => {
-        fetch(
-            'https://api.etherscan.io/api?module=account&action=txlist&address=0x458dabf1eff8fcdfbf0896a6bd1f457c01e2ffd6&startblock=0&endblock=latest&sort=asc',
-        )
-            .then(response => response.json())
-            .then(responseJson => {
-                let totalVal = new BigNumber(0);
-                responseJson.result.forEach((tx: any) => {
-                    const txVal = new BigNumber(tx.value);
-                    totalVal = totalVal.plus(txVal);
-                });
-                setTotalLockVal(
-                    new BigNumber(Web3Utils.fromWei(totalVal.toFixed(), 'ether')).decimalPlaces(1).toFixed(),
-                );
-            })
-            .catch(error => {
-                console.error(error);
-            });
+        getLockValue();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
+
+    // useEffect(() => {
+    //     fetch(
+    //         'https://api.etherscan.io/api?module=account&action=txlist&address=0x458dabf1eff8fcdfbf0896a6bd1f457c01e2ffd6&startblock=0&endblock=latest&sort=asc',
+    //     )
+    //         .then(response => response.json())
+    //         .then(responseJson => {
+    //             let totalVal = new BigNumber(0);
+    //             responseJson.result.forEach((tx: any) => {
+    //                 const txVal = new BigNumber(tx.value);
+    //                 totalVal = totalVal.plus(txVal);
+    //             });
+    //             setTotalLockVal(
+    //                 addComma(
+    //                     new BigNumber(Web3Utils.fromWei(totalVal.toFixed(), 'ether')).decimalPlaces(1).toFixed(), 1),
+    //             );
+    //         })
+    //         .catch(error => {
+    //             console.error(error);
+    //         });
+    // }, []);
 
     const classes = useStyles();
 
