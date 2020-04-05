@@ -11,7 +11,7 @@ import Grid from '@material-ui/core/Grid';
 import { LockdropEnd, LockdropStart } from '../../../database/tokenInfo';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
-interface Props { }
+interface Props {}
 
 const useStyles = makeStyles(theme => ({
     title: {
