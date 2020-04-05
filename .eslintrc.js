@@ -14,8 +14,9 @@ module.exports = {
         },
     },
     rules: {
-        "react/prop-types": 0
+        "react/prop-types": 0,
     },
+    "plugins": ["react", "react-hooks",],
     settings: {
         react: {
             version: 'detect', // Tells eslint-plugin-react to automatically detect the version of React to use
