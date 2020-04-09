@@ -10,7 +10,7 @@ import BigNumber from 'bignumber.js';
 import Web3Utils from 'web3-utils';
 import moment, { Moment, duration } from 'moment';
 import { LockTxArray } from '../types/types';
-import { addComma } from '../utils/addComma';
+import CountUp from 'react-countup';
 
 interface TimeFormat {
     days: number;
@@ -101,10 +101,10 @@ const LockdropPanel: React.FC<Props> = ({ startTime, endTime }) => {
                                         Starting in:
                                     </Typography>
                                 ) : (
-                                    <Typography variant="h4" component="h2">
-                                        Ending in:
-                                    </Typography>
-                                )}
+                                        <Typography variant="h4" component="h2">
+                                            Ending in:
+                                        </Typography>
+                                    )}
                             </Grid>
                             <Grid item>
                                 <h3>{timeLeft.days}</h3>
@@ -157,7 +157,7 @@ const PanelWrapper: React.FC = ({ children }) => {
         },
     }));
 
-    const [totalLockVal, setTotalLockVal] = useState<string>('---');
+    const [totalLockVal, setTotalLockVal] = useState<number>(0);
     const getLockValue = async (): Promise<void> => {
         const url =
             'https://api.etherscan.io/api?module=account&action=txlist&address=0x458dabf1eff8fcdfbf0896a6bd1f457c01e2ffd6&startblock=0&endblock=latest&sort=asc';
@@ -177,10 +177,7 @@ const PanelWrapper: React.FC = ({ children }) => {
             // Memo: Recursion
             if (totalVal.s !== null) {
                 setTotalLockVal(
-                    addComma(
-                        new BigNumber(Web3Utils.fromWei(totalVal.toFixed(), 'ether')).decimalPlaces(1).toFixed(),
-                        1,
-                    ),
+                    Number(new BigNumber(Web3Utils.fromWei(totalVal.toFixed(), 'ether')).decimalPlaces(1).toFixed()),
                 );
             } else {
                 getLockValue();
@@ -195,28 +192,11 @@ const PanelWrapper: React.FC = ({ children }) => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-    // useEffect(() => {
-    //     fetch(
-    //         'https://api.etherscan.io/api?module=account&action=txlist&address=0x458dabf1eff8fcdfbf0896a6bd1f457c01e2ffd6&startblock=0&endblock=latest&sort=asc',
-    //     )
-    //         .then(response => response.json())
-    //         .then(responseJson => {
-    //             let totalVal = new BigNumber(0);
-    //             responseJson.result.forEach((tx: any) => {
-    //                 const txVal = new BigNumber(tx.value);
-    //                 totalVal = totalVal.plus(txVal);
-    //             });
-    //             setTotalLockVal(
-    //                 addComma(
-    //                     new BigNumber(Web3Utils.fromWei(totalVal.toFixed(), 'ether')).decimalPlaces(1).toFixed(), 1),
-    //             );
-    //         })
-    //         .catch(error => {
-    //             console.error(error);
-    //         });
-    // }, []);
-
     const classes = useStyles();
+
+    const countupTotalLockVal: JSX.Element = (
+        <CountUp start={0} end={totalLockVal} decimals={1} duration={1} separator="," />
+    );
 
     return (
         <>
@@ -224,7 +204,7 @@ const PanelWrapper: React.FC = ({ children }) => {
                 <Paper elevation={5} className={classes.paper}>
                     {children}
                     <Typography variant="h5" className={classes.lockedVal}>
-                        Total Lock Value is around {totalLockVal} ETH
+                        Total Lock Value is around {countupTotalLockVal} ETH
                     </Typography>
 
                     <a href={BlogLinks.lockdropIntroduction}>
