@@ -6,11 +6,9 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import { BlogLinks } from '../database/links';
-import BigNumber from 'bignumber.js';
-import Web3Utils from 'web3-utils';
 import moment, { Moment, duration } from 'moment';
-import { LockTxArray } from '../types/types';
 import CountUp from 'react-countup';
+import { getLockValue } from '../helpers/ethLockdrop';
 
 interface TimeFormat {
     days: number;
@@ -101,10 +99,10 @@ const LockdropPanel: React.FC<Props> = ({ startTime, endTime }) => {
                                         Starting in:
                                     </Typography>
                                 ) : (
-                                        <Typography variant="h4" component="h2">
-                                            Ending in:
-                                        </Typography>
-                                    )}
+                                    <Typography variant="h4" component="h2">
+                                        Ending in:
+                                    </Typography>
+                                )}
                             </Grid>
                             <Grid item>
                                 <h3>{timeLeft.days}</h3>
@@ -157,45 +155,22 @@ const PanelWrapper: React.FC = ({ children }) => {
         },
     }));
 
-    const [totalLockVal, setTotalLockVal] = useState<number>(0);
-    const getLockValue = async (): Promise<void> => {
-        const url =
-            'https://api.etherscan.io/api?module=account&action=txlist&address=0x458dabf1eff8fcdfbf0896a6bd1f457c01e2ffd6&startblock=0&endblock=latest&sort=asc';
+    const [totalLockVal, setTotalLockVal] = useState('0');
 
-        try {
-            const res = await fetch(url);
-            const data = await res.json();
-            const result: LockTxArray = data.result;
-            let totalVal = new BigNumber(0);
-
-            // Memo: forEach will occur `forEach Is Not a Function` error sometime
-            for (let i = 0; i < result.length; i++) {
-                const txVal = new BigNumber(result[i].value);
-                totalVal = totalVal.plus(txVal);
-            }
-
-            // Memo: Recursion
-            if (totalVal.s !== null) {
-                setTotalLockVal(
-                    Number(new BigNumber(Web3Utils.fromWei(totalVal.toFixed(), 'ether')).decimalPlaces(1).toFixed()),
-                );
-            } else {
-                getLockValue();
-            }
-        } catch (err) {
-            console.error(err);
-        }
+    const setLocks = async (): Promise<void> => {
+        const lockVal = await getLockValue();
+        setTotalLockVal(lockVal);
     };
 
     useEffect(() => {
-        getLockValue();
+        setLocks();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const classes = useStyles();
 
     const countupTotalLockVal: JSX.Element = (
-        <CountUp start={0} end={totalLockVal} decimals={1} duration={1} separator="," />
+        <CountUp start={0} end={Number(totalLockVal)} decimals={1} duration={1} separator="," />
     );
 
     return (
