@@ -3,6 +3,7 @@ import TagFacesOutlinedIcon from '@material-ui/icons/TagFacesOutlined';
 import DehazeOutlinedIcon from '@material-ui/icons/DehazeOutlined';
 import FilterTiltShiftOutlinedIcon from '@material-ui/icons/FilterTiltShiftOutlined';
 import LastPageOutlinedIcon from '@material-ui/icons/LastPageOutlined';
+import AssignmentTurnedInIcon from '@material-ui/icons/AssignmentTurnedIn';
 
 //todo: add more content here
 export const RoadmapItems = [
@@ -41,5 +42,13 @@ export const RoadmapItems = [
         content:
             "Plasm Network is in it's core, bringing Layer 2 to the Polkadot network (Depends on Polkadot). And Starts 2-nd, 3-rd Lockdrop with ETC, BTC and DOT.",
         date: '2020-Q3',
+    },
+    {
+        id: 5,
+        icon: AssignmentTurnedInIcon,
+        heading: 'Completed a Plasm Network v2.0.0.',
+        content:
+            'All the features described in the white paper are available. All lockdrops have been terminated(with Reail-time lockdrop).  The network is controlled autonomously and decentralized. Also Parachained and connected to Polkadot.',
+        date: '2020-Q4',
     },
 ];
