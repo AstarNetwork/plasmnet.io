@@ -62,8 +62,8 @@ const WhatWeDo: React.FC = () => {
             <Container className={classes.cardGrid} maxWidth="md">
                 {/* End hero unit */}
                 <Grid container spacing={4}>
-                    {cards.map(card => (
-                        <Grid item key={card.id} xs={12} sm={6} md={4}>
+                    {cards.map((card, index) => (
+                        <Grid item key={index} xs={12} sm={6} md={4}>
                             <Card className={classes.card}>
                                 <card.icon style={{ fontSize: 60 }} className={classes.icon}></card.icon>
                                 <CardContent className={classes.cardContent}>

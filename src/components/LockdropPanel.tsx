@@ -150,8 +150,6 @@ const PanelWrapper: React.FC = ({ children }) => {
         },
         btnPrimary: {
             margin: theme.spacing(5),
-            backgroundColor: '#3498DB',
-            color: 'white',
         },
     }));
 
@@ -183,8 +181,8 @@ const PanelWrapper: React.FC = ({ children }) => {
                     </Typography>
 
                     <a href={BlogLinks.lockdropIntroduction}>
-                        <Button variant="contained" size="large" className={classes.btnPrimary}>
-                            What is the Lockdrop?
+                        <Button variant="contained" size="large" color="primary" className={classes.btnPrimary}>
+                            What&#39;s a Lockdrop?
                         </Button>
                     </a>
                 </Paper>

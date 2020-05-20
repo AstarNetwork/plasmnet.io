@@ -21,6 +21,12 @@ const useStyles = makeStyles((theme: Theme) =>
             color: '#fff',
             backgroundColor: blue[50],
         },
+        headerText: {
+            color: 'white',
+        },
+        descriptionText: {
+            color: 'white',
+        },
     }),
 );
 
@@ -33,13 +39,13 @@ const AboutToken: React.FC = () => {
     return (
         <div className={classes.heroContent} id="aboutToken-section">
             <Container maxWidth="md">
-                <Typography component="h3" variant="h3" align="center" color="textPrimary" gutterBottom>
+                <Typography component="h3" variant="h3" align="center" className={classes.headerText} gutterBottom>
                     The PLM token gives everyone the power to utilize Plasm Network
                 </Typography>
                 <List>
                     <Grid container spacing={4}>
-                        {listItems.map(item => (
-                            <Grid item key={item.id} xs={12} sm={6} md={4}>
+                        {listItems.map((item, index) => (
+                            <Grid item key={index} xs={12} sm={6} md={4}>
                                 <ListItem>
                                     <ListItemAvatar>
                                         <Avatar className={classes.avatar}>
@@ -47,10 +53,15 @@ const AboutToken: React.FC = () => {
                                         </Avatar>
                                     </ListItemAvatar>
                                     <ListItemText>
-                                        <Typography gutterBottom variant="h5" component="h2">
+                                        <Typography
+                                            gutterBottom
+                                            variant="h5"
+                                            component="h2"
+                                            className={classes.descriptionText}
+                                        >
                                             {item.heading}
                                         </Typography>
-                                        <Typography>{item.content}</Typography>
+                                        <Typography color="textSecondary">{item.content}</Typography>
                                     </ListItemText>
                                 </ListItem>
                             </Grid>
