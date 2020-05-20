@@ -17,6 +17,9 @@ const useStyles = makeStyles(theme => ({
         paddingTop: theme.spacing(8),
         paddingBottom: theme.spacing(8),
     },
+    headerText: {
+        color: 'white',
+    },
 }));
 
 const Roadmap: React.FC = () => {
@@ -25,7 +28,7 @@ const Roadmap: React.FC = () => {
     return (
         <div className={classes.heroContent} id="roadmap-section">
             <Container maxWidth="sm">
-                <Typography component="h3" variant="h3" align="center" color="textPrimary" gutterBottom>
+                <Typography component="h3" variant="h3" align="center" className={classes.headerText} gutterBottom>
                     Our development timeline
                 </Typography>
             </Container>
