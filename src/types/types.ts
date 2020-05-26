@@ -1,5 +1,4 @@
 export interface CardItem {
-    id: number;
     icon: any;
     heading: string;
     content: string;

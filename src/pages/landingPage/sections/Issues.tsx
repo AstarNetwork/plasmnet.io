@@ -15,6 +15,9 @@ const useStyles = makeStyles(theme => ({
     link: {
         color: 'navy',
     },
+    headerText: {
+        color: 'white',
+    },
 }));
 
 const Issues: React.FC = () => {
@@ -24,7 +27,7 @@ const Issues: React.FC = () => {
         <div className={classes.heroContent} id="issues-section">
             <CssBaseline />
             <Container maxWidth="md">
-                <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
+                <Typography component="h1" variant="h2" align="center" className={classes.headerText} gutterBottom>
                     Public Blockchains are &quot;full&quot;,
                     <br />
                     but we can fix that

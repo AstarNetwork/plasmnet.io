@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-scroll';
-import { Button } from 'semantic-ui-react';
+
 import { AppLinks } from '../../../database/links';
 import { TableOfContents } from '../../../database/tableOfContents';
 import { makeStyles } from '@material-ui/core/styles';
@@ -9,24 +9,28 @@ import '../../../styles/animation.scss';
 import LockdropPanel from '../../../components/LockdropPanel';
 import Grid from '@material-ui/core/Grid';
 import { LockdropEnd, LockdropStart } from '../../../database/tokenInfo';
+import ParticlesBg from 'particles-bg';
+import { theme } from '../../../styles/theme';
+import { Button } from '@material-ui/core';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface Props {}
 
 const useStyles = makeStyles(theme => ({
     title: {
-        color: '#FFFFFF',
+        color: 'black',
         textAlign: 'center',
         fontSize: theme.spacing(5),
-        fontWeight: 700,
+        //fontWeight: 700,
         maxWidth: '100%',
         overflowWrap: 'normal',
+        fontFamily: '"Roboto", sans-serif;',
     },
     heroContent: {
         padding: '10% 10% 10%',
         width: '100%',
         maxWidth: '100%',
-        background: 'black',
+        background: 'transparent',
         display: 'grid',
         alignItems: 'center',
     },
@@ -70,7 +74,7 @@ const Title: React.FC<Props> = () => {
                 gutterBottom
             >
                 Plasm Network is
-                <br /> a scaling Dapps platform on Substrate
+                <br /> a scaling dApps platform on Substrate
             </Typography>
             <Grid className={classes.heroGrid} container direction="row-reverse" spacing={1} alignItems="center">
                 <Grid item xs={12} sm={6} md className="SlideUp one">
@@ -82,14 +86,14 @@ const Title: React.FC<Props> = () => {
                             <Grid container spacing={2} justify="center" className={classes.heroGrid + ' SlideUp two'}>
                                 <Grid item>
                                     <a href={AppLinks.plasmnetIo} rel="noopener noreferrer" target="_blank">
-                                        <Button color="violet" size="massive" className="ui-button">
+                                        <Button color="primary" size="large" variant="contained" className="ui-button">
                                             Launch UI
                                         </Button>
                                     </a>
                                 </Grid>
                                 <Grid item>
                                     <a href={AppLinks.joinLockdrop} rel="noopener noreferrer" target="_blank">
-                                        <Button size="massive" className="ui-button" inverted color="violet">
+                                        <Button size="large" className="ui-button" variant="outlined" color="primary">
                                             Join Lockdrop
                                         </Button>
                                     </a>
@@ -108,6 +112,7 @@ const Title: React.FC<Props> = () => {
                     ))}
                 </Grid>
             </Grid>
+            <ParticlesBg type="cobweb" bg={true} color={theme.colors.blue} />
         </div>
     );
 };

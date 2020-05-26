@@ -9,31 +9,27 @@ import moment from 'moment';
 //todo: add more content here
 export const TokenInfo: CardItem[] = [
     {
-        id: 1,
         icon: MonetizationOnOutlinedIcon,
-        heading: 'Liquidity',
+        heading: 'Value',
         content: 'PLM is the main exchange medium that represents value in the network',
     },
     {
-        id: 2,
         icon: FlashOnOutlinedIcon,
-        heading: 'Operation',
+        heading: 'Operators',
         content: 'Good actors are rewarded by this mechanism whilst bad actors will lose their stake in the network',
     },
     {
-        id: 3,
         icon: AutorenewOutlinedIcon,
         heading: 'Decentralization',
         content: 'Having a well-distributed wealth amongst the community ensures decentralization',
     },
     {
-        id: 4,
         icon: CodeOutlinedIcon,
-        heading: 'More dApps',
-        content: 'PLM provide incentives to the developers creating great dApps',
+        heading: 'dApps Rewards',
+        content:
+            'PLM provide incentives to the developers creating great dApps with the most nominators by splitting the block validation rewards',
     },
     {
-        id: 5,
         icon: LockIcon,
         heading: 'Multi-Lockdrop',
         content: 'PLM is distributed via a Multi-Lockdrop, which is a modified lockdrop, popularized by Edgeware',
