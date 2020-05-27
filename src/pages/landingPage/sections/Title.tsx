@@ -41,7 +41,6 @@ const useStyles = makeStyles(theme => ({
     btnRow: {
         color: '#FFFFFF',
         height: theme.spacing(5.3),
-        cursor: 'pointer',
         lineHeight: theme.spacing(0.5),
         fontSize: 18,
         position: 'relative',
@@ -57,6 +56,7 @@ const useStyles = makeStyles(theme => ({
     },
     link: {
         color: 'rgb(129, 133, 141)',
+        cursor: 'pointer',
     },
 }));
 
