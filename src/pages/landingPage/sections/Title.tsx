@@ -12,6 +12,8 @@ import { LockdropEnd, LockdropStart } from '../../../database/tokenInfo';
 import ParticlesBg from 'particles-bg';
 import { theme } from '../../../styles/theme';
 import { Button } from '@material-ui/core';
+import { motion } from 'framer-motion';
+import { TitleVariants, TitleTransition } from '../../../styles/titleTransitAnimation';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface Props {}
@@ -106,7 +108,9 @@ const Title: React.FC<Props> = () => {
                     {TableOfContents.map(content => (
                         <div className={classes.btnRow + ' Fade-in one'} key={content.id}>
                             <Link className={classes.link} to={content.link} smooth={true} offset={0} duration={900}>
-                                {content.content}
+                                <motion.p variants={TitleVariants} transition={TitleTransition} whileHover="whileHover">
+                                    {content.content}
+                                </motion.p>
                             </Link>
                         </div>
                     ))}
