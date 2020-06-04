@@ -17,6 +17,7 @@
     "@types/react-vertical-timeline-component": "^2.5.0",
     "bignumber.js": "^9.0.0",
     "clsx": "^1.1.0",
+    "framer-motion": "^1.11.0",
     "moment": "^2.24.0",
     "node-sass": "^4.13.1",
     "particles-bg": "^2.5.0",
