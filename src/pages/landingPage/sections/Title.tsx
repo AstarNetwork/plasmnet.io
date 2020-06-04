@@ -59,6 +59,7 @@ const useStyles = makeStyles(theme => ({
     link: {
         color: 'rgb(129, 133, 141)',
         cursor: 'pointer',
+        display: 'inline-block',
     },
 }));
 
