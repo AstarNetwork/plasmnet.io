@@ -30,8 +30,7 @@ const useStyles = makeStyles(theme => ({
     },
     heroContent: {
         padding: '10% 10% 10%',
-        // eslint-disable-next-line no-useless-computed-key
-        ['@media (max-width:414px)']: {
+        [theme.breakpoints.down('sm')]: {
             padding: '10% 0%',
         },
         width: '100%',
@@ -83,7 +82,7 @@ const Title: React.FC<Props> = () => {
                 Plasm Network is
                 <br /> a scaling dApps platform on Substrate
             </Typography>
-            <Grid className={classes.heroGrid} container direction="row-reverse" spacing={1} alignItems="center">
+            <Grid className={classes.heroGrid} container direction="row-reverse" spacing={0} alignItems="center">
                 <Grid item xs={12} sm={6} md className="SlideUp one">
                     {/* Time standard: UTC  */}
                     {/* <LockdropInfo countdownDate="2020-03-15 00:00:00" /> */}
