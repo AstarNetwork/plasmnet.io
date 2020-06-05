@@ -30,6 +30,10 @@ const useStyles = makeStyles(theme => ({
     },
     heroContent: {
         padding: '10% 10% 10%',
+        // eslint-disable-next-line no-useless-computed-key
+        ['@media (max-width:414px)']: {
+            padding: '10% 0%',
+        },
         width: '100%',
         maxWidth: '100%',
         background: 'transparent',
