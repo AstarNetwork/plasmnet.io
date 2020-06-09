@@ -33,7 +33,7 @@ export const SponsorLinks = {
 };
 
 export const BlogLinks = {
-    lockdropIntroduction: 'https://docs.plasmnet.io/PlasmNetwork/Lockdrop.html',
+    lockdropIntroduction: 'https://docs.plasmnet.io/workshop-and-tutorial/lockdrop-tutrial',
 };
 
 export const AppLinks = {
