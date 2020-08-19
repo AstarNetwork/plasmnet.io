@@ -16,7 +16,7 @@ import { BlogLinks } from '../../database/links';
 import SocialButtons from '../../components/SocialButtons';
 
 // toast content
-const toastContent = () => {
+const toastContent = (): JSX.Element => {
     return (
         <NotificationMessage
             message="Our lockdrop is about to launch!"

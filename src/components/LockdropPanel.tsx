@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
@@ -9,6 +9,7 @@ import { BlogLinks } from '../database/links';
 import moment, { Moment, duration } from 'moment';
 import CountUp from 'react-countup';
 import { getLockValue } from '../helpers/ethLockdrop';
+import { firstLockContract } from '../database/tokenInfo';
 
 interface TimeFormat {
     days: number;
@@ -31,7 +32,7 @@ enum LockState {
 const LockdropPanel: React.FC<Props> = ({ startTime, endTime }) => {
     const now = moment().utc();
 
-    const calculateTimeLeft = (): TimeFormat => {
+    const calculateTimeLeft = useCallback((): TimeFormat => {
         const tillStart = moment(startTime).valueOf() - now.valueOf();
 
         //let difference = tillStart;
@@ -61,9 +62,9 @@ const LockdropPanel: React.FC<Props> = ({ startTime, endTime }) => {
         }
 
         return timeLeft;
-    };
+    }, [startTime, endTime, now]);
 
-    const getLockState = (): LockState => {
+    const getLockState = useCallback((): LockState => {
         const tillStart = moment(startTime).valueOf() - now.valueOf();
         if (tillStart > 0) {
             return LockState.notStart;
@@ -72,7 +73,7 @@ const LockdropPanel: React.FC<Props> = ({ startTime, endTime }) => {
         } else {
             return LockState.end;
         }
-    };
+    }, [startTime, endTime, now]);
 
     const [timeLeft, setTimeLeft] = useState<TimeFormat>(calculateTimeLeft());
     const [lockState, setLockState] = useState(getLockState());
@@ -156,7 +157,7 @@ const PanelWrapper: React.FC = ({ children }) => {
     const [totalLockVal, setTotalLockVal] = useState('0');
 
     const setLocks = async (): Promise<void> => {
-        const lockVal = await getLockValue();
+        const lockVal = await getLockValue(firstLockContract);
         setTotalLockVal(lockVal);
     };
 
@@ -177,7 +178,7 @@ const PanelWrapper: React.FC = ({ children }) => {
                 <Paper elevation={5} className={classes.paper}>
                     {children}
                     <Typography variant="h5" className={classes.lockedVal}>
-                        Total Lock Value is around {countupTotalLockVal} ETH
+                        Total Locked Value: {countupTotalLockVal} ETH (1st Lockdrop)
                     </Typography>
 
                     <a href={BlogLinks.lockdropIntroduction}>

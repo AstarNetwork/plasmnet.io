@@ -15,9 +15,6 @@ import { Button } from '@material-ui/core';
 import { motion } from 'framer-motion';
 import { TitleVariants, TitleTransition } from '../../../styles/titleTransitAnimation';
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
-interface Props {}
-
 const useStyles = makeStyles(theme => ({
     title: {
         color: 'black',
@@ -66,7 +63,7 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-const Title: React.FC<Props> = () => {
+const Title: React.FC = () => {
     const classes = useStyles();
 
     return (
@@ -84,8 +81,6 @@ const Title: React.FC<Props> = () => {
             </Typography>
             <Grid className={classes.heroGrid} container direction="row-reverse" spacing={0} alignItems="center">
                 <Grid item xs={12} sm={6} md className="SlideUp one">
-                    {/* Time standard: UTC  */}
-                    {/* <LockdropInfo countdownDate="2020-03-15 00:00:00" /> */}
                     <LockdropPanel endTime={LockdropEnd} startTime={LockdropStart} />
                     <Grid container spacing={1} justify="center">
                         <Grid item>
