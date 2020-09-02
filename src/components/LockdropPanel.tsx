@@ -9,7 +9,7 @@ import { BlogLinks } from '../database/links';
 import moment, { Moment, duration } from 'moment';
 import CountUp from 'react-countup';
 import { getLockValue } from '../helpers/ethLockdrop';
-import { firstLockContract } from '../database/tokenInfo';
+import { secondLockContract } from '../database/tokenInfo';
 
 interface TimeFormat {
     days: number;
@@ -157,7 +157,7 @@ const PanelWrapper: React.FC = ({ children }) => {
     const [totalLockVal, setTotalLockVal] = useState('0');
 
     const setLocks = async (): Promise<void> => {
-        const lockVal = await getLockValue(firstLockContract);
+        const lockVal = await getLockValue(secondLockContract);
         setTotalLockVal(lockVal);
     };
 
@@ -178,7 +178,7 @@ const PanelWrapper: React.FC = ({ children }) => {
                 <Paper elevation={5} className={classes.paper}>
                     {children}
                     <Typography variant="h5" className={classes.lockedVal}>
-                        Total Locked Value: {countupTotalLockVal} ETH (1st Lockdrop)
+                        Total Locked Value: {countupTotalLockVal} ETH (2nd Lockdrop)
                     </Typography>
 
                     <a href={BlogLinks.lockdropIntroduction}>
