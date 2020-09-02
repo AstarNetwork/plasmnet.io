@@ -6,6 +6,8 @@ import CodeOutlinedIcon from '@material-ui/icons/CodeOutlined';
 import LockIcon from '@material-ui/icons/Lock';
 import moment from 'moment';
 
+const LOCKDROP_DURATION = 30; // days
+
 //todo: add more content here
 export const TokenInfo: CardItem[] = [
     {
@@ -37,10 +39,10 @@ export const TokenInfo: CardItem[] = [
 ];
 
 // the time zone is set to UTC as default
-export const LockdropStart = moment.utc('2020-08-31 00:00:00');
+export const LockdropStart = moment.unix(1598832000);
 
-export const LockdropEnd = moment.utc('2020-09-30 00:00:00');
+export const LockdropEnd = LockdropStart.clone().add(LOCKDROP_DURATION, 'days');
 
 export const firstLockContract = '0x458dabf1eff8fcdfbf0896a6bd1f457c01e2ffd6';
 
-export const secondLockContract = '';
+export const secondLockContract = '0xa4803f17607B7cDC3dC579083d9a14089E87502b';
