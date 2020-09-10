@@ -1,34 +1,65 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import BigNumber from 'bignumber.js';
 import Web3Utils from 'web3-utils';
-import { LockTxArray } from '../types/types';
+import { LockEvent } from '../types/types';
 
-export async function getLockValue(contractAddr: string, ropsten?: boolean): Promise<string> {
-    const apiNetwork = ropsten ? 'api-ropsten' : 'api';
-    const url = `https://${apiNetwork}.etherscan.io/api?module=account&action=txlist&address=${contractAddr}&startblock=0&endblock=latest&sort=asc`;
+/**
+ * parses through the given lock events to calculate the total amount of locked ETH
+ * @param locks a list of lockdrop contract events
+ * @param roundTo
+ */
+function calculateTotalEth(locks: LockEvent[], roundTo?: number): string {
+    //let totalVal = new BigNumber(0);
+    if (locks.length > 0 && Array.isArray(locks)) {
+        const allVal = locks.map(e => {
+            return e.eth;
+        });
 
-    let totalLock = '';
+        const totalVal = allVal.reduce((a, b) => a.plus(b), new BigNumber(0));
 
-    try {
-        const res = await fetch(url);
-        const data = await res.json();
-        const result: LockTxArray = data.result;
-        let totalVal = new BigNumber(0);
+        const _eth = Web3Utils.fromWei(totalVal.toFixed(), 'ether');
 
-        // Memo: forEach will occur `forEach Is Not a Function` error sometime
-        for (let i = 0; i < result.length; i++) {
-            if (result[i].isError === '0') {
-                const txVal = new BigNumber(result[i].value);
-                totalVal = totalVal.plus(txVal);
-            }
-        }
-        // Memo: Recursion
-        if (totalVal.s !== null) {
-            totalLock = new BigNumber(Web3Utils.fromWei(totalVal.toFixed(), 'ether')).decimalPlaces(1).toFixed();
-        } else {
-            getLockValue(contractAddr, ropsten);
-        }
-    } catch (err) {
-        console.error(err);
+        if (roundTo) return new BigNumber(_eth).toFixed(roundTo, 5);
+        return new BigNumber(_eth).toFixed();
     }
-    return totalLock;
+    return '0';
+}
+
+/**
+ * Fetches ethereum lock event from the cache server.
+ * This is a temporary cache server with not query
+ * @param contractAddr contract address that emits the event
+ */
+const fetchEventsFromCache = async (contractAddr: string): Promise<LockEvent[]> => {
+    const api = `https://cache.plasmnet.io/locks/cache-${contractAddr.slice(0, 6)}.json`;
+
+    const res = await fetch(api);
+
+    const jsonData: any[] = await res.json();
+
+    const evs = jsonData.map(i => {
+        return {
+            eth: new BigNumber(i.eth),
+            duration: i.duration,
+            lock: i.lock,
+            introducer: i.introducer,
+            blockNo: i.blockNo,
+            timestamp: i.timestamp,
+            lockOwner: i.lockOwner,
+            transactionHash: i.transactionHash,
+        } as LockEvent;
+    });
+
+    return evs;
+};
+
+export async function getLockValue(contractAddr: string): Promise<string> {
+    try {
+        const events = await fetchEventsFromCache(contractAddr);
+        const totalVal = calculateTotalEth(events, 4);
+        return totalVal;
+    } catch (e) {
+        console.log(e);
+        return '0';
+    }
 }

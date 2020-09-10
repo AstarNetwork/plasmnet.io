@@ -1,3 +1,5 @@
+import BigNumber from 'bignumber.js';
+
 export interface CardItem {
     icon: any;
     heading: string;
@@ -18,25 +20,13 @@ export interface TableOfItem {
     link: string;
 }
 
-export interface LockTx {
-    blockNumber: string;
-    timeStamp: string;
-    hash: string;
-    nonce: string;
-    blockHash: string;
-    transactionIndex: string;
-    from: string;
-    to: string;
-    value: string;
-    gas: string;
-    gasPrice: string;
-    isError: string;
-    txreceipt_status: string;
-    input: string;
-    contractAddress: string;
-    cumulativeGasUsed: string;
-    gasUsed: string;
-    confirmations: string;
+export interface LockEvent {
+    eth: BigNumber; // locked value in wei
+    duration: number; // in Unix epoch seconds
+    lock: string; // lock address
+    introducer: string;
+    blockNo: number;
+    timestamp: number; // in Unix epoch seconds
+    lockOwner: string; // locker's address
+    transactionHash: string;
 }
-
-export type LockTxArray = LockTx[];
