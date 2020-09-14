@@ -38,15 +38,15 @@ export const RoadmapItems = [
     {
         id: 4,
         icon: FilterTiltShiftOutlinedIcon,
-        heading: 'Becomes a parachain.',
+        heading: 'Becomes a Parachain.',
         content:
-            "Plasm Network is in it's core, bringing Layer 2 to the Polkadot network (Depends on Polkadot). And Starts 2-nd, 3-rd Lockdrop with ETC, BTC and DOT.",
+            'Being a Parachain for the Polkadot Network allows us to provide much more value to the users in the crypto space.',
         date: '2020-Q3',
     },
     {
         id: 5,
         icon: AssignmentTurnedInIcon,
-        heading: 'Completed a Plasm Network v2.0.0.',
+        heading: 'Completed the Plasm Network v2.0.0.',
         content:
             'All the features described in the white paper are available. All lockdrops have been terminated(with Reail-time lockdrop).  The network is controlled autonomously and decentralized. Also Parachained and connected to Polkadot.',
         date: '2020-Q4',

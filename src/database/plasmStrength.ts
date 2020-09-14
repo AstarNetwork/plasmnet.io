@@ -11,7 +11,7 @@ export const PlasmStrength: CardItem[] = [
     {
         icon: LayersIcon,
         heading: 'Layer 2',
-        content: "Plasm Network is in it's core, bringing Layer 2 to the Polkadot network",
+        content: 'Plasm Network is about enabling layer 2 technology on top of the Polkadot Network',
     },
     {
         icon: TimerOutlinedIcon,
