@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { createMuiTheme } from '@material-ui/core/styles';
+import { createMuiTheme, responsiveFontSizes } from '@material-ui/core/styles';
 import { MuiThemeProvider } from '@material-ui/core/styles';
 
-const theme = createMuiTheme({
+let theme = createMuiTheme({
     typography: {
         fontFamily: [
             'Work Sans',
@@ -30,6 +30,8 @@ const theme = createMuiTheme({
         },
     },
 });
+
+theme = responsiveFontSizes(theme);
 
 ReactDOM.render(
     <MuiThemeProvider theme={theme}>
